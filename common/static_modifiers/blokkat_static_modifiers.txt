@@ -368,3 +368,22 @@ giga_blokkat_blokkazoi_buff = {
 	ship_shield_mult = 100
 	ship_engagement_range_mult = 3
 }
+
+giga_gif_member_modifier = {
+	country_produces_mult = -0.15
+	country_unity_produces_mult = -0.45
+	country_physics_research_produces_mult = 0.3
+	country_physics_research_produces_mult = 0.3
+	country_physics_research_produces_mult = 0.3
+	ship_weapon_damage = 0.3
+	ship_fire_rate_mult = 0.3
+}
+
+giga_gif_ally_modifier = {
+	country_unity_produces_mult = -0.15
+	country_physics_research_produces_mult = 0.1
+	country_physics_research_produces_mult = 0.1
+	country_physics_research_produces_mult = 0.1
+	ship_weapon_damage = 0.1
+	ship_fire_rate_mult = 0.1
+}

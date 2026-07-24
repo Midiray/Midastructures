@@ -860,6 +860,279 @@ ship_design = {
 }
 
 ship_design = {
+	name = "Blokk-Eradicator"
+	ship_size = giga_blokkat_eradicator
+	section = {
+		template = "BLOKKAT_ERADICATOR"
+		slot = "mid"
+
+		component = { slot = "ERADICATOR_ULTRA_GUN"	template = "ERADICATOR_BEAM_BLOKKAT" }
+
+		component = { slot = "OMEGA_GUN_01"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_02"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_03"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_04"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_05"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_06"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_07"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_08"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_09"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_10"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_11"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_12"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_13"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_14"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_15"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_16"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_17"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_18"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_19"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_20"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_21"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_22"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_23"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_24"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_25"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_26"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_27"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_28"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_29"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_30"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_31"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_32"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_33"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_34"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_35"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_36"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_37"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_38"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_39"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_40"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_41"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_42"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_43"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_44"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_45"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_46"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_47"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_48"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_49"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_50"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_51"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_52"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_53"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_54"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_55"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_56"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_57"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_58"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_59"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_60"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_61"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_62"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_63"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_64"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_65"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_66"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_67"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_68"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_69"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_70"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_71"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_72"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_73"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_74"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_75"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_76"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_77"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_78"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_79"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_80"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_81"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_82"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_83"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_84"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_85"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_86"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_87"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_88"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_89"	template = "PLANET_LANCE_BLOKKAT" }
+		component = { slot = "OMEGA_GUN_90"	template = "PLANET_LANCE_BLOKKAT" }
+
+		component = { slot = "TITANIC_GUN_01"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_02"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_03"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_04"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_05"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_06"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_07"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_08"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_09"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_10"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_11"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_12"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_13"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_14"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_15"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_16"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_17"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_18"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_19"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_20"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_21"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_22"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_23"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_24"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_25"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_26"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_27"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_28"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_29"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_30"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_31"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_32"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_33"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_34"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_35"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_36"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_37"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_38"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_39"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_40"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_41"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_42"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_43"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_44"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_45"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_46"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_47"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_48"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_49"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_50"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_51"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_52"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_53"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_54"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_55"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_56"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_57"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_58"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_59"	template = "ARC_EMITTER_BLOKKAT" }
+		component = { slot = "TITANIC_GUN_60"	template = "ARC_EMITTER_BLOKKAT" }
+
+		component = { slot = "HANGAR_01"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_02"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_03"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_04"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_05"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_06"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_07"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_08"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_09"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_10"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_11"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_12"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_13"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_14"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_15"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_16"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_17"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_18"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_19"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_20"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_21"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_22"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_23"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_24"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_25"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_26"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_27"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_28"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_29"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_30"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_31"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_32"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_33"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_34"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_35"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_36"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_37"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_38"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_39"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+		component = { slot = "HANGAR_40"			template = "STRIKE_CRAFT_HANGAR_BLOKKAT" }
+
+		component = { slot = "POINT_DEFENCE_01"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_02"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_03"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_04"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_05"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_06"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_07"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_08"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_09"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_10"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_11"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_12"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_13"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_14"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_15"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_16"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_17"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_18"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_19"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_20"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_21"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_22"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_23"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_24"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_25"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_26"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_27"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_28"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_29"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_30"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_31"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_32"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_33"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_34"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_35"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_36"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_37"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_38"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_39"		template = "POINT_DEFENCE_BLOKKAT" }
+		component = { slot = "POINT_DEFENCE_40"		template = "POINT_DEFENCE_BLOKKAT" }
+
+		component = { slot = "AUX_UTILITY_1"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_2"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_3"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_4"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_5"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_6"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_7"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_8"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_9"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_10"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_11"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_12"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_13"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_14"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_15"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_16"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_17"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_18"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_19"		template = "REACTOR_BOOSTER_BLOKKAT" }
+		component = { slot = "AUX_UTILITY_20"		template = "REACTOR_BOOSTER_BLOKKAT" }
+	}
+
+	required_component = "COMBAT_COMPUTER_ERADICATOR_BLOKKAT"
+	required_component = "SENSOR_BLOKKAT"
+	required_component = "REACTOR_BLOKKAT"
+	required_component = "JUMP_DRIVE_BLOKKAT"
+	required_component = "THRUSTER_BLOKKAT"
+	required_component = "SHIP_AURA_BLOKKAT_ERADICATOR"
+}
+
+ship_design = {
 	name = "Blokkat"
 	ship_size = giga_blokkat_individual
 	section = {
@@ -1105,4 +1378,212 @@ ship_design = {
 	required_component = "REACTOR_BLOKKAT"
 	required_component = "JUMP_DRIVE_BLOKKAT"
 	required_component = "THRUSTER_BLOKKAT"
+}
+# GIF Enclave Station
+ship_design = {
+	name = "NAME_GIF_Enclave_Station"
+	ship_size = enclave_station
+
+	section = {
+		template = "station_enclave_trader_01_key"
+		slot = "mid"
+
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "MASS_ACCELERATOR_2"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "KINETIC_ARTILLERY_2"
+		}
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_04"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_05"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "MEDIUM_GUN_06"
+			template = "MEDIUM_MASS_DRIVER_5"
+		}
+		component = {
+			slot = "PD_01"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_02"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_03"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "PD_04"
+			template = "FLAK_BATTERY_2"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "TORPEDO_2"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "TORPEDO_2"
+		}
+		component = {
+			slot = "SMALL_GUN_01"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_02"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_03"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_04"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_05"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "SMALL_GUN_06"
+			template = "SMALL_AUTOCANNON_3"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "LARGE_ARMOR_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "LARGE_SHIELD_5"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "SHIELD_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "SHIELD_BOOSTER"
+		}
+	}
+	required_component = "SENSOR_4"
 }

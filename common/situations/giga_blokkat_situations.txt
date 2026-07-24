@@ -1,0 +1,292 @@
+
+
+#Situation to get GIF components
+situation_gif_integration = {
+	picture = GFX_evt_rare_tech_cache
+	#complete_icon_frame = GFX_situation_outcome_frame_blue
+	#complete_icon = GFX_situation_outcome_ascension
+
+	#on_start = {
+	#	owner = {
+	#		country_event = {
+	#			id = giga_eawaf.3014 #check approach cost eligibility
+	#		}
+	#	}
+	#}
+
+	#on_progress_complete = {
+		#custom_tooltip = situation_gif_integration_finish
+		#hidden_effect = { owner = { country_event = { id = giga_eawaf.5004 } } }
+	#}
+
+	start_value = 0
+
+	stages = {
+		stage_1 = { #Little involvement: 0-50
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 50
+			on_first_enter = {
+			}
+			custom_tooltip = situation_gif_integration_stage_1_tt
+		}
+		stage_2 = { #Strategic partner: 50-250
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 250
+			on_first_enter = {
+				#owner = { country_event = { id = giga_blokkat_wave_2.1010 } }
+			}
+			custom_tooltip = situation_gif_integration_stage_2_tt
+		}
+		stage_3 = { #Full member: 250-750
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 750
+			on_first_enter = {
+				#owner = { country_event = { id = giga_blokkat_wave_2.1011 } }
+			}
+			custom_tooltip = situation_gif_integration_stage_3_tt
+		}
+		stage_4 = { #Highly-integrated member: 750-1000
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 1000
+			on_first_enter = {
+				#owner = { country_event = { id = giga_blokkat_wave_2.1011 } }
+			}
+			custom_tooltip = situation_gif_integration_stage_4_tt
+		}
+	}
+	triggered_blocked_desc = {
+		trigger = {
+			current_stage = stage_2
+			owner = {
+				NOT = { has_country_flag = giga_is_gif_ally }
+			}
+		}
+		text = "giga_gif_must_be_ally_tt"
+	}
+	triggered_blocked_desc = {
+		trigger = {
+			OR = { current_stage = stage_3 current_stage = stage_4 }
+			owner = {
+				NOT = { has_country_flag = giga_is_gif_member }
+			}
+		}
+		text = "giga_gif_must_be_member_tt"
+	}
+
+	monthly_progress = {
+		base = 0
+	}
+
+	on_monthly = {
+		events = {
+			giga_GIF_enclaves.1 #update progress bar
+		}
+	}
+
+	#approach = { #Placeholder
+	#	name = approach_situation_gif_integration_1
+	#	icon = GFX_situation_approach_shrug
+	#	icon_background = GFX_situation_approach_bg_red
+	#	default = yes
+	#	on_select = {
+	#		custom_tooltip = approach_situation_gif_integration_1_tt
+	#	}
+	#}
+}
+
+#Situation for Blokkwork Pylons dissolving the galaxy
+situation_blokkat_pylon_dissolution = {
+	picture = GFX_evt_supernova
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_eotc
+
+	#on_start = {
+	#	owner = {
+	#		country_event = {
+	#			id = giga_eawaf.3014 #check approach cost eligibility
+	#		}
+	#	}
+	#}
+
+	on_progress_complete = {
+		custom_tooltip = situation_blokkat_pylon_dissolution_finish
+		#hidden_effect = { owner = { country_event = { id = giga_eawaf.5004 } } }
+	}
+
+	start_value = 0
+
+	stages = {
+		stage_1 = { #Nothing, starting stage
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			on_first_enter = {
+			}
+			custom_tooltip = ssituation_blokkat_pylon_dissolution_effect
+		}
+		stage_2 = { #Unlocks basic resource buildings
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_blue
+			end = 240
+			on_first_enter = {
+				owner = { country_event = { id = giga_blokkat_wave_2.2010 } }
+			}
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_3 = { #Unlocks basic resource zones
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 360
+			on_first_enter = {
+				owner = { country_event = { id = giga_blokkat_wave_2.2011 } }
+			}
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_4 = { #Unlocks advanced resource buildings
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 480
+			on_first_enter = {
+				owner = { country_event = { id = giga_blokkat_wave_2.2012 } }
+			}
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+	}
+
+	monthly_progress = {
+		base = 0.25
+		modifier = {
+			desc = "giga_eawaf_has_sirens_secret"
+			add = 0.25
+			owner = {
+				has_technology = giga_tech_eawaf_sirens_secret
+			}
+		}
+		modifier = {
+			desc = "giga_eawaf_has_psifusion_secret"
+			add = 0.25
+			owner = {
+				has_country_flag = eawaf_mindwardens_psifusion_study
+			}
+		}
+		modifier = {
+			desc = string_current_approach
+			add = 0
+			current_situation_approach = approach_giga_eawaf_sirens_research_1
+		}
+		modifier = {
+			desc = string_current_approach
+			add = 1
+			current_situation_approach = approach_giga_eawaf_sirens_research_2
+		}
+		modifier = {
+			desc = string_current_approach
+			add = 2
+			has_situation_flag = approach_giga_eawaf_sirens_research_3
+		}
+		modifier = {
+			desc = string_current_approach
+			add = 4
+			has_situation_flag = approach_giga_eawaf_sirens_research_4
+		}
+	}
+
+	#on_monthly = {
+	#	events = {
+	#		giga_eawaf.3015 #check approach cost eligibility
+	#	}
+	#}
+
+	approach = { #No investment
+		name = approach_giga_eawaf_sirens_research_1
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = approach_giga_eawaf_sirens_research_1_tooltip
+		}
+	}
+
+	approach = { #Small investment
+		name = approach_giga_eawaf_sirens_research_2
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = approach_giga_eawaf_sirens_research_2_tooltip
+		}
+		allow = {
+			owner = {
+				has_monthly_income = { resource = engineering_research  value > 100 }
+				has_monthly_income = { resource = society_research  value > 100 }
+				has_monthly_income = { resource = physics_research  value > 100 }
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				physics_research = 100
+				society_research = 100
+				engineering_research = 100
+			}
+		}
+	}
+
+	approach = {
+		name = approach_giga_eawaf_sirens_research_3
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = approach_giga_eawaf_sirens_research_3_tooltip
+		}
+		allow = {
+			owner = {
+				has_monthly_income = { resource = engineering_research  value > 200 }
+				has_monthly_income = { resource = society_research  value > 200 }
+				has_monthly_income = { resource = physics_research  value > 200 }
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				physics_research = 200
+				society_research = 200
+				engineering_research = 200
+			}
+		}
+	}
+
+	approach = {
+		name = approach_giga_eawaf_sirens_research_4
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_green
+		on_select = {
+			custom_tooltip = approach_giga_eawaf_sirens_research_4_tooltip
+		}
+		allow = {
+			owner = {
+				has_monthly_income = { resource = engineering_research  value > 400 }
+				has_monthly_income = { resource = society_research  value > 400 }
+				has_monthly_income = { resource = physics_research  value > 400 }
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				physics_research = 400
+				society_research = 400
+				engineering_research = 400
+			}
+		}
+	}
+
+	#abort_trigger = {
+	#	OR = {
+	#		has_global_flag = giga_eawaf_sirens_defeated
+	#		event_target:giga_eawaf_planet = { owner = { NOT = { is_country_type = giga_eawaf_sirens } } }
+	#	}
+	#}
+}

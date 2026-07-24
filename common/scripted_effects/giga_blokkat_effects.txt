@@ -2844,3 +2844,21 @@ draw_blokkat_vester_path = {
 		}
 	}
 }
+giga_create_eradicator_effect = {
+	create_fleet = {
+		name = "NAME_Blokk_Eradicator"
+		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
+		effect = {
+			set_owner = event_target:blokkat_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "NAME_Blokk_Eradicator"
+					design = "Blokk-Eradicator"
+				}
+			}
+			set_fleet_flag = giga_blokk_eradicator
+			set_location = prev
+		}
+	}
+}

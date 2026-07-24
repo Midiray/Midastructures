@@ -29,3 +29,121 @@ giga_blokkat_player_shipyard_initializer = {
 		add_modifier = { modifier = blokkat_mothership_shield days = -1 }
 	}
 }
+
+GIF_enclave_init = {
+	#class = "sc_empty_space"
+	class = "sc_a"
+	name = "NAME_GIF_enclave_system"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+	}
+
+	max_instances = 1
+	spawn_chance = 0
+
+	flags = { GIF_system enclave }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+		init_effect = {
+			create_country = {
+				name = "NAME_GIF"
+				adjective = NAME_GIF_adj
+				type = enclave
+				authority = "auth_democratic"
+				civics = {
+					civic = civic_trading_conglomerate
+				}
+				origin = "origin_default"
+				species = event_target:lyuinite_species
+				flag = {
+					icon = {
+						category = "zoological"
+						file = "flag_zoological_6.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors={
+						"shadow_blue"
+						"shadow_blue"
+						"null"
+						"null"
+					}
+				}
+				ethos = {
+					ethic = ethic_fanatic_xenophile
+					#ethic = ethic_materialist
+				}
+				ignore_initial_colony_error = yes
+			}
+			last_created_country = {
+				#set_country_flag = trader_enclave_country
+				set_country_flag = giga_is_gif_country
+				set_graphical_culture = mammalian_01
+				create_fleet = {
+					name = "NAME_GIF_Enclave_Station"
+					settings = { spawn_debris = no }
+					effect = {
+						set_owner = prev
+						create_ship = {
+							name = random
+							design = "NAME_GIF_Enclave_Station"
+							graphical_culture = prev
+						}
+						set_location = {
+							target = prevprev
+							distance = 90
+						}
+						save_event_target_as = CustomCapital
+						prev = {
+							set_custom_capital_location = event_target:CustomCapital
+						}
+						#set_fleet_flag = trader_enclave_station
+						prev = { set_country_flag = suppress_first_contact_comms }
+						every_country = {
+							establish_communications_no_message = prevprev
+						}
+					}
+				}
+				create_leader = {
+					class = official
+					species = this
+					name = random
+					skill = 5
+				}
+				set_leader = last_created_leader
+				#save_global_event_target_as = xuracorp_country
+			}
+			solar_system = {
+				#save_global_event_target_as = xuracorp_enclave_system
+			}
+		}
+	}
+
+	change_orbit = 45
+
+#	planet = {
+#		count = { min = 2 max = 5 }
+#		orbit_distance = 20
+#		orbit_angle = { min = 90 max = 270 }
+#
+#		change_orbit = @base_moon_distance
+#
+#		moon = {
+#			count = { min = 0 max = 1 }
+#			orbit_angle = { min = 90 max = 270 }
+#			orbit_distance = 5
+#		}
+#
+	#
+	#}
+}
