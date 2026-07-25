@@ -772,9 +772,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 
 	immediate = {
 		#Set Blokkat Rage (determines how many ships a wave brings. rage is increased by getting GIF support, destroying blokkat ships, and forcing harvesting field divergence [surviving too long])
+		set_global_flag = blokkat_wave_2_started
 		set_variable = {
 			which = blokkat_wave_2_beamfight_energy_cost_raw
-			value = blokkat_shieldkiller_activation_cost
+			value = event_target:blokkat_country.blokkat_shieldkiller_activation_cost
 		}
 		set_variable = {
 			which = blokkat_wave_2_rage
@@ -784,6 +785,32 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 			which = blokkat_wave_2_rage
 			value = 200
 		}
+		set_variable = {
+			which = blokkat_wave_2_beamfight_energy_cost_final
+			value = blokkat_wave_2_beamfight_energy_cost_raw
+		}
+		divide_variable = {
+			which = blokkat_wave_2_beamfight_energy_cost_final
+			value = 50
+		}
+		no_scope = {
+			spawn_system = {
+				min_distance = 500
+				max_distance = 500
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = main_eradicator_system
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_eradicator_system
+				}
+			}
+		}
+		country_event = { id = giga_blokkat_wave_2.1993 }
+		country_event = { id = giga_blokkat_wave_2.2000 days = 1 }
 	}
 }
 country_event = { #Spawn ships, repeatable event that fires with each new wave from wave 2 onward
@@ -802,6 +829,7 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 				which = blokkat_wave_2_eradicator_count
 				value = 1000
 			}
+			floor_variable = blokkat_wave_2_eradicator_count
 		}
 		else = {
 			set_variable = {
@@ -842,9 +870,13 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 			value = 1000
 		}
 		#MIDIRAY_CHANGE_THIS, numbers of above list are very much unfinished
+		while = {
+			count = blokkat_wave_2_eradicator_count
+			giga_create_eradicator_wave_2_effect = yes
+		}
 	}
 }
-country_event = { #Monthly event for beamfight situation that increases how much energy the Blokks are giving it
+situation_event = { #Monthly event for beamfight situation that increases how much energy the Blokks are giving it
 	id = giga_blokkat_wave_2.1994
 	hide_window = yes
 	is_triggered_only = yes
@@ -852,19 +884,403 @@ country_event = { #Monthly event for beamfight situation that increases how much
 	immediate = {
 		if = {
 			limit = { has_global_flag = is_beamfighting_eradicator }
-			add_variable = {
-				which = blokkat_wave_2_beamfight_energy_cost_raw
-				value = blokkat_wave_2_rage
+			owner = {
+				add_variable = {
+					which = blokkat_wave_2_beamfight_energy_cost_raw
+					value = blokkat_wave_2_rage
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_cost_temp
+					value = blokkat_wave_2_beamfight_energy_cost_raw
+				}
+				divide_variable = {
+					which = blokkat_wave_2_beamfight_energy_cost_temp
+					value = 20
+				}
+				add_variable = {
+					which = blokkat_wave_2_beamfight_energy_cost_final
+					value = blokkat_wave_2_beamfight_energy_cost_temp
+				}
+				#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
 			}
-			multiply_variable = {
-				which = blokkat_wave_2_beamfight_energy_cost_raw
-				value = 0.05
+		}
+
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_0 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
 			}
-			set_variable = {
-				which = blokkat_wave_2_beamfight_energy_cost_final
-				value = blokkat_wave_2_beamfight_energy_cost_raw
+			event_target:blokkat_beamfight_system_dist_0 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
 			}
-			#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_50 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_50 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_100 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_100 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_150 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_150 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_200 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_200 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_250 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_250 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_300 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_8
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_300 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_350 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_9
+						current_stage = stage_10
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_350 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_400 = { has_psionic_aura = eradicator_aura }
+				event_target:giga_beamfight_situation = {
+					current_stage = stage_10
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_400 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:qso_country
+					type = qso_aura
+				}
+			}
+		}
+		#
+		#
+		#
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_0 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					current_stage = stage_1
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_0 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_50 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_50 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_100 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_100 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_150 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_150 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_200 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_200 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_250 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_250 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_300 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_300 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_350 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_350 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
+		}
+		if = {
+			limit = {
+				event_target:blokkat_beamfight_system_dist_400 = { has_psionic_aura = qso_aura }
+				event_target:giga_beamfight_situation = {
+					OR = {
+						current_stage = stage_1
+						current_stage = stage_2
+						current_stage = stage_3
+						current_stage = stage_4
+						current_stage = stage_5
+						current_stage = stage_6
+						current_stage = stage_7
+						current_stage = stage_8
+						current_stage = stage_9
+					}
+				}
+			}
+			event_target:blokkat_beamfight_system_dist_400 = {
+				destroy_psionic_aura = yes
+				spawn_psionic_aura = {
+					owner = event_target:blokkat_country
+					type = eradicator_aura
+				}
+			}
 		}
 	}
 }
@@ -881,6 +1297,209 @@ country_event = { #oh shit the eradicator is here
 		room = blokkat3d_room
 	}
 	immediate = {
+		event_target:main_eradicator_system = {
+			spawn_psionic_aura = {
+				owner = event_target:blokkat_country
+				type = eradicator_aura
+			}
+		}
+		no_scope = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_distance = 450
+				max_distance = 450
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_450
+				}
+			}
+			spawn_system = {
+				min_distance = 400
+				max_distance = 400
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_400
+				}
+			}
+			spawn_system = {
+				min_distance = 350
+				max_distance = 350
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_350
+				}
+			}
+			spawn_system = {
+				min_distance = 300
+				max_distance = 300
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_300
+				}
+			}
+			spawn_system = {
+				min_distance = 250
+				max_distance = 250
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_250
+				}
+			}
+			spawn_system = {
+				min_distance = 200
+				max_distance = 200
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_200
+				}
+			}
+			spawn_system = {
+				min_distance = 150
+				max_distance = 150
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_150
+				}
+			}
+			spawn_system = {
+				min_distance = 100
+				max_distance = 100
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_100
+				}
+			}
+			spawn_system = {
+				min_distance = 50
+				max_distance = 50
+				min_orientation_angle = 90
+				max_orientation_angle = 90
+				initializer = blokkat_beamfight_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+					save_global_event_target_as = last_blokkat_spawned_system
+					save_global_event_target_as = blokkat_beamfight_system_dist_50
+				}
+			}
+			if = {
+				limit = { NOT = { has_global_flag = giga_galactic_core_spawned } }
+				spawn_system = {
+					min_distance = 0
+					max_distance = 0
+					min_orientation_angle = 90
+					max_orientation_angle = 90
+					initializer = blokkat_beamfight_system_init
+					hyperlane = no
+					is_discovered = yes
+					effect = {
+						spawn_psionic_aura = {
+							owner = event_target:blokkat_country
+							type = eradicator_aura
+						}
+						save_global_event_target_as = blokkat_beamfight_system_dist_0
+						add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+						set_name = NAME_central_mass_system
+					}
+				}
+			}
+			else = {
+				event_target:giga_core_system = {
+					save_global_event_target_as = blokkat_beamfight_system_dist_0
+					spawn_psionic_aura = {
+						owner = event_target:blokkat_country
+						type = eradicator_aura
+					}
+					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
+				}
+			}
+			set_spawn_system_batch = end
+		}
 	}
 
 	option = { #Well fuck
@@ -897,11 +1516,36 @@ country_event = { #its beginning to fire, how do we plan to deal with the eradic
 	is_triggered_only = yes
 	fire_only_once = yes
 	picture = GFX_evt_intelligence_report
+	immediate = {
+		start_situation = {
+			type = situation_blokkat_beamfight
+			target = this
+			effect = {
+				save_global_event_target_as = giga_beamfight_situation
+			}
+		}
+		if = {
+			limit = {
+				any_megastructure = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 } }
+			}
+			random_megastructure = {
+				limit = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 } }
+				owner = { save_global_event_target_as = qso_country }
+			}
+		}
+		else = {
+			random_country = {
+				limit = { is_ai = no }
+				save_global_event_target_as = qso_country
+			}
+		}
+	}
 
 
 	option = { #Beamfight it
 		name = "giga_blokkat_wave_2.2001.a"
 		custom_tooltip = giga_blokkat_wave_2.2001.a_tt
+		set_global_flag = is_beamfighting_eradicator
 	}
 	option = { #Shoot it directly
 		name = "giga_blokkat_wave_2.2001.b"

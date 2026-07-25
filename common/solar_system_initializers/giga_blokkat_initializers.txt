@@ -147,3 +147,29 @@ GIF_enclave_init = {
 	#
 	#}
 }
+
+blokkat_beamfight_system_init = {
+	class = "sc_empty_space"
+	name = "NAME_beamfight_system"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+	}
+
+	max_instances = -1
+	spawn_chance = 0
+
+	flags = { blokkat_beamfight_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+}

@@ -2064,6 +2064,7 @@ country_event = {
 				NOT = { has_global_flag = blokkat_mothership_shield_down }
 				NOT = { has_global_flag = blokkat_mothership_killed_legit }
 				NOT = { has_global_flag = blokkat_crisis_defeated }
+				NOT = { has_global_flag = blokkat_wave_2_started }
 				OR = {
 					NOT = { any_owned_fleet = { has_fleet_flag = blokkat_mothership_fleet } }
 					event_target:blokkat_mothership_ship = {

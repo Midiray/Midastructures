@@ -98,11 +98,13 @@ situation_gif_integration = {
 	#}
 }
 
-#Situation for Blokkwork Pylons dissolving the galaxy
-situation_blokkat_pylon_dissolution = {
+#Situation for dragonbeamfight z
+situation_blokkat_beamfight = {
 	picture = GFX_evt_supernova
 	complete_icon_frame = GFX_situation_outcome_frame_red
 	complete_icon = GFX_situation_outcome_eotc
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_eotc
 
 	#on_start = {
 	#	owner = {
@@ -111,174 +113,162 @@ situation_blokkat_pylon_dissolution = {
 	#		}
 	#	}
 	#}
-
+	on_fail = {
+		custom_tooltip = situation_blokkat_beamfight_lose
+	}
 	on_progress_complete = {
-		custom_tooltip = situation_blokkat_pylon_dissolution_finish
-		#hidden_effect = { owner = { country_event = { id = giga_eawaf.5004 } } }
+		custom_tooltip = situation_blokkat_beamfight_win
 	}
 
 	start_value = 0
 
 	stages = {
-		stage_1 = { #Nothing, starting stage
+		stage_1 = { #Beam hitting the core (or center of mass if no core)
 			icon = GFX_situation_stage_1
-			icon_background = GFX_situation_stage_frame_blue
+			icon_background = GFX_situation_stage_frame_red
 			end = 100
-			on_first_enter = {
-			}
 			custom_tooltip = ssituation_blokkat_pylon_dissolution_effect
 		}
-		stage_2 = { #Unlocks basic resource buildings
+		stage_2 = { #Beam clash at Dist 50 star
 			icon = GFX_situation_stage_2
-			icon_background = GFX_situation_stage_frame_blue
-			end = 240
-			on_first_enter = {
-				owner = { country_event = { id = giga_blokkat_wave_2.2010 } }
-			}
+			icon_background = GFX_situation_stage_frame_red
+			end = 200
 			custom_tooltip = situation_blokkat_pylon_dissolution_effect
 		}
-		stage_3 = { #Unlocks basic resource zones
+		stage_3 = { #Beam clash at Dist 100 star
 			icon = GFX_situation_stage_3
-			icon_background = GFX_situation_stage_frame_blue
-			end = 360
-			on_first_enter = {
-				owner = { country_event = { id = giga_blokkat_wave_2.2011 } }
-			}
+			icon_background = GFX_situation_stage_frame_red
+			end = 300
 			custom_tooltip = situation_blokkat_pylon_dissolution_effect
 		}
-		stage_4 = { #Unlocks advanced resource buildings
+		stage_4 = { #Beam clash at Dist 150 star
 			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_red
+			end = 400
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_5 = { #Beam clash at Dist 200 star
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_red
+			end = 500
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_6 = { #Beam clash at Dist 250 star
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_red
+			end = 600
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_7 = { #Beam clash at Dist 300 star
+			icon = GFX_situation_stage_7
+			icon_background = GFX_situation_stage_frame_red
+			end = 700
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_8 = { #Beam clash at Dist 350 star
+			icon = GFX_situation_stage_8
+			icon_background = GFX_situation_stage_frame_red
+			end = 800
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_9 = { #Beam clash at Dist 400 star
+			icon = GFX_situation_stage_9
+			icon_background = GFX_situation_stage_frame_red
+			end = 900
+			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+		}
+		stage_10 = { #Beam clash at Dist 450 star
+			icon = GFX_situation_stage_10
 			icon_background = GFX_situation_stage_frame_blue
-			end = 480
-			on_first_enter = {
-				owner = { country_event = { id = giga_blokkat_wave_2.2012 } }
-			}
+			end = 1000
 			custom_tooltip = situation_blokkat_pylon_dissolution_effect
 		}
 	}
 
 	monthly_progress = {
-		base = 0.25
+		base = 0
 		modifier = {
-			desc = "giga_eawaf_has_sirens_secret"
-			add = 0.25
-			owner = {
-				has_technology = giga_tech_eawaf_sirens_secret
-			}
+			desc = string_current_approach
+			add = -50
+			current_situation_approach = approach_beamfight_situation_1
 		}
 		modifier = {
-			desc = "giga_eawaf_has_psifusion_secret"
-			add = 0.25
-			owner = {
-				has_country_flag = eawaf_mindwardens_psifusion_study
-			}
+			desc = string_current_approach
+			add = -10
+			current_situation_approach = approach_beamfight_situation_2
 		}
 		modifier = {
 			desc = string_current_approach
 			add = 0
-			current_situation_approach = approach_giga_eawaf_sirens_research_1
+			has_situation_flag = approach_beamfight_situation_3
 		}
 		modifier = {
 			desc = string_current_approach
-			add = 1
-			current_situation_approach = approach_giga_eawaf_sirens_research_2
-		}
-		modifier = {
-			desc = string_current_approach
-			add = 2
-			has_situation_flag = approach_giga_eawaf_sirens_research_3
-		}
-		modifier = {
-			desc = string_current_approach
-			add = 4
-			has_situation_flag = approach_giga_eawaf_sirens_research_4
+			add = 20
+			has_situation_flag = approach_beamfight_situation_4
 		}
 	}
 
-	#on_monthly = {
-	#	events = {
-	#		giga_eawaf.3015 #check approach cost eligibility
-	#	}
-	#}
+	on_monthly = {
+		events = {
+			giga_blokkat_wave_2.1994
+		}
+	}
 
-	approach = { #No investment
-		name = approach_giga_eawaf_sirens_research_1
+	approach = { #Poor ass can't even slow it down
+		name = approach_beamfight_situation_1
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		on_select = {
-			custom_tooltip = approach_giga_eawaf_sirens_research_1_tooltip
+			custom_tooltip = approach_beamfight_situation_1_tooltip
 		}
 	}
 
-	approach = { #Small investment
-		name = approach_giga_eawaf_sirens_research_2
+	approach = { #Slow down beam
+		name = approach_beamfight_situation_2
 		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_yellow
+		icon_background = GFX_situation_approach_bg_red
 		on_select = {
-			custom_tooltip = approach_giga_eawaf_sirens_research_2_tooltip
-		}
-		allow = {
-			owner = {
-				has_monthly_income = { resource = engineering_research  value > 100 }
-				has_monthly_income = { resource = society_research  value > 100 }
-				has_monthly_income = { resource = physics_research  value > 100 }
-			}
+			custom_tooltip = approach_beamfight_situation_2_tooltip
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				physics_research = 100
-				society_research = 100
-				engineering_research = 100
+				energy = 20
+				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
 			}
 		}
 	}
 
-	approach = {
-		name = approach_giga_eawaf_sirens_research_3
+	approach = { #Stabilize beam
+		name = approach_beamfight_situation_3
 		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_green
+		icon_background = GFX_situation_approach_bg_red
 		on_select = {
-			custom_tooltip = approach_giga_eawaf_sirens_research_3_tooltip
-		}
-		allow = {
-			owner = {
-				has_monthly_income = { resource = engineering_research  value > 200 }
-				has_monthly_income = { resource = society_research  value > 200 }
-				has_monthly_income = { resource = physics_research  value > 200 }
-			}
+			custom_tooltip = approach_beamfight_situation_3_tooltip
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				physics_research = 200
-				society_research = 200
-				engineering_research = 200
+				energy = 50
+				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
 			}
 		}
 	}
 
-	approach = {
-		name = approach_giga_eawaf_sirens_research_4
-		icon = GFX_situation_approach_this_is_fine
-		icon_background = GFX_situation_approach_bg_green
+	approach = { #Overpower beam
+		name = approach_beamfight_situation_4
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
 		on_select = {
-			custom_tooltip = approach_giga_eawaf_sirens_research_4_tooltip
-		}
-		allow = {
-			owner = {
-				has_monthly_income = { resource = engineering_research  value > 400 }
-				has_monthly_income = { resource = society_research  value > 400 }
-				has_monthly_income = { resource = physics_research  value > 400 }
-			}
+			custom_tooltip = approach_beamfight_situation_4_tooltip
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				physics_research = 400
-				society_research = 400
-				engineering_research = 400
+				energy = 200
+				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
 			}
 		}
 	}

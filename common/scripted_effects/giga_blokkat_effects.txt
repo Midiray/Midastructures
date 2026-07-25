@@ -2844,7 +2844,7 @@ draw_blokkat_vester_path = {
 		}
 	}
 }
-giga_create_eradicator_effect = {
+giga_create_eradicator_wave_2_effect = {
 	create_fleet = {
 		name = "NAME_Blokk_Eradicator"
 		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
@@ -2858,7 +2858,130 @@ giga_create_eradicator_effect = {
 				}
 			}
 			set_fleet_flag = giga_blokk_eradicator
-			set_location = prev
+			set_location = event_target:main_eradicator_system
 		}
 	}
+}
+
+blokkat_spread_aura = { #Useless atm
+	custom_tooltip = try_spread_aura_tt
+	if = {
+		limit = {
+			has_psionic_aura = yes
+			#aura_owner = { has_technology = tech_aura_intensification }
+		}
+		aura_owner = { save_event_target_as = current_aura_owner }
+		random_neighbor_system = {
+			limit = { has_psionic_aura = no }
+			spawn_psionic_aura = { owner = prev.aura_owner }
+			weights = {
+				base = 1
+				modifier = {
+					add = value:count_adjacent_psionic_auras
+					always = yes
+				}
+			}
+		}
+	}
+}
+
+setup_beam_aura_clashing_monthly = {
+	set_timed_star_flag = {
+		flag = aura_clashing_on_monthly_check
+		days = 20 #to fit within on_monthly (can be changed for AIs if needed)
+	}
+	setup_beam_aura_clashing = {
+		PRE_LOOP_CONDITIONS = "NOT = { has_star_flag = aura_clashing_on_monthly_check }"
+		PRE_LOOP_EFFECTS = "clear_aura_clashing_flags = yes"
+	}
+}
+setup_beam_aura_clashing = {
+	export_trigger_value_to_variable = {
+		trigger = monthly_intensity_increase
+		variable = monthly_increase
+	}
+	every_neighbor_system = {
+		limit = {
+			[[PRE_LOOP_CONDITIONS]
+				$PRE_LOOP_CONDITIONS$
+			]
+			has_psionic_aura = yes
+			aura_owner = { NOT = { is_same_value = root.aura_owner } }
+		}
+
+		[[PRE_LOOP_EFFECTS]
+			$PRE_LOOP_EFFECTS$
+		]
+
+		export_trigger_value_to_variable = {
+			trigger = monthly_intensity_increase
+			variable = monthly_increase
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = monthly_increase
+					value < root.monthly_increase
+				}
+			}
+			root = { save_event_target_as = winning_system }
+			save_event_target_as = losing_system
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = monthly_increase
+					value > root.monthly_increase
+				}
+			}
+			save_event_target_as = winning_system
+			root = { save_event_target_as = losing_system }
+		}
+		if = {
+			limit = { exists = event_target:losing_system }
+			if = {
+				limit = {
+					always = yes
+				# 	event_target:losing_system = {
+				# 		aura_clash_can_attacker_spread_in_system = {
+				# 			ATTACKER_SYSTEM = event_target:winning_system
+				# 		}
+				# 	}
+				}
+				event_target:winning_system = {
+					set_star_flag = aura_is_clashing_against_@event_target:losing_system
+					set_star_flag = aura_clash_winning_against_@event_target:losing_system
+				}
+				event_target:losing_system = {
+					set_star_flag = aura_is_clashing_against_@event_target:winning_system
+				}
+			}
+		}
+		else = {
+			save_event_target_as = tested_system
+			if = { # In case of tie, auras are clashing if any of them can spread
+				limit = {
+					OR = {
+						aura_clash_can_attacker_spread_in_system = {
+							ATTACKER_SYSTEM = root
+						}
+						root = {
+							aura_clash_can_attacker_spread_in_system = {
+								ATTACKER_SYSTEM = event_target:tested_system
+							}
+						}
+					}
+				}
+				set_star_flag = aura_is_clashing_against_@root
+				trigger_aura_clashing_event = { FROM = root }
+				root = {
+					set_star_flag = aura_is_clashing_against_@event_target:tested_system
+					trigger_aura_clashing_event = { FROM = event_target:tested_system }
+				}
+			}
+		}
+		clear_variable = monthly_increase
+	}
+	clear_variable = monthly_increase
 }
