@@ -961,6 +961,50 @@ set_blokkat_difficulty = {
         set_global_flag = giga_blokkats_easy
     }
 }
+set_blokkat2_difficulty = {
+	if = {
+		limit = {
+			OR = {
+				any_country = { has_country_flag = oe_player }
+				any_country = { has_authority = auth_warshipgirls }
+				any_country = { has_authority = auth_shenhai }
+			}
+		}
+		set_global_flag = giga_blokkat2_deathmode
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_global_flag = acot_full_activated
+				has_global_flag = has_aot_mod
+				has_global_flag = has_sots_mod
+			}
+		}
+		set_global_flag = giga_blokkat2_endtech
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_global_flag = acot_activated
+				is_sbtg_activated = yes
+			}
+		}
+		set_global_flag = giga_blokkat2_bismuth
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_global_flag = nhsc_v30
+				has_global_flag = nhsc_overwrites_v30
+				has_global_flag = has_nsc_active
+			}
+		}
+		set_global_flag = giga_blokkat2_normal
+	}
+	else = {
+		set_global_flag = giga_blokkat2_easy
+	}
+}
 set_siren_difficulty = {
     if = {
         limit = {
@@ -2666,6 +2710,14 @@ giga_preset_vanilla_plus = {
 				which = blokkat_spawn_date
 				value = 2500
 			}
+			set_variable = {
+				which = blokkat_wave2_spawn_date
+				value = 2500
+			}
+			set_variable = {
+				which = blokkat_wave2_spawn_delay
+				value = 30
+			}
 		}
 		# Blokkat MP check
 		if = {
@@ -2674,8 +2726,10 @@ giga_preset_vanilla_plus = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
+		else = { set_global_flag = giga_blokkats_enabled	}
 		#CHECK FOR BLOKKAT DIFFICULTY
         set_blokkat_difficulty = yes
+		set_blokkat2_difficulty = yes
 		#CHECK FOR SIRENS DIFFICULTY
         set_siren_difficulty = yes
 		# Disable O-Stars for real space
@@ -2853,6 +2907,14 @@ giga_preset_gigas_experience = {
 				which = blokkat_spawn_date
 				value = 2500
 			}
+			set_variable = {
+				which = blokkat_wave2_spawn_date
+				value = 2500
+			}
+			set_variable = {
+				which = blokkat_wave2_spawn_delay
+				value = 30
+			}
 		}
 		# Blokkat MP check
 		if = {
@@ -2861,8 +2923,10 @@ giga_preset_gigas_experience = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
+		else = { set_global_flag = giga_blokkats_enabled	}
 		#CHECK FOR BLOKKAT DIFFICULTY
         set_blokkat_difficulty = yes
+		set_blokkat2_difficulty = yes
 		#CHECK FOR SIRENS DIFFICULTY
         set_siren_difficulty = yes
 		# Disable O-Stars for real space
@@ -3038,6 +3102,14 @@ giga_preset_arcade = {
 				which = blokkat_spawn_date
 				value = 2500
 			}
+			set_variable = {
+				which = blokkat_wave2_spawn_date
+				value = 2500
+			}
+			set_variable = {
+				which = blokkat_wave2_spawn_delay
+				value = 30
+			}
 		}
 		# Blokkat MP check
 		if = {
@@ -3046,8 +3118,10 @@ giga_preset_arcade = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
+		else = { set_global_flag = giga_blokkats_enabled	}
 		#CHECK FOR BLOKKAT DIFFICULTY
         set_blokkat_difficulty = yes
+		set_blokkat2_difficulty = yes
 
 		# THE SIRENS
 		remove_global_flag = giga_eawaf_sirens_disabled
@@ -3242,8 +3316,10 @@ giga_preset_00 = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
+		else = { set_global_flag = giga_blokkats_enabled	}
 		#CHECK FOR BLOKKAT DIFFICULTY
         set_blokkat_difficulty = yes
+		set_blokkat2_difficulty = yes
 		#CHECK FOR SIRENS DIFFICULTY
         set_siren_difficulty = yes
 		# Disable O-Stars for real space

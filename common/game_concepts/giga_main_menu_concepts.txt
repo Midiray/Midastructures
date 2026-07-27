@@ -18,6 +18,29 @@ concept_giga_blokkat_diff_very_easy = {
     icon = gfx/interface/menu_ui/giga_menu_blokkats_ve.dds
 }
 
+concept_giga_blokkat2_diff_deathmode = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_d.dds
+}
+concept_giga_blokkat2_diff_endtech = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_i.dds
+}
+concept_giga_blokkat2_diff_bismuth = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_b.dds
+}
+concept_giga_blokkat2_diff_normal = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_n.dds
+}
+concept_giga_blokkat2_diff_easy = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_e.dds
+}
+concept_giga_blokkat2_diff_very_easy = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_ve.dds
+}
+
+concept_giga_blokkat2_rage = {
+    icon = gfx/interface/menu_ui/giga_menu_blokkats_d.dds
+}
+
 concept_giga_eawaf_sirens_abyss = {
     icon = gfx/interface/menu_ui/giga_menu_sirens_abyss.dds
 }

@@ -97,3 +97,67 @@
     giga_blokkat_flavoring.10.name:0 "" #MIDIRAY_CHANGE_THIS
     giga_blokkat_flavoring.10.desc:0 "§R<<EXTENSIVE MILITARY ASSETS LOST>>\n\n<<SEVERAL ERADICATOR FLEETS DISPATCHED>>\n\n<<ALL NEARBY MILITARY DETACHMENTS REDIRECTED>>\n\n<<GALAXY STERILIZATION GIVEN PRIORITY BLOKKWORK ACCESS>>\n\n<<HARVESTING FIELD DIVERGING>>§!"
     giga_blokkat_flavoring.10.a:0 "The storm worsens..."
+
+    giga_blokkat2_very_easy:0 "The Blokkat Eradicators (§EBlokklets§!)\nThe Blokkats will be §Every debuffed§!.\n\nThey will receive the following effects:\n§Y-70% Weapons Damage\n-70% Ship Hull/Armor/Shield HP\n-50% Ship Speed\n-70% Army Damage/Heath/Morale§!\n\nThe §YBlokk-Eradicator§! will not revive, thus having a base total of §Y60 billion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y10k§! £energy£\nThe §YClash of the Titans§! will be §Y70%§! cheaper\n['concept_giga_blokkat2_rage'] will scale §Y70%§! slower\n\n§HBalanced for usage with §YGigastructural Engineering & More§! as the only major mod and limited §YCelestial Warships§!."
+    giga_blokkat2_easy:0 "The Blokkat Eradicators (§BBlokkittens§!)\nThe Blokkats will be §Bsomewhat debuffed§!.\n\nThey will receive the following effects:\n§Y-33% Weapons Damage\n-33% Ship Hull/Armor/Shield HP\n-33% Ship Speed\n-33% Army Damage/Heath/Morale§!\n\nThe §YBlokk-Eradicator§! will revive §Y1 time§!, thus having a base total of §Y120 billion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y20k§! £energy£\nThe §YClash of the Titans§! will be §Y33%§! cheaper\n['concept_giga_blokkat2_rage'] will scale §Y33%§! slower\n\n§HBalanced for usage with §YGigastructural Engineering & More§! as the only major mod."
+    giga_blokkat2_normal:0 "The Blokkat Eradicators (§GRegular Blokkats§!)\nThe Blokkats will have their default strength.\n\nThe §YBlokk-Eradicator§! will revive §Y4 times§!, thus having a base total of §Y300 billion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y30k§! £energy£\n\n§HBalanced for usage with strong mods such as §YNew Ship Classes§! or §YExtra Ship Components§!.§!"
+    giga_blokkat2_bismuth:0 "The Blokkat Eradicators (§RBismuth Blokkats§!)\nThe Blokkats will be §Rsignificantly stronger§!.\n\nThey will receive the following effects:\n§Y+200% Weapons Damage\n+200% Ship Fire Rate\n+200% Ship Hull/Armor/Shield HP\n+50% Ship Speed\n+50% Megastructure Build Speed\n+200% Army Damage/Health/Morale§!\n\nThe §YBlokk-Eradicator§! will revive §Y19 times§!, thus having a base total of §Y1.2 trillion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y50k§! £energy£\nThe §YClash of the Titans§! will be §Y50%§! more expensive\n['concept_giga_blokkat2_rage'] will scale §Y50%§! faster\n\n§HBalanced for usage with very powerful mods such as §YAncient Caches of Technologies§!.§!"
+    giga_blokkat2_endtech:0 "The Blokkat Eradicators (§MEndtekk Blokkats§!)\nThe Blokkats will be §Mmassively stronger§!.\n\nThey will receive the following effects:\n§Y+1000% Weapons Damage\n+1000% Ship Fire Rate\n+2000% Ship Hull/Armor/Shield HP\n+90% Ship Speed\n+250% Megastructure Build Speed\n+1000% Army Damage/Health/Morale§!\n\nThe §YBlokk-Eradicator§! will revive §Y99 times§!, thus having a base total of §Y6 trillion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y200k§! £energy£\nThe §YClash of the Titans§! will be §Y200%§! more expensive\n['concept_giga_blokkat2_rage'] will scale §Y200%§! faster\n\n§HBALANCED FOR USAGE WITH TOO MANY POWERFUL MODS!"
+    giga_blokkat2_deathmode:0 "The Blokkat Eradicators (§PObliterator Blokkats§!)\nThe Blokkats will be §PINFINITELY STRONGER§!.\n\nThey will receive the following effects:\n§Y+1000% Weapons Damage\n+1000% Ship Fire Rate\n+2000% Ship Hull/Armor/Shield HP\n+150% Ship Speed\n+600% Megastructure Build Speed\n+1000% Army Damage/Health/Morale§!\n\nThe §YBlokk-Eradicator§! will revive §Y999 times§!, thus having a base total of §Y60 trillion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y500k§! £energy£\nThe §YClash of the Titans§! will be §Y500%§! more expensive\n['concept_giga_blokkat2_rage'] will scale §Y500%§! faster\n\n§H'BALANCED' FOR USAGE WITH UTTERLY OVERPOWERED MODS!"
+
+    giga_blokkat2_very_easy_dec: "$giga_dec_diff$$giga_blokkat2_very_easy$"
+    giga_blokkat2_easy_dec: "$giga_dec_diff$$giga_blokkat2_easy$"
+    giga_blokkat2_normal_dec: "$giga_dec_diff$$giga_blokkat2_normal$"
+    giga_blokkat2_bismuth_dec: "$giga_dec_diff$$giga_blokkat2_bismuth$"
+    giga_blokkat2_endtech_dec: "$giga_dec_diff$$giga_blokkat2_endtech$"
+
+    giga_blokkat2_easy_inc: "$giga_inc_diff$$giga_blokkat2_easy$"
+    giga_blokkat2_normal_inc: "$giga_inc_diff$$giga_blokkat2_normal$"
+    giga_blokkat2_bismuth_inc: "$giga_inc_diff$$giga_blokkat2_bismuth$"
+    giga_blokkat2_endtech_inc: "$giga_inc_diff$$giga_blokkat2_endtech$"
+    giga_blokkat2_deathmode_inc: "$giga_inc_diff$$giga_blokkat2_deathmode$"
+
+    giga_blokkat2_very_easy_curr: "$giga_curr_diff$$giga_blokkat2_very_easy$"
+    giga_blokkat2_easy_curr: "$giga_curr_diff$$giga_blokkat2_easy$"
+    giga_blokkat2_normal_curr: "$giga_curr_diff$$giga_blokkat2_normal$"
+    giga_blokkat2_bismuth_curr: "$giga_curr_diff$$giga_blokkat2_bismuth$"
+    giga_blokkat2_endtech_curr: "$giga_curr_diff$$giga_blokkat2_endtech$"
+    giga_blokkat2_deathmode_curr: "$giga_curr_diff$$giga_blokkat2_deathmode$"
+
+    concept_giga_blokkat2_diff_very_easy:0 "§EBlokklets§! Difficulty"
+    concept_giga_blokkat2_diff_easy:0 "§BBlokkittens§! Difficulty"
+    concept_giga_blokkat2_diff_normal:0 "§GRegular Blokkats§! Difficulty"
+    concept_giga_blokkat2_diff_bismuth:0 "§RBismuth Blokkats§! Difficulty"
+    concept_giga_blokkat2_diff_endtech:0 "§MEndtekk Blokkats§! Difficulty"
+    concept_giga_blokkat2_diff_deathmode:0 "§PObliterator Blokkats§! Difficulty"
+    concept_giga_blokkat2_diff_very_easy_desc:0 "$giga_blokkat2_very_easy$"
+    concept_giga_blokkat2_diff_easy_desc:0 "$giga_blokkat2_easy$"
+    concept_giga_blokkat2_diff_normal_desc:0 "$giga_blokkat2_normal$"
+    concept_giga_blokkat2_diff_bismuth_desc:0 "$giga_blokkat2_bismuth$"
+    concept_giga_blokkat2_diff_endtech_desc:0 "$giga_blokkat2_endtech$"
+    concept_giga_blokkat2_diff_deathmode_desc:0 "$giga_blokkat2_deathmode$"
+
+    concept_giga_blokkat2_rage:0 "§RGalactic Threat§!"
+    concept_giga_blokkat2_rage_desc:0 "Indicates how much of a threat the Blokkats see you as, and thus how much energy they allocate to your destruction.\n\nIncreased by destroying Blokkat ships, beamfighting the Eradicator, and gaining support from the GIF.\n\nEach point of §RGalactic Threat§! increases Blokkat ship weapons damage, fire rate, and health by 0.1%.\n\nEach 1000 points of §RGalactic Threat§! gives all Blokkat military vessels an §Yextra life§!."
+
+    giga_blokkat2_guaranteed:0 "The Blokkat Eradicators are §GGUARANTEED§! to spawn at roughly their designated date."
+    giga_blokkat2_enabled:0 "The Blokkat Eradicators, a full military force of the Blokkats aiming to destroy the galaxy utterly, §GCAN§! spawn.\n\nThey will always spawn away from your capital."
+    giga_blokkat2_disabled:0 "The Blokkat Eradicators will §RNOT§! spawn.\n\n§RNOTE: The Blokkats are designed as a singleplayer crisis and are thus disabled by default in Multiplayer. This is due to the fact they could spawn on top of a player's capital and because they are generally quite challenging. They can be enabled again but make sure every player knows the risks.§!"
+
+    giga_blokkat2_randomgame:0 "Blokkat Eradicators Spawn Date: §LRandom§!\nThe Blokkat Eradicators will spawn anywhere between §Y2250§! and §Y100 Years§! past §YEndgame Date§!. There is no way to know for sure!\n$blokkat2_spawn_warning$"
+    giga_blokkat2_lateendgame:0 "Blokkat Eradicators Spawn Date: §ELate Endgame§! (Default)\nThe Blokkat Eradicators can either spawn §Y100 Years§! after §YEndgame Date§! OR after §YAeternum§! or a §YCrisis§! has been defeated and §YEndgame Date§! has passed, whichever comes first.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_regularendgame:0 "Blokkat Eradicators Spawn Date: §GMid Endgame§!\nThe Blokkat Eradicators can spawn about §Y50 Years§! after §YEndgame Date§!.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_endgame:0 "Blokkat Eradicators Spawn Date: §YEndgame§!\nThe Blokkat Eradicators can spawn after §YEndgame Date§!.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_latemidgame:0 "Blokkat Eradicators Spawn Date: §HLate Midgame§!\nThe Blokkat Eradicators can spawn about §Y50 Years§! after §YMidgame Date§!.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_midgame:0 "Blokkat Eradicators Spawn Date: §SMidgame§!\nThe Blokkat Eradicators can spawn after §YMidgame Date§!.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_lateearlygame:0 "Blokkat Eradicators Spawn Date: §PLate Earlygame§!\nThe Blokkat Eradicators can spawn about §Y50 Years§! after §YGame Start§!.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_earlygame:0 "Blokkat Eradicators Spawn Date: §RGame Start§!\nThe Blokkat Eradicators can spawn right after §YGame Start§!.\n$blokkat2_spawn_warning$"
+
+    giga_blokkat2_randompostwave1:0 "Blokkat Eradicators Spawn Time: §LRandom§!\nThe Blokkat Eradicators will spawn anywhere between §Y10§! and §Y30 Years§! post the Blokkat-Vester's destruction. There is no way to know for sure!\n$blokkat2_spawn_warning$"
+    giga_blokkat2_30yrs:0 "Blokkat Eradicators Spawn Time: §GSlow§!\nThe Blokkat Eradicators can spawn §Y30 years§! after the Blokkat-Vester is defeated.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_20yrs:0 "Blokkat Eradicators Spawn Time: §YRegular§!\nThe Blokkat Eradicators can spawn §Y20 years§! after the Blokkat-Vester is defeated.\n$blokkat2_spawn_warning$"
+    giga_blokkat2_10yrs:0 "Blokkat Eradicators Spawn Time: §RFast§!\nThe Blokkat Eradicators can spawn §Y10 years§! after the Blokkat-Vester is defeated.\n$blokkat2_spawn_warning$"
+
+    blokkat2_spawn_warning:0 "\n§YSet the Blokkat Eradicators to §GGuaranteed§! if you want to ensure they spawn at this date§!\n\n§GClick to change Blokkat Spawn Date§!"
+
+    giga_menu_blokkat2_section_desc: "The Blokkat Eradicators are a fully militarized intergalactic force come to destroy the galaxy utterly.\n\nIf the Blokkat Harvesters are enabled, the Eradicators' spawn chain will be tied to the Blokkat-Vester's defeat.\n\nThis section controls their settings. Below lists the effects of each difficulty setting.\n - ['concept_giga_blokkat2_diff_very_easy']\n - ['concept_giga_blokkat2_diff_easy']\n - ['concept_giga_blokkat2_diff_normal']\n - ['concept_giga_blokkat2_diff_bismuth']\n - ['concept_giga_blokkat2_diff_endtech']\n - ['concept_giga_blokkat2_diff_deathmode']"

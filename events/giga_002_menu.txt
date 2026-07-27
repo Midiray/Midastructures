@@ -1397,6 +1397,36 @@ country_event = {
 			# set up asteroid industry candidates
 			country_event = { id = giga_asteroid_industry.002 days = 4 }
 
+			# set flags for which blokkats spawn
+			if = {
+				limit = {
+					OR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
+					NOR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+				}
+				set_global_flag = giga_blokkats_only_wave1
+			}
+			else_if = {
+				limit = {
+					NOR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
+					OR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+				}
+				set_global_flag = giga_blokkats_only_wave2
+			}
+			else_if = {
+				limit = {
+					OR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
+					OR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+				}
+				set_global_flag = giga_blokkats_both_wave
+			}
+			else = {
+				limit = {
+					NOR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
+					NOR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+				}
+				set_global_flag = giga_blokkats_no_wave
+			}
+
 			# Set Megastructure Caps
 			every_country = {
 

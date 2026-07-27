@@ -1507,40 +1507,18 @@ guiTypes = {
 
 					 effectButtonType = { name = "ehof_disabled"	spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes	effect = "giga_ehof_disabled" }
 					 effectButtonType = { name = "ehof_enabled"	spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface	effect = "giga_ehof_enabled" }
-				}
 
-				####################################
-				### ehof_ai ########################
-				####################################
-				containerWindowType = {
-					name = "ehof_ai_options"
-					position = { x = 450 y = -45 }
-					size = { width = 410 height = 34 }
-					orientation = upper_left
+					effectButtonType = { name = "ehof_ai_disabled"		spriteType = "GFX_giga_menu_disabled" position = { x = 230 y = 5 }		no_clicksound = yes effect = "giga_ehof_ai_disabled" }
+					effectButtonType = { name = "ehof_ai_3"				spriteType = "GFX_giga_menu_3" position = { x = 350 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_3" }
+					effectButtonType = { name = "ehof_ai_2"				spriteType = "GFX_giga_menu_2" position = { x = 320 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_2" }
+					effectButtonType = { name = "ehof_ai_1"				spriteType = "GFX_giga_menu_1" position = { x = 290 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_1" }
+					effectButtonType = { name = "ehof_ai_s"				spriteType = "GFX_giga_menu_s" position = { x = 260 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_s" }
 
-					effectButtonType = {
-						name = "background_ehof_ai"
-						spriteType = "GFX_giga_menu_button_bg"
-						position = { x = 0 y = 0 }
-						format = left
-						no_clicksound = yes
-						borderSize = { x = 10 y = 0 }
-						font = "cg_16b"
-						text = "E.H.O.F. AI"
-						effect = "giga_page_00"
-					}
-
-					 effectButtonType = { name = "ehof_ai_disabled"		spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 }		no_clicksound = yes effect = "giga_ehof_ai_disabled" }
-					 effectButtonType = { name = "ehof_ai_3"				spriteType = "GFX_giga_menu_3" position = { x = 350 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_3" }
-					 effectButtonType = { name = "ehof_ai_2"				spriteType = "GFX_giga_menu_2" position = { x = 320 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_2" }
-					 effectButtonType = { name = "ehof_ai_1"				spriteType = "GFX_giga_menu_1" position = { x = 290 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_1" }
-					 effectButtonType = { name = "ehof_ai_s"				spriteType = "GFX_giga_menu_s" position = { x = 260 y = 5 }				no_clicksound = yes effect = "giga_ehof_ai_s" }
-
-					 effectButtonType = { name = "ehof_ai_enabled"		spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 }			clicksound = interface effect = "giga_ehof_ai_enabled" }
-					 effectButtonType = { name = "ehof_ai_3_disabled"	spriteType = "GFX_giga_menu_3_disabled" position = { x = 350 y = 5 }		clicksound = interface effect = "giga_ehof_ai_3_disabled" }
-					 effectButtonType = { name = "ehof_ai_2_disabled"	spriteType = "GFX_giga_menu_2_disabled" position = { x = 320 y = 5 }		clicksound = interface effect = "giga_ehof_ai_2_disabled" }
-					 effectButtonType = { name = "ehof_ai_1_disabled"	spriteType = "GFX_giga_menu_1_disabled" position = { x = 290 y = 5 }		clicksound = interface effect = "giga_ehof_ai_1_disabled" }
-					 effectButtonType = { name = "ehof_ai_s_disabled"	spriteType = "GFX_giga_menu_s_disabled" position = { x = 260 y = 5 }	clicksound = interface effect = "giga_ehof_ai_s_disabled" }
+					effectButtonType = { name = "ehof_ai_enabled"		spriteType = "GFX_giga_menu_enabled" position = { x = 230 y = 5 }			clicksound = interface effect = "giga_ehof_ai_enabled" }
+					effectButtonType = { name = "ehof_ai_3_disabled"	spriteType = "GFX_giga_menu_3_disabled" position = { x = 350 y = 5 }		clicksound = interface effect = "giga_ehof_ai_3_disabled" }
+					effectButtonType = { name = "ehof_ai_2_disabled"	spriteType = "GFX_giga_menu_2_disabled" position = { x = 320 y = 5 }		clicksound = interface effect = "giga_ehof_ai_2_disabled" }
+					effectButtonType = { name = "ehof_ai_1_disabled"	spriteType = "GFX_giga_menu_1_disabled" position = { x = 290 y = 5 }		clicksound = interface effect = "giga_ehof_ai_1_disabled" }
+					effectButtonType = { name = "ehof_ai_s_disabled"	spriteType = "GFX_giga_menu_s_disabled" position = { x = 260 y = 5 }	clicksound = interface effect = "giga_ehof_ai_s_disabled" }
 				}
 
 				####################################
@@ -1646,7 +1624,7 @@ guiTypes = {
                 ####################################
                 effectButtonType = {
                     name = "crisis_button_group_title"
-                    position = { x = 375 y = 32 }
+                    position = { x = 375 y = -8 }
                     size = { width = 500 height = 20 }
                     no_clicksound = yes
                     orientation = LEFT
@@ -1662,7 +1640,7 @@ guiTypes = {
 				# y = 65
                 containerWindowType = {
 					name = "fe_planetcraft_options"
-					position = { x = 450 y = 65 }
+					position = { x = 450 y = 25 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -1760,7 +1738,7 @@ guiTypes = {
                 # y = 105
 				containerWindowType = {
 					name = "katzenartig"
-					position = { x = 450 y = 105 }
+					position = { x = 450 y = 65 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -1860,7 +1838,7 @@ guiTypes = {
 						effect = "giga_page_00_siren_desc"
 					}
 					name = "Sirens"
-					position = { x = 450 y = 145 }
+					position = { x = 450 y = 105 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -1943,7 +1921,7 @@ guiTypes = {
                 # y = 185
                 containerWindowType = {
                     name = "compound_options"
-                    position = { x = 450 y = 185 }
+                    position = { x = 450 y = 145 }
                     size = { width = 410 height = 34 }
                     orientation = upper_left
 
@@ -1989,7 +1967,7 @@ guiTypes = {
                 # y = 225
 				containerWindowType = {
 					name = "Aeternum"
-					position = { x = 450 y = 225 }
+					position = { x = 450 y = 185 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -2035,8 +2013,8 @@ guiTypes = {
 				####################################
                 # y = 265
 				containerWindowType = {
-					name = "Blokkats"
-					position = { x = 450 y = 265 }
+					name = "Blokkat Harvesters"
+					position = { x = 450 y = 225 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -2048,7 +2026,7 @@ guiTypes = {
 						no_clicksound = yes
 						borderSize = { x = 10 y = 0 }
 						font = "cg_16b"
-						text = "Blokkats"
+						text = "Blokkat Harvesters"
 						effect = "giga_page_00_blokkat_desc"
 					}
 
@@ -2101,6 +2079,84 @@ guiTypes = {
 					
 					#effectButtonType = { name = "blokkats_x_spawnearlier"	spriteType = "GFX_giga_menu_blokkats_spawnearlier"	position = { x = 80 y = 5 } clicksound = interface		effect = "blokkats_x_spawnearlier" }
 				
+					#Late Endgame = Either 100 years past endgame or whenever Aeternum or a crisis is defeated (2500)
+					#Regular Endgame = 50 years past endgame (2450)
+					#Endgame = Endgame (2400)
+					#Late Midgame = 50 years past midgame (2350)
+					#Midgame = Midgame (2300)
+					#Late Earlygame = 50 years past game start (2250)
+					#Game Start = Game start (2000)
+				}
+
+				####################################
+				### Blokkats #######################
+				####################################
+				# y = 265
+				containerWindowType = {
+					name = "Blokkat Eradicators"
+					position = { x = 450 y = 265 }
+					size = { width = 410 height = 34 }
+					orientation = upper_left
+
+					effectButtonType = {
+						name = "background_blokkats"
+						spriteType = "GFX_giga_menu_button_bg"
+						position = { x = 0 y = 0 }
+						format = left
+						no_clicksound = yes
+						borderSize = { x = 10 y = 0 }
+						font = "cg_16b"
+						text = "Blokkat Eradicators"
+						effect = "giga_page_00_blokkat2_desc"
+					}
+
+					# center selected icon
+					effectButtonType = { name = "blokkat2_x_diff_disabled"	spriteType = "GFX_giga_menu_blokkats_e_disabled"	position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_diff_disabled" }
+					effectButtonType = { name = "blokkat2_x_very_easy"	spriteType = "GFX_giga_menu_blokkats_ve"	position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_very_easy" }
+					effectButtonType = { name = "blokkat2_x_easy"		spriteType = "GFX_giga_menu_blokkats_e"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_easy" }
+					effectButtonType = { name = "blokkat2_x_normal"		spriteType = "GFX_giga_menu_blokkats_n"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_normal" }
+					effectButtonType = { name = "blokkat2_x_bismuth"	spriteType = "GFX_giga_menu_blokkats_b"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_bismuth" }
+					effectButtonType = { name = "blokkat2_x_endtech" 	spriteType = "GFX_giga_menu_blokkats_i" 	position = { x = 290 y = 5 } no_clicksound = yes 	effect = "blokkat2_x_endtech"}
+					effectButtonType = { name = "blokkat2_x_deathmode"	spriteType = "GFX_giga_menu_blokkats_d"		position = { x = 290 y = 5 } no_clicksound = yes		effect = "blokkat2_x_deathmode"}
+
+					#increase difficulty icon
+					effectButtonType = { name = "blokkat2_increase_stop"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_stop" }
+					effectButtonType = { name = "blokkat2_increase_deathmode"	spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_deathmode" }
+					effectButtonType = { name = "blokkat2_increase_endtech"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_endtech" }
+					effectButtonType = { name = "blokkat2_increase_bismuth"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_bismuth" }
+					effectButtonType = { name = "blokkat2_increase_normal"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_normal" }
+					effectButtonType = { name = "blokkat2_increase_easy"	    spriteType = "GFX_giga_menu_up_red_button"		position = { x = 320 y = 5 } clicksound = interface		effect = "blokkat2_increase_easy" }
+
+					#decrease difficulty icon
+					effectButtonType = { name = "blokkat2_decrease_endtech"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_endtech" }
+					effectButtonType = { name = "blokkat2_decrease_bismuth"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_bismuth" }
+					effectButtonType = { name = "blokkat2_decrease_normal"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_normal" }
+					effectButtonType = { name = "blokkat2_decrease_easy"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_easy" }
+					effectButtonType = { name = "blokkat2_decrease_very_easy"	spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_very_easy" }
+					effectButtonType = { name = "blokkat2_decrease_stop"	    spriteType = "GFX_giga_menu_down_green_button"		position = { x = 260 y = 5 } clicksound = interface		effect = "blokkat2_decrease_stop" }
+
+					#enabled,guaranteed,disabled
+					effectButtonType = { name = "blokkat2_x_enabled"		spriteType = "GFX_giga_menu_wrecked_ships_reset"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkat2_x" }
+					effectButtonType = { name = "blokkat2_x_guaranteed"	    spriteType = "GFX_giga_menu_enabled"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkat2_x_guaranteed" }
+					effectButtonType = { name = "blokkat2_x_disabled"		spriteType = "GFX_giga_menu_disabled"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkat2_x_disabled" }
+
+					#how long after the vester is kil (if wave 1 is enabled)
+					effectButtonType = { name = "blokkat2_x_randompostwave1"		spriteType = "GFX_giga_menu_blokkats_randomgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_randompostwave1" }
+					effectButtonType = { name = "blokkat2_x_10yrs"	spriteType = "GFX_giga_menu_blokkats_lateendgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_10yrs" }
+					effectButtonType = { name = "blokkat2_x_20yrs"	spriteType = "GFX_giga_menu_blokkats_regularendgame"	position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_20yrs" }
+					effectButtonType = { name = "blokkat2_x_30yrs"		spriteType = "GFX_giga_menu_blokkats_endgame"			position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_30yrs" }
+
+					#how long after game start (if wave 1 is disabled)
+					effectButtonType = { name = "blokkat2_x_randomgame"		spriteType = "GFX_giga_menu_blokkats_randomgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_randomgame" }
+					effectButtonType = { name = "blokkat2_x_lateendgame"		spriteType = "GFX_giga_menu_blokkats_lateendgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_lateendgame" }
+					effectButtonType = { name = "blokkat2_x_regularendgame"	spriteType = "GFX_giga_menu_blokkats_regularendgame"	position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_regularendgame" }
+					effectButtonType = { name = "blokkat2_x_endgame"			spriteType = "GFX_giga_menu_blokkats_endgame"			position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_endgame" }
+					effectButtonType = { name = "blokkat2_x_latemidgame"		spriteType = "GFX_giga_menu_blokkats_latemidgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_latemidgame" }
+					effectButtonType = { name = "blokkat2_x_midgame"			spriteType = "GFX_giga_menu_blokkats_midgame"			position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_midgame" }
+					effectButtonType = { name = "blokkat2_x_lateearlygame"		spriteType = "GFX_giga_menu_blokkats_lateearlygame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_lateearlygame" }
+					effectButtonType = { name = "blokkat2_x_earlygame"			spriteType = "GFX_giga_menu_blokkats_earlygame"			position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_earlygame" }
+
+
 					#Late Endgame = Either 100 years past endgame or whenever Aeternum or a crisis is defeated (2500)
 					#Regular Endgame = 50 years past endgame (2450)
 					#Endgame = Endgame (2400)

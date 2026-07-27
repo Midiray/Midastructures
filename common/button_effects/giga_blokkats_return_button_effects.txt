@@ -1,0 +1,660 @@
+
+
+# literally a dummy made to show a tooltip about the blokkat2 in the main menu
+giga_page_00_blokkat2_desc = {
+    potential = { exists = from from = { has_country_flag = giga_menu_page_00 } }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = "giga_menu_blokkat2_section_desc"
+    }
+}
+
+#Difficulties
+blokkat2_x_diff_disabled = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            has_global_flag = giga_blokkat2_disabled
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        custom_tooltip = {
+            fail_text = "giga_blokkat2_disabled"
+            always = no
+        }
+    }
+    effect = { custom_tooltip = "giga_blokkat2_disabled" }
+}
+blokkat2_x_very_easy = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_very_easy
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_very_easy_curr" }
+}
+blokkat2_x_easy = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_easy
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_easy_curr" }
+}
+blokkat2_x_normal = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_normal
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_normal_curr" }
+}
+blokkat2_x_bismuth = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_bismuth
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_bismuth_curr" }
+}
+blokkat2_x_endtech = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_endtech
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_endtech_curr" }
+}
+blokkat2_x_deathmode = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = {	has_global_flag = giga_blokkat2_disabled }
+			has_global_flag = giga_blokkat2_deathmode
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+		}
+	}
+	effect = { custom_tooltip = "giga_blokkat2_deathmode_curr" }
+}
+
+#increase
+blokkat2_increase_stop = { #shows up if blokkat2 disabled
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            OR = {
+                has_global_flag = giga_blokkat2_disabled
+                has_global_flag = giga_blokkat2_deathmode
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        custom_tooltip = {
+            fail_text = "gigas_menu_blokkat_disabled"
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+        custom_tooltip = {
+            fail_text = "gigas_max_blokkat_difficulty"
+            NOT = { has_global_flag = giga_blokkat2_deathmode }
+        }
+    }
+}
+blokkat2_increase_deathmode = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_endtech
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_deathmode_inc"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_deathmode
+    }
+}
+blokkat2_increase_endtech = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_bismuth
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_endtech_inc"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_endtech
+    }
+}
+blokkat2_increase_bismuth = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_normal
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_bismuth_inc"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_bismuth
+    }
+}
+blokkat2_increase_normal = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_easy
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_normal_inc"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_normal
+    }
+}
+blokkat2_increase_easy = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_very_easy
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_easy_inc"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_easy
+    }
+}
+
+#decrease
+blokkat2_decrease_endtech = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_deathmode
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_endtech_dec"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_endtech
+    }
+}
+blokkat2_decrease_bismuth = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_endtech
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_bismuth_dec"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_bismuth
+        }
+}
+blokkat2_decrease_normal = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_bismuth
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_normal_dec"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_normal
+    }
+}
+blokkat2_decrease_easy = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_normal
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_easy_dec"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_easy
+    }
+}
+blokkat2_decrease_very_easy = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            NOT = {	has_global_flag = giga_blokkat2_disabled }
+            has_global_flag = giga_blokkat2_easy
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        hidden_trigger = {
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_very_easy_dec"
+        remove_flags_blokkat2_difficulty = yes
+        set_global_flag = giga_blokkat2_very_easy
+    }
+}
+blokkat2_decrease_stop = { #shows up if blokkat2 disabled
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            OR = {
+                has_global_flag = giga_blokkat2_disabled
+                has_global_flag = giga_blokkat2_very_easy
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "must_not_have_started_game"
+            NOT = { has_global_flag = giga_game_started }
+        }
+        custom_tooltip = {
+            fail_text = "gigas_menu_blokkat_disabled"
+            NOT = { has_global_flag = giga_blokkat2_disabled }
+        }
+        custom_tooltip = {
+            fail_text = "gigas_min_blokkat_difficulty"
+            NOT = { has_global_flag = giga_blokkat2_very_easy }
+        }
+    }
+}
+
+# 40% chance, default -> moves to guaranteed
+blokkat2_x = {
+	potential = {
+		exists = from
+		from = {
+			has_country_flag = giga_menu_page_00
+			NOT = { has_global_flag = giga_blokkat2_disabled }
+            NOT = { has_global_flag = giga_blokkat2_guaranteed }
+		}
+	}
+	allow = {
+		custom_tooltip = "must_not_have_started_game"
+		hidden_trigger = { NOT = { has_global_flag = giga_game_started } }
+	}
+	effect = {
+		custom_tooltip = "giga_blokkat2_enabled"
+		hidden_effect = {
+			set_global_flag = giga_blokkat2_guaranteed
+		}
+        # clicking moves to gauranteed
+	}
+}
+# guaranteed -> moves to disabled
+blokkat2_x_guaranteed = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            has_global_flag = giga_blokkat2_guaranteed
+        }
+    }
+    allow = {
+        custom_tooltip = "must_not_have_started_game"
+        hidden_trigger = { NOT = { has_global_flag = giga_game_started } }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_guaranteed"
+        hidden_effect = {
+            set_global_flag = giga_blokkat2_disabled
+            remove_global_flag = giga_blokkat2_guaranteed
+        }
+    }
+}
+# disabled -> moves to enabled
+blokkat2_x_disabled = {
+    potential = {
+        exists = from
+        from = {
+            has_country_flag = giga_menu_page_00
+            has_global_flag = giga_blokkat2_disabled
+        }
+    }
+    allow = {
+        custom_tooltip = "must_not_have_started_game"
+        hidden_trigger = { NOT = { has_global_flag = giga_game_started } }
+    }
+    effect = {
+        custom_tooltip = "giga_blokkat2_disabled"
+        hidden_effect = {
+            remove_global_flag = giga_blokkat2_disabled
+            if = {
+                # if no difficulty tag, set a default or else the icons disappear lmao
+                limit = {
+                    NOR = {
+                        has_global_flag = giga_blokkat2_deathmode
+                        has_global_flag = giga_blokkat2_endtech
+                        has_global_flag = giga_blokkat2_bismuth
+                        has_global_flag = giga_blokkat2_normal
+                        has_global_flag = giga_blokkat2_easy
+                        has_global_flag = giga_blokkat2_very_easy
+                    }
+                }
+                set_blokkat2_difficulty = yes
+            }
+        }
+    }
+}
+
+#Spawning section: for if Wave 1 is disabled
+blokkat2_x_randomgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2550 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_randomgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_lateendgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2500 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_lateendgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_regularendgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2450 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_regularendgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_endgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2400 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_endgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_latemidgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2350 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_latemidgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_midgame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2300 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_midgame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_lateearlygame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2250 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_lateearlygame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_earlygame = {
+	potential = {
+		exists = from
+		from = { has_country_flag = giga_menu_page_00 }
+		event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_date value = 2200 } }
+        has_global_flag = giga_blokkats_disabled
+	}
+	allow = {
+		custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+		hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+	}
+	effect = { custom_tooltip = "giga_blokkat2_earlygame" hidden_effect = { reduce_blokkat_wave2_spawn_date = yes } }
+}
+blokkat2_x_randompostwave1 = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_menu_page_00 }
+        event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_delay value = 40 } }
+        NOT = { has_global_flag = giga_blokkats_disabled }
+    }
+    allow = {
+        custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+        hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+    }
+    effect = { custom_tooltip = "giga_blokkat2_randompostwave1" hidden_effect = { reduce_blokkat_wave2_spawn_delay = yes } }
+}
+blokkat2_x_30yrs = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_menu_page_00 }
+        event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_delay value = 30 } }
+        NOT = { has_global_flag = giga_blokkats_disabled }
+    }
+    allow = {
+        custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+        hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+    }
+    effect = { custom_tooltip = "giga_blokkat2_30yrs" hidden_effect = { reduce_blokkat_wave2_spawn_delay = yes } }
+}
+blokkat2_x_20yrs = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_menu_page_00 }
+        event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_delay value = 20 } }
+        NOT = { has_global_flag = giga_blokkats_disabled }
+    }
+    allow = {
+        custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+        hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+    }
+    effect = { custom_tooltip = "giga_blokkat2_20yrs" hidden_effect = { reduce_blokkat_wave2_spawn_delay = yes } }
+}
+blokkat2_x_10yrs = {
+    potential = {
+        exists = from
+        from = { has_country_flag = giga_menu_page_00 }
+        event_target:global_event_country = { check_variable = { which = blokkat_wave2_spawn_delay value = 10 } }
+        NOT = { has_global_flag = giga_blokkats_disabled }
+    }
+    allow = {
+        custom_tooltip = { fail_text = "must_not_have_started_game" NOT = { has_global_flag = giga_game_started } }
+        hidden_trigger = { NOT = { has_global_flag = giga_blokkat2_disabled } }
+    }
+    effect = { custom_tooltip = "giga_blokkat2_10yrs" hidden_effect = { reduce_blokkat_wave2_spawn_delay = yes } }
+}
