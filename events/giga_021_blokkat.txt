@@ -10185,6 +10185,13 @@ country_event = {
 						}
 						modifier = { add = 1000 has_leader_flag = tempestkat_leader }
 					}
+					0 = {
+						set_leader_flag = blokkat_is_midikat
+						add_trait = {
+							trait = trait_blokkat_eradicator_prime
+						}
+						modifier = { add = 1000 has_leader_flag = midikat_leader }
+					}
 				}
 				#Behavior
 				random_list = {

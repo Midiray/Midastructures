@@ -31,7 +31,7 @@ giga_create_eradicator_wave_2_effect = {
 		name = "NAME_Blokk_Eradicator"
 		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
 		effect = {
-			set_owner = event_target:blokkat_country
+			set_owner = event_target:blokkat2_country
 			while = {
 				count = 1
 				create_ship = {
@@ -234,6 +234,197 @@ reduce_blokkat_wave2_spawn_delay = {
 				which = blokkat_wave2_spawn_delay
 				value = 40
 			}
+		}
+	}
+}
+
+giga_blokkat_beamfight_situation_prerun_calc = {
+	event_target:giga_beamfight_situation_recipient = {
+		set_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_rage
+		}
+		multiply_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep_mult
+		}
+		divide_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = 12
+		}
+		#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+	}
+
+	event_target:giga_beamfight_situation_recipient = {
+		# Updating situation progress: done manually to avoid the situation going out of bounds, and to allow choosing how much energy the QSO fires
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		subtract_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 1
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 20
+		}
+		event_target:giga_beamfight_situation = {
+			export_trigger_value_to_variable = {
+				trigger = situation_progress
+				variable = giga_blokkat_wave_2_situation_progress_absolute
+			}
+			change_variable = {
+				which = giga_blokkat_wave_2_situation_progress_absolute
+				value = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_situation_progress_absolute
+			value = event_target:giga_beamfight_situation.giga_blokkat_wave_2_situation_progress_absolute
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_expected_progress
+			value = giga_blokkat_wave_2_beamfight_status
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 10000
+		}
+		round_variable = giga_blokkat_wave_2_beamfight_fulfil_perc
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 100
+		}
+		# if = {
+		# 	limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value > 0 } }
+		# 	# if = {
+		# 	# 	limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value < 999 } }
+		# 	# 	event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+		# 	# }
+		# 	# else = {
+		# 	# 	event_target:giga_beamfight_situation = { set_situation_progress = 999 }
+		# 	# }
+		# }
+		# else_if = {
+		# 	limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value < 0 } }
+		# 	# if = {
+		# 	# 	limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value > 1 } }
+		# 	# 	event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+		# 	# }
+		# 	# else = {
+		# 	# 	event_target:giga_beamfight_situation = { set_situation_progress = 1 }
+		# 	# }
+		# }
+	}
+}
+giga_blokkat_beamfight_situation_run_calc_with_update = {
+	event_target:giga_beamfight_situation_recipient = {
+		set_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_rage
+		}
+		multiply_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep_mult
+		}
+		divide_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = 12
+		}
+		ceiling_variable = blokkat_wave_2_beamfight_energy_upkeep_temp
+		#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+	}
+	event_target:global_event_country = {
+		add_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep
+			value = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_energy_upkeep_temp
+		}
+	}
+	event_target:giga_beamfight_situation_recipient = {
+		# Updating situation progress: done manually to avoid the situation going out of bounds, and to allow choosing how much energy the QSO fires
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		subtract_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 1
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 20
+		}
+		event_target:giga_beamfight_situation = {
+			export_trigger_value_to_variable = {
+				trigger = situation_progress
+				variable = giga_blokkat_wave_2_situation_progress_absolute
+			}
+			change_variable = {
+				which = giga_blokkat_wave_2_situation_progress_absolute
+				value = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_situation_progress_absolute
+			value = event_target:giga_beamfight_situation.giga_blokkat_wave_2_situation_progress_absolute
+		}
+		if = {
+			limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value > 0 } }
+			if = {
+				limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value < 999 } }
+				event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+			}
+			else = {
+				event_target:giga_beamfight_situation = { set_situation_progress = 999 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value < 0 } }
+			if = {
+				limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value > 1 } }
+				event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+			}
+			else = {
+				event_target:giga_beamfight_situation = { set_situation_progress = 1 }
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_expected_progress
+			value = giga_blokkat_wave_2_beamfight_status
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 10000
+		}
+		round_variable = giga_blokkat_wave_2_beamfight_fulfil_perc
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 100
 		}
 	}
 }

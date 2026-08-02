@@ -756,4 +756,28 @@ portraits = {
             gfx/models/portraits/blokkat3d/unique_blokkats/blokkat_colours_tempestkat.dds
         }
     }
+
+    ####################################################################################################################
+    #Midiray (patreon/contributor)
+    blokkat3d_midikat = {
+        entity = portrait_blokkat_breadkat_entity
+        clothes_selector = no_texture
+        attachment_selector = no_texture
+        greeting_sound = lithoid_portrait_12_crystal
+        character_textures = {
+            gfx/models/portraits/blokkat3d/unique_blokkats/blokkat_colours_midikat.dds
+        }
+        # character_textures = {
+        #     gfx/models/portraits/blokkat3d/blokkat_colours_purple.dds
+        # }
+    }
+    blokkat3d_midikat_angry = {
+        entity = portrait_blokkat_breadkat_angry_entity
+        clothes_selector = no_texture
+        attachment_selector = no_texture
+        greeting_sound = lithoid_portrait_12_crystal
+        character_textures = {
+            gfx/models/portraits/blokkat3d/unique_blokkats/blokkat_colours_midikat.dds
+        }
+    }
 }

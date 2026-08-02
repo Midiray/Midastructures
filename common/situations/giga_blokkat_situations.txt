@@ -1,6 +1,6 @@
 
 
-#Situation to get GIF components
+#Situation to show how integrated you are with the GIF
 situation_gif_integration = {
 	picture = GFX_evt_rare_tech_cache
 	#complete_icon_frame = GFX_situation_outcome_frame_blue
@@ -78,12 +78,12 @@ situation_gif_integration = {
 	}
 
 	monthly_progress = {
-		base = 0
+		base = 0 #Monthly progress is controlled via monthly event, to make sure it cannot go out of bounds
 	}
 
 	on_monthly = {
 		events = {
-			giga_GIF_enclaves.1 #update progress bar
+			giga_GIF_enclaves.1 #update progress
 		}
 	}
 
@@ -101,24 +101,22 @@ situation_gif_integration = {
 #Situation for dragonbeamfight z
 situation_blokkat_beamfight = {
 	picture = GFX_evt_supernova
-	complete_icon_frame = GFX_situation_outcome_frame_red
-	complete_icon = GFX_situation_outcome_eotc
-	fail_icon_frame = GFX_situation_outcome_frame_red
-	fail_icon = GFX_situation_outcome_eotc
+	# complete_icon_frame = GFX_situation_outcome_frame_red
+	# complete_icon = GFX_situation_outcome_eotc
+	# fail_icon_frame = GFX_situation_outcome_frame_red
+	# fail_icon = GFX_situation_outcome_eotc
 
-	#on_start = {
-	#	owner = {
-	#		country_event = {
-	#			id = giga_eawaf.3014 #check approach cost eligibility
-	#		}
-	#	}
-	#}
-	on_fail = {
-		custom_tooltip = situation_blokkat_beamfight_lose
+	on_start = {
+		situation_event = {
+			id = giga_blokkat_wave_2.1994
+		}
 	}
-	on_progress_complete = {
-		custom_tooltip = situation_blokkat_beamfight_win
-	}
+	# on_fail = {
+	# 	custom_tooltip = situation_blokkat_beamfight_lose
+	# }
+	# on_progress_complete = {
+	# 	custom_tooltip = situation_blokkat_beamfight_win
+	# }
 
 	start_value = 0
 
@@ -127,86 +125,86 @@ situation_blokkat_beamfight = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
-			custom_tooltip = ssituation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_1_tt
 		}
 		stage_2 = { #Beam clash at Dist 50 star
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 200
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_2_tt
 		}
 		stage_3 = { #Beam clash at Dist 100 star
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 300
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_3_tt
 		}
 		stage_4 = { #Beam clash at Dist 150 star
 			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_red
 			end = 400
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_4_tt
 		}
 		stage_5 = { #Beam clash at Dist 200 star
 			icon = GFX_situation_stage_5
 			icon_background = GFX_situation_stage_frame_red
 			end = 500
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_5_tt
 		}
 		stage_6 = { #Beam clash at Dist 250 star
 			icon = GFX_situation_stage_6
 			icon_background = GFX_situation_stage_frame_red
 			end = 600
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_6_tt
 		}
 		stage_7 = { #Beam clash at Dist 300 star
 			icon = GFX_situation_stage_7
 			icon_background = GFX_situation_stage_frame_red
 			end = 700
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_7_tt
 		}
 		stage_8 = { #Beam clash at Dist 350 star
 			icon = GFX_situation_stage_8
 			icon_background = GFX_situation_stage_frame_red
 			end = 800
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_8_tt
 		}
 		stage_9 = { #Beam clash at Dist 400 star
 			icon = GFX_situation_stage_9
 			icon_background = GFX_situation_stage_frame_red
 			end = 900
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_9_tt
 		}
 		stage_10 = { #Beam clash at Dist 450 star
 			icon = GFX_situation_stage_10
 			icon_background = GFX_situation_stage_frame_blue
 			end = 1000
-			custom_tooltip = situation_blokkat_pylon_dissolution_effect
+			custom_tooltip = situation_blokkat_beamfight_stage_10_tt
 		}
 	}
 
 	monthly_progress = {
 		base = 0
-		modifier = {
-			desc = string_current_approach
-			add = -50
-			current_situation_approach = approach_beamfight_situation_1
-		}
-		modifier = {
-			desc = string_current_approach
-			add = -10
-			current_situation_approach = approach_beamfight_situation_2
-		}
-		modifier = {
-			desc = string_current_approach
-			add = 0
-			has_situation_flag = approach_beamfight_situation_3
-		}
-		modifier = {
-			desc = string_current_approach
-			add = 20
-			has_situation_flag = approach_beamfight_situation_4
-		}
+		# modifier = {
+		# 	desc = string_current_approach
+		# 	add = -50
+		# 	current_situation_approach = approach_beamfight_situation_1
+		# }
+		# modifier = {
+		# 	desc = string_current_approach
+		# 	add = -10
+		# 	current_situation_approach = approach_beamfight_situation_2
+		# }
+		# modifier = {
+		# 	desc = string_current_approach
+		# 	add = 0
+		# 	current_situation_approach = approach_beamfight_situation_3
+		# }
+		# modifier = {
+		# 	desc = string_current_approach
+		# 	add = 20
+		# 	current_situation_approach = approach_beamfight_situation_4
+		# }
 	}
 
 	on_monthly = {
@@ -225,53 +223,64 @@ situation_blokkat_beamfight = {
 		}
 	}
 
-	approach = { #Slow down beam
-		name = approach_beamfight_situation_2
-		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_beamfight_situation_2_tooltip
-		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 20
-				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
-			}
-		}
-	}
-
-	approach = { #Stabilize beam
-		name = approach_beamfight_situation_3
-		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_beamfight_situation_3_tooltip
-		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 50
-				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
-			}
-		}
-	}
-
-	approach = { #Overpower beam
-		name = approach_beamfight_situation_4
-		icon = GFX_situation_approach_research
-		icon_background = GFX_situation_approach_bg_red
-		on_select = {
-			custom_tooltip = approach_beamfight_situation_4_tooltip
-		}
-		resources = {
-			category = situations
-			upkeep = {
-				energy = 200
-				mult = event_target:qso_country.blokkat_wave_2_beamfight_energy_cost_final
-			}
-		}
-	}
+	# approach = { #Slow down beam
+	# 	name = approach_beamfight_situation_2
+	# 	icon = GFX_situation_approach_research
+	# 	icon_background = GFX_situation_approach_bg_red
+	# 	on_select = {
+	# 		custom_tooltip = approach_beamfight_situation_2_tooltip
+	# 	}
+	# 	allow = {
+	# 		#custom_tooltip = approach_giga_eawaf_sirens_research_2_cost_tooltip
+	# 		hidden_trigger = {
+	# 			owner = {
+	# 				check_variable = {
+	# 					which = giga_blokkat_wave_2_energy_income
+	# 					value >= blokkat_wave_2_beamfight_cost_approach_2
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# 	resources = {
+	# 		category = situations
+	# 		upkeep = {
+	# 			energy = 1
+	# 			mult = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_cost_approach_2
+	# 		}
+	# 	}
+	# }
+	#
+	# approach = { #Stabilize beam
+	# 	name = approach_beamfight_situation_3
+	# 	icon = GFX_situation_approach_research
+	# 	icon_background = GFX_situation_approach_bg_red
+	# 	on_select = {
+	# 		custom_tooltip = approach_beamfight_situation_3_tooltip
+	# 	}
+	# 	resources = {
+	# 		category = situations
+	# 		upkeep = {
+	# 			energy = 1
+	# 			mult = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_cost_approach_3
+	# 		}
+	# 	}
+	# }
+	#
+	# approach = { #Overpower beam
+	# 	name = approach_beamfight_situation_4
+	# 	icon = GFX_situation_approach_research
+	# 	icon_background = GFX_situation_approach_bg_red
+	# 	on_select = {
+	# 		custom_tooltip = approach_beamfight_situation_4_tooltip
+	# 	}
+	# 	resources = {
+	# 		category = situations
+	# 		upkeep = {
+	# 			energy = 1
+	# 			mult = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_cost_approach_4
+	# 		}
+	# 	}
+	# }
 
 	#abort_trigger = {
 	#	OR = {

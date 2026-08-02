@@ -1,0 +1,8 @@
+
+blokkat_eradicator_threat_modifier = {
+	ship_weapon_damage = 0.001
+	ship_fire_rate_mult = 0.001
+	ship_shield_mult = 0.001
+	ship_armor_mult = 0.001
+	ship_hull_mult = 0.001
+}

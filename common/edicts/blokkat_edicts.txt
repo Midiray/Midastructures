@@ -660,3 +660,20 @@ blokkat_elise_mega = {
 		weight = 0
 	}
 }
+
+giga_blokkat2_bureau_edict = {
+	icon = "GFX_edict_type_blokkat"
+	length = 1
+	resources = { category = edicts }
+	potential = {
+		has_global_flag = blokkat_wave_2_started
+	}
+	effect = { country_event = { id = giga_blokkat_wave_2.1995 } }
+	allow = {
+		hidden_trigger = {
+			custom_tooltip = "already_monitoring_blokkats"
+			NOT = { has_country_flag = monitoring_blokkat2 }
+		}
+	}
+	ai_weight = { weight = 0 }
+}

@@ -736,6 +736,27 @@ portrait_groups = {
                 }
             }
 
+            # Midiray
+            add = {
+                trigger = {
+                    has_leader_flag = midikat_leader
+                    not = { has_leader_flag = blokkat_is_angry }
+                }
+                portraits = {
+                    blokkat3d_midikat
+                }
+            }
+
+            add = {
+                trigger = {
+                    has_leader_flag = midikat_leader
+                    has_leader_flag = blokkat_is_angry
+                }
+                portraits = {
+                    blokkat3d_midikat_angry
+                }
+            }
+
             #Angry leader
             add = {
                 trigger = {

@@ -853,6 +853,7 @@ blokkat_inquietude_locked = {
 	potential = {
 		exists = from
 		from = { NOT = { has_country_flag = blokkat_inquietude_taught } }
+        NOT = { has_global_flag = is_beamfighting_eradicator }
 	}
 	allow = { always = yes }
 	effect = {

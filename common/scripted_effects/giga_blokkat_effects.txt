@@ -1185,6 +1185,26 @@ set_blokkat_leader_data = {
 				has_leader_flag = tempestkat_leader
 			}
 		}
+		4 = {
+			set_name = "Blokkiray"
+			if = {
+				limit = { NOT = { has_leader_flag = midikat_leader } }
+				set_leader_flag = midikat_leader
+			}
+			set_leader_flag = unique_blokkat_leader
+
+			add_trait = {
+				trait = trait_blokkat_eradicator_prime
+			}
+			modifier = {
+				factor = 0
+				any_country = { any_owned_leader = { has_leader_flag = midikat_leader } }
+			}
+			modifier = { #Already defined
+				add = 10000
+				has_leader_flag = midikat_leader
+			}
+		}
 	}
 	random_list = {
 		1 = { set_age = 43486 set_variable = { which = blokkat_age_value value = 43486 } }

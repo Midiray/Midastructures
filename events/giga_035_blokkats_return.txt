@@ -30,9 +30,9 @@ country_event = { #hi gif. jif?
 				# makes system positions originate from galactic core, spawn location is set as far away as L cluster so should never overlap galaxy
 				spawn_system = {
 					min_distance >= 550
-					max_distance <= 560
-					min_orientation_angle = 314
-					max_orientation_angle = 316
+					max_distance <= 550
+					min_orientation_angle = 315
+					max_orientation_angle = 315
 					initializer = GIF_enclave_init
 					hyperlane = no
 					effect = {
@@ -134,62 +134,208 @@ country_event = {
 		name = "giga_blokkat_wave_2.1003.a"
 	}
 }
-country_event = { #event to create the blokkats and everything if set to only do second wave
-	id = giga_blokkat_wave_2.1990
+country_event = { #Wave 2 setup, fired both from the above chain and normal Wave 2 spawning
+	id = giga_blokkat_wave_2.1992
+	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	hide_window = yes
+
 	immediate = {
-		country_event = { id = giga_blokkat_wave_2.1991 }
-		set_global_flag = blokkat_crisis_ongoing
-		set_global_flag = sbtg_blokkat_light_block
-		event_target:blokkat_spawn_system = {
-			set_star_class = sc_blokkat_stripmined
-			star = { if = { limit = { NOT = { has_planet_flag = shroud_storm_changed } } } set_planet_flag = shroud_storm_changed }
-			set_name = {
-				key = "NAME_Giga_Blokkaspawn_Void_System"
-				variable_string = "[blokkat_spawn_system.GetName]"
-			}
-			set_asteroid_belt = { radius = 0 }
-			set_star_flag = blokkat_stripmined_system
-			every_system_planet = {
-				clear_deposits = yes
-			}
-			every_system_planet = {
-				limit = {
-					is_star = yes
+		set_global_flag = blokkat_wave_2_started
+		event_target:global_event_country = {
+
+			#Base cost for the shieldkiller edict : 40k
+			#On Very Easy --> 10k
+			#On Baby --> 20k
+			#On Bismuth --> 75k
+			#On Endtech --> 250k (cuz screw you lol)
+			#On Deathmod --> 1M (cuz double screw you lol)
+
+			#Set Galactic Threat (rage): determines blokkat wave 2 buffs. increased by:
+			# getting support from the GIF enclave
+			# destroying blokkat ships
+			# surviving past wave 10 makes it increase faster and faster for each subsequent wave
+			if = {
+				limit = { has_global_flag = giga_blokkat2_very_easy }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 10000
 				}
-				change_pc = pc_giga_empty_space
-				add_modifier = {
-					modifier = blokkat_can_repair_system
-					days = -1
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 0.3
 				}
-			}
-			every_system_planet = {
-				limit = {
-					is_colony = yes
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 0.3
 				}
-				destroy_colony = yes
-			}
-			every_system_planet = {
-				limit = { is_star = no }
-				giga_remove_planet = yes
-			}
-			every_system_ambient_object = {
-				destroy_ambient_object = THIS
-			}
-			every_system_megastructure = {
-				limit = { NOT = { mega_blokkats_wont_stripmine = yes } }
-				remove_megastructure = THIS
-			}
-			every_fleet_in_system = {
-				limit = {
-					owner = { NOT = { is_country_type = blokkat_stripminers } }
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 3000
 				}
-				destroy_fleet = THIS
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 300
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 1
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_blokklets_component_upkeep_multiplier } }
+			}
+			else_if = {
+				limit = { has_global_flag = giga_blokkat2_easy }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 20000
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 0.67
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 0.67
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 6700
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 670
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 2
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_blokkittens_component_upkeep_multiplier } }
+			}
+			else_if = {
+				limit = { has_global_flag = giga_blokkat2_normal }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 40000
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 1
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 1
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 10000
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 1000
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 5
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_regular_component_upkeep_multiplier } }
+			}
+			else_if = {
+				limit = { has_global_flag = giga_blokkat2_bismuth }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 75000
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 1.5
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 1.5
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 15000
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 1500
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 20
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_bismuth_component_upkeep_multiplier } }
+			}
+			else_if = {
+				limit = { has_global_flag = giga_blokkat2_endtech }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 250000
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 3
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 3
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 30000
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 3000
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 100
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_endtekk_component_upkeep_multiplier } }
+			}
+			else_if = {
+				limit = { has_global_flag = giga_blokkat2_deathmode }
+				set_variable = {
+					which = blokkat_wave_2_shieldkiller_energy_upkeep
+					value = 1000000
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep_mult
+					value = 6
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage_mult
+					value = 6
+				}
+				set_variable = {
+					which = blokkat_wave_2_beamfight_energy_upkeep
+					value = 60000
+				}
+				set_variable = {
+					which = blokkat_wave_2_rage
+					value = 6000
+				}
+				set_variable = {
+					which = blokkat_eradicator_life_count
+					value = 1000
+				}
+				set_variable = {
+					which = blokkat_obliterator_life_count
+					value = 200
+				}
+				set_variable = {
+					which = blokkat_terminator_life_count
+					value = 40
+				}
+				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_obliterator_component_upkeep_multiplier } }
+			}
+			set_variable = {
+				which = giga_blokkat_wave_2_beamfight_energy_input
+				value = 1
 			}
 		}
-
 		#Make the species
 		if = {
 			limit = {
@@ -407,11 +553,10 @@ country_event = { #event to create the blokkats and everything if set to only do
 				}
 			}
 		}
-
 		#Make the country
 		create_country = {
-			type = blokkat_stripminers
-			name = "Blokkat Harvesters"
+			type = blokkat_eradicators
+			name = "Blokkat Eradicators"
 			species = event_target:blokkat_species
 			auto_delete = no
 			flag = {
@@ -434,12 +579,6 @@ country_event = { #event to create the blokkats and everything if set to only do
 			effect = {
 				set_country_flag = protected_from_queen_storm
 				set_country_flag = custom_difficulty_no_bonuses_flag #dynamic difficulty compat for no overflow
-				#Base cost for the shieldkiller : 800k
-				#On Very Easy --> 200k
-				#On Baby --> 400k
-				#On Bismuth --> 1.5M
-				#On Endtech --> 10M (cuz screw you lol)
-				#On Deathmod --> 20M (cuz double screw you lol)
 				add_modifier = { modifier = giga_allseeing_intel days = -1 }#Adds intel bonuses to allow blokkats to see cloaked ships
 				every_country = {
 					prev = {
@@ -449,349 +588,30 @@ country_event = { #event to create the blokkats and everything if set to only do
 						}
 					}
 				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_very_easy }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 200000
-					}
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_blokklets_component_upkeep_multiplier } }
+				add_modifier = {
+					modifier = blokkat_eradicator_threat_modifier
+					mult = event_target:global_event_country.blokkat_wave_2_rage
+					days = -1
 				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_easy }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 400000
-					}
-
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_blokkittens_component_upkeep_multiplier } }
-				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_normal }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 800000
-					}
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_regular_component_upkeep_multiplier } }
-				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_bismuth }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 1500000
-					}
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_bismuth_component_upkeep_multiplier } }
-				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_endtech }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 5000000
-					}
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_endtekk_component_upkeep_multiplier } }
-				}
-				if = {
-					limit = { has_global_flag = giga_blokkats_deathmode }
-					set_variable = {
-						which = blokkat_shieldkiller_activation_cost
-						value = 20000000
-					}
-					event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_obliterator_component_upkeep_multiplier } }
-				}
-				save_global_event_target_as = blokkat_country
-				country_event = { id = giga_blokkat.1012 }
+				save_global_event_target_as = blokkat2_country
 			}
 		}
 
 		#Establish comms
-		every_country = { establish_communications_no_message = event_target:blokkat_country }
+		every_country = { establish_communications_no_message = event_target:blokkat2_country }
 		every_country = {
 			establish_contact = {
-				who = event_target:blokkat_country
+				who = event_target:blokkat2_country
 				location = event_target:blokkat_spawn_system
 			}
 		}
-		if = {
-			limit = {
-				has_global_flag = giga_blokkats_deathmode
-				OR = {
-					any_country = { has_country_flag = oe_player }
-					any_country = { has_authority = auth_warshipgirls }
-					any_country = { has_authority = auth_shenhai }
-					any_country = { has_authority = auth_united_fleet }
-				}
-				NOT = { has_global_flag = anime_blokkats }
-			}
-			event_target:blokkat_country = { #Anime
-				country_event = { id = giga_blokkat.10032 days = 1 }
-			}
-		}
-	}
-}
-country_event = {
-	id = giga_blokkat_wave_2.1991
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		#event_target:blokkat_spawn_system = {
-		#	save_global_event_target_as = current_blokkat_mothership_system
-		#	save_global_event_target_as = future_blokkat_mothership_system
-		#}
-
-		#set_variable = {
-		#	which = current_blokkat_phase
-		#	value = 1
-		#}
-
-		set_variable = {
-			which = current_blokkat_stripminer_max_id
-			value = 1
-		}
-
-		set_variable = {
-			which = current_blokkat_escort_max_id
-			value = 1
-		}
-
-		#Blokkat Capture IDs
-		event_target:global_event_country = {
-			set_variable = {
-				which = current_blokkat_prison_max_id
-				value = 1
-			}
-		}
-
-		#Blokkat Capture Base Research Time (months)
 		every_country = {
-			set_variable = {
-				which = blokkat_prison_research_time
-				value = 8
+			limit = { is_ai = no }
+			if = { #MIDIRAY_CHANGE_THIS honestly no clue how the gui works, fix it at some point to have a gui button
+				limit = { NOT = { has_country_flag = blokkat2_bureau_unlocked } }
+				set_country_flag = gigas_diplo_engaged
+				set_country_flag = blokkat2_bureau_unlocked
 			}
-		}
-
-		#country_event = { id = giga_blokkat.7000 days = 30 } #Start the stripmining process
-		country_event = { id = giga_blokkat.5000 days = 30 } #Inquietude stuff
-		country_event = { id = giga_blokkat_wave_2.1992 }
-
-		#MOTHERSHIP REVIVES
-		if = {
-			limit = { has_global_flag = giga_blokkats_deathmode }
-			set_variable = { #40 billion HP
-				which = blokkat_mothership_life_count
-				value = 100
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_endtech }
-			set_variable = {
-				which = blokkat_mothership_life_count
-				value = 20
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_bismuth }
-			set_variable = {
-				which = blokkat_mothership_life_count
-				value = 5
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_easy }
-			set_variable = {
-				which = blokkat_mothership_life_count
-				value = 1
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_very_easy }
-			set_variable = {
-				which = blokkat_mothership_life_count
-				value = 1
-			}
-		}
-		else = {
-			set_variable = {
-				which = blokkat_mothership_life_count
-				value = 2
-			}
-		}
-
-		#Harvester life count
-		if = {
-			limit = { has_global_flag = giga_blokkats_deathmode }
-			set_variable = { #40 billion HP
-				which = blokkat_harvester_life_count
-				value = 20
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_endtech }
-			set_variable = {
-				which = blokkat_harvester_life_count
-				value = 6
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_bismuth }
-			set_variable = {
-				which = blokkat_harvester_life_count
-				value = 3
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_easy }
-			set_variable = {
-				which = blokkat_harvester_life_count
-				value = 1
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_very_easy }
-			set_variable = {
-				which = blokkat_harvester_life_count
-				value = 1
-			}
-		}
-		else = {
-			set_variable = {
-				which = blokkat_harvester_life_count
-				value = 2
-			}
-		}
-
-		#OBLITERATOR REVIVES
-		if = {
-			limit = { has_global_flag = giga_blokkats_deathmode }
-			set_variable = { #100 billion HP (lol?)
-				which = blokkat_obliterator_life_count
-				value = 200
-			}
-		}
-
-		#TERMINATOR REVIVES
-		if = {
-			limit = { has_global_flag = giga_blokkats_deathmode }
-			set_variable = {
-				which = blokkat_terminator_life_count
-				value = 10
-			}
-		}
-		else_if = {
-			limit = { has_global_flag = giga_blokkats_endtech }
-			set_variable = {
-				which = blokkat_terminator_life_count
-				value = 5
-			}
-		}
-		else = {
-			set_variable = {
-				which = blokkat_terminator_life_count
-				value = 2
-			}
-		}
-
-		#SET DIFFICULTY
-		if = {
-			limit = { has_global_flag = giga_blokkats_deathmode }
-			add_modifier = {
-				modifier = blokkat_deathmode_country_buff
-				days = -1
-			}
-		}
-
-		if = {
-			limit = { has_global_flag = giga_blokkats_endtech }
-			add_modifier = {
-				modifier = blokkat_endtech_country_buff
-				days = -1
-			}
-		}
-
-		if = {
-			limit = { has_global_flag = giga_blokkats_bismuth }
-			add_modifier = {
-				modifier = blokkat_bismuth_country_buff
-				days = -1
-			}
-		}
-
-		if = {
-			limit = { has_global_flag = giga_blokkats_easy }
-			add_modifier = {
-				modifier = blokkat_easy_country_buff
-				days = -1
-			}
-		}
-
-		if = {
-			limit = { has_global_flag = giga_blokkats_very_easy }
-			add_modifier = {
-				modifier = blokkat_very_easy_country_buff
-				days = -1
-			}
-		}
-
-		add_modifier = {
-			modifier = giga_blokkat_balance
-			days = -1
-		}
-
-
-		#Counting systems
-		set_variable = { #% of systems the blokkats ate
-			which = blokkat_stripmined_system_perc_last_month
-			value = 0
-		}
-
-		set_variable = { #% of systems the blokkats ate
-			which = blokkat_stripmined_system_perc
-			value = 0
-		}
-
-		#Determine the amount of Blokk-Dismantlers
-		set_variable = { #total systems
-			which = blokkat_galaxy_system_count
-			value = 0
-		}
-
-		#count all systems
-		ROOT = {
-			set_variable = {
-				which = blokkat_galaxy_system_count
-				value = trigger:num_galaxy_systems
-			}
-		}
-	}
-}
-country_event = { #Wave 2 setup, fired both from the above chain and normal Wave 2 spawning
-	id = giga_blokkat_wave_2.1992
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	immediate = {
-		#Set Blokkat Rage (determines how many ships a wave brings. rage is increased by getting GIF support, destroying blokkat ships, and forcing harvesting field divergence [surviving too long])
-		set_global_flag = blokkat_wave_2_started
-		set_variable = {
-			which = blokkat_wave_2_beamfight_energy_cost_raw
-			value = event_target:blokkat_country.blokkat_shieldkiller_activation_cost
-		}
-		set_variable = {
-			which = blokkat_wave_2_rage
-			value = blokkat_wave_2_beamfight_energy_cost_raw
-		}
-		divide_variable = {
-			which = blokkat_wave_2_rage
-			value = 200
-		}
-		set_variable = {
-			which = blokkat_wave_2_beamfight_energy_cost_final
-			value = blokkat_wave_2_beamfight_energy_cost_raw
-		}
-		divide_variable = {
-			which = blokkat_wave_2_beamfight_energy_cost_final
-			value = 50
 		}
 		no_scope = {
 			spawn_system = {
@@ -806,6 +626,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					save_global_event_target_as = main_eradicator_system
 					save_global_event_target_as = last_blokkat_spawned_system
 					set_name = NAME_eradicator_system
+					while = { count = 4 giga_generate_hyperlane = yes }
 				}
 			}
 		}
@@ -882,29 +703,91 @@ situation_event = { #Monthly event for beamfight situation that increases how mu
 	is_triggered_only = yes
 
 	immediate = {
-		if = {
-			limit = { has_global_flag = is_beamfighting_eradicator }
-			owner = {
-				add_variable = {
-					which = blokkat_wave_2_beamfight_energy_cost_raw
-					value = blokkat_wave_2_rage
-				}
-				set_variable = {
-					which = blokkat_wave_2_beamfight_energy_cost_temp
-					value = blokkat_wave_2_beamfight_energy_cost_raw
-				}
-				divide_variable = {
-					which = blokkat_wave_2_beamfight_energy_cost_temp
-					value = 20
-				}
-				add_variable = {
-					which = blokkat_wave_2_beamfight_energy_cost_final
-					value = blokkat_wave_2_beamfight_energy_cost_temp
-				}
-				#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
-			}
-		}
+		owner = { save_global_event_target_as = giga_beamfight_situation_recipient }
+		if = { limit = { NOT = { has_global_flag = is_beamfighting_eradicator } } set_global_flag = is_beamfighting_eradicator }
+		giga_blokkat_beamfight_situation_run_calc_with_update = yes
+		# if = {
+		# 	limit = { has_global_flag = is_beamfighting_eradicator }
+		# 	owner = {
+		# 		set_variable = {
+		# 			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+		# 			value = event_target:global_event_country.blokkat_wave_2_rage
+		# 		}
+		# 		multiply_variable = {
+		# 			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+		# 			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep_mult
+		# 		}
+		# 		divide_variable = {
+		# 			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+		# 			value = 12
+		# 		}
+		# 		#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+		# 	}
+		# 	event_target:global_event_country = {
+		# 		add_variable = {
+		# 			which = blokkat_wave_2_beamfight_energy_upkeep
+		# 			value = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_energy_upkeep_temp
+		# 		}
+		# 	}
+		# }
+		#
+		# owner = {
+		# 	# Updating situation progress: done manually to avoid the situation going out of bounds, and to allow choosing how much energy the QSO fires
+		# 	set_variable = {
+		# 		which = giga_blokkat_wave_2_beamfight_status
+		# 		value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		# 	}
+		# 	divide_variable = {
+		# 		which = giga_blokkat_wave_2_beamfight_status
+		# 		value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		# 	}
+		# 	subtract_variable = {
+		# 		which = giga_blokkat_wave_2_beamfight_status
+		# 		value = 1
+		# 	}
+		# 	multiply_variable = {
+		# 		which = giga_blokkat_wave_2_beamfight_status
+		# 		value = 20
+		# 	}
+		# 	prev = {
+		# 		export_trigger_value_to_variable = {
+		# 			trigger = situation_progress
+		# 			variable = giga_blokkat_wave_2_situation_progress_absolute
+		# 		}
+		# 		change_variable = {
+		# 			which = giga_blokkat_wave_2_situation_progress_absolute
+		# 			value = prev.giga_blokkat_wave_2_beamfight_status
+		# 		}
+		# 	}
+		# 	set_variable = {
+		# 		which = giga_blokkat_wave_2_situation_progress_absolute
+		# 		value = prev.giga_blokkat_wave_2_situation_progress_absolute
+		# 	}
+		# 	if = {
+		# 		limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value > 0 } }
+		# 		if = {
+		# 			limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value < 999 } }
+		# 			prev = { add_situation_progress = prev.giga_blokkat_wave_2_beamfight_status }
+		# 		}
+		# 		else = {
+		# 			prev = { set_situation_progress = 999 }
+		# 		}
+		# 	}
+		# 	else_if = {
+		# 		limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value < 0 } }
+		# 		if = {
+		# 			limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value > 1 } }
+		# 			prev = { add_situation_progress = prev.giga_blokkat_wave_2_beamfight_status }
+		# 		}
+		# 		else = {
+		# 			prev = { set_situation_progress = 1 }
+		# 		}
+		# 	}
+		# }
 
+
+
+		# Managing the beamfight systems
 		if = {
 			limit = {
 				event_target:blokkat_beamfight_system_dist_0 = { has_psionic_aura = eradicator_aura }
@@ -1284,6 +1167,1403 @@ situation_event = { #Monthly event for beamfight situation that increases how mu
 		}
 	}
 }
+country_event = { #blokkat research bureau, but like, new and stuff
+	id = giga_blokkat_wave_2.1995
+	title = "giga_blokkat_wave_2.1995.name"
+
+	desc = {
+		text = "giga_blokkat_wave_2.1995.desc.a"
+		trigger = {
+			always = yes
+		}
+	}
+
+	is_triggered_only = yes
+
+	diplomatic = yes
+
+	custom_gui = blokkat_bureau_wave_2_window
+
+	picture_event_data = {
+		portrait = ROOT.species
+		room = blokkat_monitor_room
+	}
+
+	immediate = {
+		set_country_flag = monitoring_blokkat2
+		ROOT = { save_global_event_target_as = country_checking_blokkat_country }
+	}
+
+	option = { #bye
+		name = "giga_blokkat_wave_2.1995.bye"
+		custom_gui = blokkat_bureau_wave_2_option_leave
+		default_hide_option = yes
+		hidden_effect = {
+			remove_country_flag = monitoring_blokkat2
+		}
+	}
+
+	option = { #general study
+		name = "giga_blokkat_wave_2.1995.generalstudy"
+		custom_tooltip = "giga_blokkat_wave_2.1995.generalstudy.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless
+		hidden_effect = {
+			country_event = { id = giga_blokkat_wave_2.1995 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkats_are_already_gone"
+				hidden_trigger = {
+					NOT = { has_global_flag = blokkat_wave_2_defeated }
+				}
+			}
+		}
+	}
+
+	option = { #repeatables
+		name = "giga_blokkat.3000.repeatables"
+		custom_tooltip = "giga_blokkat.3000.repeatables.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_1
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkats_are_already_gone"
+				hidden_trigger = {
+					NOT = { has_global_flag = blokkat_crisis_defeated }
+				}
+			}
+		}
+		trigger = { has_country_flag = blokkat_shield_researched }
+	}
+
+	option = { #sacrifice ship
+		name = "giga_blokkat.3000.sacrifice"
+		custom_tooltip = "giga_blokkat.3000.sacrifice.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_2
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		trigger = { has_country_flag = blokkat_shield_researched }
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_task_already_done"
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_ship_sacrificed }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkats_are_already_gone"
+				hidden_trigger = {
+					NOT = { has_global_flag = blokkat_crisis_defeated }
+				}
+			}
+		}
+	}
+
+	option = { #go to system
+		name = "giga_blokkat.3000.system"
+		custom_tooltip = "giga_blokkat.3000.system.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_3
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		trigger = { has_country_flag = blokkat_shield_researched }
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_task_already_done"
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_ship_sent_to_system }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkats_are_already_gone"
+				hidden_trigger = {
+					NOT = { has_global_flag = blokkat_crisis_defeated }
+				}
+			}
+		}
+	}
+
+	option = { #blow up dismantlers
+		name = "giga_blokkat.3000.destroy"
+		custom_tooltip = "giga_blokkat.3000.destroy.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_4
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		trigger = { has_country_flag = blokkat_shield_researched }
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_task_already_done"
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_ship_sent_to_destroy }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkats_are_already_gone"
+				hidden_trigger = {
+					NOT = { has_global_flag = blokkat_crisis_defeated }
+				}
+			}
+		}
+	}
+
+	option = { #capture blokkats
+		name = "giga_blokkat.3000.capture"
+		custom_tooltip = "giga_blokkat.3000.capture.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_5
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		trigger = { has_country_flag = 	blokkat_capture_project_researched }
+	}
+
+	option = { #do paluushia stuff
+		name = "giga_blokkat.3000.paluushia"
+		custom_tooltip = "giga_blokkat.3000.paluushia.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_clickless_6
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			remove_country_flag = monitoring_blokkat2
+		}
+		trigger = { has_country_flag = paluush_event_chain_ongoing }
+	}
+
+	option = { #scrap count
+		name = "giga_blokkat.3000.scrap"
+		custom_gui = blokkat_bureau_wave_2_option_scrap
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			always = no
+		}
+	}
+
+	option = { #knowledge count
+		name = "giga_blokkat.3000.knowledge"
+		custom_gui = blokkat_bureau_wave_2_option_knowledge
+		allow = {
+			always = no
+		}
+	}
+
+	option = { #beamfight: friendly vs goal cost
+		name = "giga_blokkat_wave_2.1995.beamfightenergy"
+		custom_gui = blokkat_bureau_wave_2_option_beamfight
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		allow = {
+			always = no
+		}
+	}
+
+	option = { #beamfight: percentage ratio and predicted situation progress
+		name = "giga_blokkat_wave_2.1995.beamfightdetails"
+		custom_gui = blokkat_bureau_wave_2_option_beamfight_detail
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		allow = {
+			always = no
+		}
+	}
+
+	# option = { #inquietude modifiers
+	# 	name = "giga_blokkat_wave_2.1995.increaseenergy"
+	# 	custom_gui = blokkat_bureau_wave_2_option_inquietude_modifiers
+	# 	trigger = { has_global_flag = is_beamfighting_eradicator }
+	# 	hidden_effect = {
+	# 		event_target:global_event_country = {
+	# 			add_variable = {
+	# 				which = giga_blokkat_wave_2_beamfight_energy_input
+	# 				value = 1000
+	# 			}
+	# 		}
+	# 		remove_country_flag = monitoring_blokkat2
+	# 		country_event = { id = giga_blokkat_wave_2.1995 }
+	# 	}
+	# }
+	#
+	# option = { #inquietude modifiers 2
+	# 	name = "giga_blokkat_wave_2.1995.decreaseenergy"
+	# 	custom_gui = blokkat_bureau_wave_2_option_inquietude_modifiers_2
+	# 	trigger = { has_global_flag = is_beamfighting_eradicator }
+	# 	hidden_effect = {
+	# 		event_target:global_event_country = {
+	# 			subtract_variable = {
+	# 				which = giga_blokkat_wave_2_beamfight_energy_input
+	# 				value = 1000
+	# 			}
+	# 			if = {
+	# 				limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_energy_input value < 1 } }
+	# 				set_variable = {
+	# 					which = giga_blokkat_wave_2_beamfight_energy_input
+	# 					value = 1
+	# 				}
+	# 			}
+	# 		}
+	# 		remove_country_flag = monitoring_blokkat2
+	# 		country_event = { id = giga_blokkat_wave_2.1995 }
+	# 	}
+	# }
+
+	option = { #scrap: research boost
+		name = "giga_blokkat.3000.scrapresearch"
+		custom_tooltip = "giga_blokkat.3000.scrapresearch.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_research
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			fail_text = {
+				text = "must_finish_blokkat_scrap_research_first"
+				has_country_flag = researched_blokkat_scrap
+			}
+			custom_tooltip = {
+				fail_text = "needs_enough_blokkat_scrap"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 50
+					}
+				}
+			}
+			fail_text = {
+				text = "already_researching_blokkat_scrap"
+				NOT = { has_country_flag = researching_blokkat_scrap_research }
+			}
+		}
+		hidden_effect = {
+			set_country_flag = researching_blokkat_scrap_research
+			country_event = { id = giga_blokkat.3000 }
+			subtract_variable = {
+				which = blokkat_scrap_value
+				value = 50
+			}
+		}
+	}
+
+	option = { #scrap: damage tech
+		name = "giga_blokkat.3000.scrapdamage"
+		custom_tooltip = "giga_blokkat.3000.scrapdamage.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_damage
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			fail_text = {
+				text = "must_finish_blokkat_scrap_research_first"
+				has_country_flag = researched_blokkat_scrap
+			}
+			custom_tooltip = {
+				fail_text = "needs_enough_blokkat_scrap"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 50
+					}
+				}
+			}
+			fail_text = {
+				text = "already_researching_blokkat_scrap"
+				NOT = { has_country_flag = researching_blokkat_scrap_damage }
+			}
+		}
+		hidden_effect = {
+			set_country_flag = researching_blokkat_scrap_damage
+			country_event = { id = giga_blokkat.3000 }
+			subtract_variable = {
+				which = blokkat_scrap_value
+				value = 50
+			}
+		}
+	}
+
+	option = { #scrap research boost count
+		name = "blokkat_scrap_research_boost"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_research_boost
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			always = no
+		}
+	}
+
+	option = { #scrap damage boost count
+		name = "blokkat_scrap_damage_boost"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_damage_boost
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			always = no
+		}
+	}
+
+
+	option = { #scrap: research boost temporary
+		name = "giga_blokkat.3000.scrapresearchtemp"
+		custom_tooltip = "giga_blokkat.3000.scrapresearchtemp.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_research_temp
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			fail_text = {
+				text = "blokkat_can_only_do_every_year"
+				NOT = { has_country_flag = recently_buffed_blokkat_research }
+			}
+			fail_text = {
+				text = "must_finish_blokkat_scrap_research_first"
+				has_country_flag = researched_blokkat_scrap
+			}
+			custom_tooltip = {
+				fail_text = "needs_enough_blokkat_scrap"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 40
+					}
+				}
+			}
+			NOT = { has_modifier = blokkat_scrap_research_buff }
+		}
+		add_modifier = {
+			modifier = blokkat_scrap_research_buff
+			days = 180
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			country_event = { id = giga_blokkat.3084 days = 180 }
+			set_timed_country_flag = {
+				flag = recently_buffed_blokkat_research
+				days = 360
+			}
+			subtract_variable = {
+				which = blokkat_scrap_value
+				value = 40
+			}
+			change_variable = {
+				which = blokkat_scrap_research_value
+				value = 100
+			}
+		}
+	}
+
+	option = { #scrap: damage tech temporary
+		name = "giga_blokkat.3000.scrapdamagetemp"
+		custom_tooltip = "giga_blokkat.3000.scrapdamagetemp.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_scrap_damage_temp
+		trigger = { has_country_flag = blokkat_scrap_popup }
+		allow = {
+			fail_text = {
+				text = "blokkat_can_only_do_every_year"
+				NOT = { has_country_flag = recently_buffed_blokkat_damage }
+			}
+			fail_text = {
+				text = "must_finish_blokkat_scrap_research_first"
+				has_country_flag = researched_blokkat_scrap
+			}
+			custom_tooltip = {
+				fail_text = "needs_enough_blokkat_scrap"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 40
+					}
+				}
+			}
+			NOT = { has_modifier = blokkat_scrap_damage_buff }
+		}
+		add_modifier = {
+			modifier = blokkat_scrap_damage_buff
+			days = 180
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3000 }
+			country_event = { id = giga_blokkat.3085 days = 180 }
+			set_timed_country_flag = {
+				flag = recently_buffed_blokkat_damage
+				days = 360
+			}
+			subtract_variable = {
+				which = blokkat_scrap_value
+				value = 40
+			}
+			change_variable = {
+				which = blokkat_scrap_damage_value
+				value = 75
+			}
+		}
+	}
+
+	option = { #talk to big bunny
+		name = "giga_blokkat.3000.talkgrandbunny"
+		custom_tooltip = "giga_blokkat.3000.talkgrandbunny.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_paluushia
+		allow = {
+			fail_text = {
+				text = "already_talking_to_grandbunny"
+				NOT = { has_country_flag = talking_to_grandbunny }
+			}
+		}
+		trigger = {
+			has_country_flag = established_contact_with_grandbunny
+		}
+		hidden_effect = {
+			set_country_flag = talking_to_grandbunny
+			if = {
+				limit = { has_country_flag = grand_archive_dig_done }
+				country_event = { id = giga_blokkat.3331 }
+			}
+			else_if = {
+				limit = { has_country_flag = grand_archive_dig_ongoing }
+				country_event = { id = giga_blokkat.3312 }
+			}
+			else_if = {
+				limit = { has_country_flag = grandbunny_waiting_for_answer }
+				country_event = { id = giga_blokkat.3310 }
+			}
+		}
+	}
+
+	option = {
+		name = "giga_blokkat_wave_2.1995.increaseenergy_alot"
+		#custom_tooltip = "giga_blokkat.3000.upinquietude.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_beam_strength_inc_alot
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		hidden_effect = {
+			event_target:global_event_country = {
+				add_variable = {
+					which = giga_blokkat_wave_2_beamfight_energy_input
+					value = 10000
+				}
+			}
+			giga_blokkat_beamfight_situation_prerun_calc = yes
+			remove_country_flag = monitoring_blokkat2
+			country_event = { id = giga_blokkat_wave_2.1995 }
+		}
+	}
+
+	option = {
+		name = "giga_blokkat_wave_2.1995.increaseenergy"
+		#custom_tooltip = "giga_blokkat.3000.upinquietude.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_beam_strength_inc
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		hidden_effect = {
+			event_target:global_event_country = {
+				add_variable = {
+					which = giga_blokkat_wave_2_beamfight_energy_input
+					value = 1000
+				}
+			}
+			giga_blokkat_beamfight_situation_prerun_calc = yes
+			remove_country_flag = monitoring_blokkat2
+			country_event = { id = giga_blokkat_wave_2.1995 }
+		}
+	}
+
+	option = {
+		name = "giga_blokkat_wave_2.1995.decreaseenergy"
+		#custom_tooltip = "giga_blokkat.3000.downinquietude.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_beam_strength_dec
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		allow = {
+			custom_tooltip = {
+				fail_text = "beamfight_energy_input_at_min"
+				hidden_trigger = {
+					event_target:global_event_country = {
+						check_variable = {
+							which = giga_blokkat_wave_2_beamfight_energy_input
+							value > 1
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:global_event_country = {
+				subtract_variable = {
+					which = giga_blokkat_wave_2_beamfight_energy_input
+					value = 1000
+				}
+				if = {
+					limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_energy_input value < 1 } }
+					set_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 1
+					}
+				}
+			}
+			giga_blokkat_beamfight_situation_prerun_calc = yes
+			remove_country_flag = monitoring_blokkat2
+			country_event = { id = giga_blokkat_wave_2.1995 }
+		}
+	}
+
+	option = {
+		name = "giga_blokkat_wave_2.1995.decreaseenergy_alot"
+		#custom_tooltip = "giga_blokkat.3000.downinquietude.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option_beam_strength_dec_alot
+		trigger = { has_global_flag = is_beamfighting_eradicator }
+		allow = {
+			custom_tooltip = {
+				fail_text = "beamfight_energy_input_at_min"
+				hidden_trigger = {
+					event_target:global_event_country = {
+						check_variable = {
+							which = giga_blokkat_wave_2_beamfight_energy_input
+							value > 1
+						}
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			event_target:global_event_country = {
+				subtract_variable = {
+					which = giga_blokkat_wave_2_beamfight_energy_input
+					value = 10000
+				}
+				if = {
+					limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_energy_input value < 1 } }
+					set_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 1
+					}
+				}
+			}
+			giga_blokkat_beamfight_situation_prerun_calc = yes
+			remove_country_flag = monitoring_blokkat2
+			country_event = { id = giga_blokkat_wave_2.1995 }
+		}
+	}
+
+	option = { #new mega stage 4
+		name = "giga_blokkat.3000.mega4"
+		custom_tooltip = "giga_blokkat.3000.mega4.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_mega_stage_2_researched
+			NOT = { has_country_flag = blokkat_mega_stage_3_researched }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3066 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_40_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 40
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #new mega stage 5
+		name = "giga_blokkat.3000.mega5"
+		custom_tooltip = "giga_blokkat.3000.mega5.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_mega_stage_3_researched
+			has_country_flag = unlocked_final_blokkat_mega_stage
+			NOT = { has_country_flag = blokkat_mega_stage_4_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3329 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_50_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 50
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #JUMP INTO THE VESTER
+		name = "giga_blokkat.3000.cosmovester"
+		custom_tooltip = "giga_blokkat.3000.cosmovester.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = cosmogenesis_vester
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3340 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_50_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 50
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #nothing to do
+		name = "giga_blokkat.3000.megano"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_mega_stage_3_researched
+			NOR = {
+				has_global_flag = blokkat_crisis_defeated
+				AND = {
+					has_country_flag = unlocked_final_blokkat_mega_stage
+					NOT = { has_country_flag = blokkat_mega_stage_4_researched }
+				}
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = blokkat_cant_click_this
+				hidden_trigger = {
+					always = no
+				}
+			}
+		}
+	}
+
+	option = { #theyre gone
+		name = "giga_blokkat.3000.blokkatsgone"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_global_flag = blokkat_crisis_defeated
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = blokkat_cant_click_this
+				hidden_trigger = {
+					always = no
+				}
+			}
+		}
+	}
+
+	option = { #new mega stage 3
+		name = "giga_blokkat.3000.mega3"
+		custom_tooltip = "giga_blokkat.3000.mega3.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_mega_stage_1_researched
+			NOT = { has_country_flag = blokkat_mega_stage_2_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3064 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_30_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 30
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #new mega stage 2
+		name = "giga_blokkat.3000.mega2"
+		custom_tooltip = "giga_blokkat.3000.mega2.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_mega_stage_0_researched
+			NOT = { has_country_flag = blokkat_mega_stage_1_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3062 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_society_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_society_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_20_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 20
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #new mega
+		name = "giga_blokkat.3000.mega1"
+		custom_tooltip = "giga_blokkat.3000.mega1.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_shield_researched
+			has_country_flag = giga_decided_to_fight_blokkats
+			NOT = { has_country_flag = blokkat_mega_stage_0_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3060 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_physics_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_physics_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_10_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 10
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #ASCEND
+		name = "giga_blokkat.3000.joinblokkats6"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats6.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = giga_decided_to_join_blokkats
+			has_country_flag = blokkat_joinblokkats_stage_5_researched
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_6_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2999 }
+			add_resource = {
+				energy = -1
+				mult = blokkat_ascension_cost
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 1
+				mult = blokkat_ascension_cost
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_70_willingness"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_willingness_global_value
+						value >= 70
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_60_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 60
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #build gigarelay
+		name = "giga_blokkat.3000.joinblokkats5"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats5.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = giga_decided_to_join_blokkats
+			has_country_flag = blokkat_joinblokkats_stage_4_researched
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_5_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2040 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_50_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 50
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #build network
+		name = "giga_blokkat.3000.joinblokkats4"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats4.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = giga_decided_to_join_blokkats
+			has_country_flag = blokkat_joinblokkats_stage_3_researched
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_4_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2030 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_40_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 40
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #do math
+		name = "giga_blokkat.3000.joinblokkats3"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats3.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = giga_decided_to_join_blokkats
+			has_country_flag = blokkat_joinblokkats_stage_2_researched
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_3_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2020 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_engineering_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_engineering_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_30_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 30
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #text the blokkats
+		name = "giga_blokkat.3000.joinblokkats2"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats2.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = giga_decided_to_join_blokkats
+			has_country_flag = blokkat_joinblokkats_stage_1_researched
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_2_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2010 }
+			add_resource = {
+				energy = -200000
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 200000
+			}
+			custom_tooltip = {
+				fail_text = "needs_physics_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_physics_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_20_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 20
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #translate blokkat language
+		name = "giga_blokkat.3000.joinblokkats1"
+		custom_tooltip = "giga_blokkat.3000.joinblokkats1.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_shield_researched
+			has_country_flag = giga_decided_to_join_blokkats
+			NOT = { has_country_flag = blokkat_joinblokkats_stage_1_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat_join.2000 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_society_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_society_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_10_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 10
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #fix stuff
+		name = "giga_blokkat.3000.fixblokkatstars"
+		custom_tooltip = "giga_blokkat.3000.fixblokkatstars.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = can_research_blokkat_star_repair
+			NOT = { has_country_flag = blokkat_star_repair_researched }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3351 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+
+	option = { #shield
+		name = "giga_blokkat.3000.shield"
+		custom_tooltip = "giga_blokkat.3000.shield.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			NOT = {
+				has_country_flag = blokkat_shield_researched
+			}
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3010 }
+			set_country_flag = blokkat_shield_being_researched
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_project_already_being_done"
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_shield_being_researched }
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_project_already_done"
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_shield_researched }
+				}
+			}
+		}
+	}
+
+	option = { #physics
+		name = "giga_blokkat.3000.blokkphysics"
+		custom_tooltip = "giga_blokkat.3000.blokkphysics.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_shield_researched
+			NOT = { has_country_flag = blokkat_physics_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3030 }
+		}
+		allow = {
+			has_technology = giga_tech_tetradimensional_engineering
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #engineering
+		name = "giga_blokkat.3000.blokkengineering"
+		custom_tooltip = "giga_blokkat.3000.blokkengineering.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_shield_researched
+			NOT = { has_country_flag = blokkat_engineering_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3050 }
+		}
+		allow = {
+			has_technology = tech_ship_armor_5
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #society
+		name = "giga_blokkat.3000.blokksociety"
+		custom_tooltip = "giga_blokkat.3000.blokksociety.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_shield_researched
+			NOT = { has_country_flag = blokkat_society_researched }
+			NOT = { has_global_flag = blokkat_crisis_defeated }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3020 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #paluush project
+		name = "giga_blokkat.3000.blokkpaluush"
+		custom_tooltip = "giga_blokkat.3000.blokkpaluush.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_paluush_analysis_started
+			NOT = { has_country_flag = blokkat_paluush_analysis_researched }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3301 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #paluush project 2
+		name = "giga_blokkat.3000.paluushshield"
+		custom_tooltip = "giga_blokkat.3000.paluushshield.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			NOT = { has_country_flag = paluushia_shield_breached }
+			has_country_flag = can_breach_paluushia_shield
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3304 }
+			add_resource = {
+				energy = -800000
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value > 800000
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #paluush project 3
+		name = "giga_blokkat.3000.paluushtime"
+		custom_tooltip = "giga_blokkat.3000.paluushtime.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = can_do_blokkat_timetravel_project
+			NOT = { has_country_flag = blokkat_temporal_discrepancy_solved }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3325 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = not_enough_scrap_knowledge
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 30
+					}
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 150
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #capture project
+		name = "giga_blokkat.3000.blokkcapture"
+		custom_tooltip = "giga_blokkat.3000.blokkcapture.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_capture_project_started
+			NOT = { has_country_flag = blokkat_capture_project_researched }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3201 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_10_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 10
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #reprogram project
+		name = "giga_blokkat.3000.blokkreprogram"
+		custom_tooltip = "giga_blokkat.3000.blokkreprogram.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_reprogram_project_unlocked
+			NOT = { has_country_flag = blokkat_reprogram_project_researched }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3231 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "blokkat_requires_35_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 35
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "must_have_conducted_3_experiments_on_blokkat"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_earned_by_capture
+						value >= 3
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #scrap
+		name = "giga_blokkat.3000.blokkscrap"
+		custom_tooltip = "giga_blokkat.3000.blokkscrap.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = blokkat_scrap_popup
+			NOT = { has_country_flag = researched_blokkat_scrap }
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3082 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_all_3_blokkat_project"
+				hidden_trigger = {
+					has_country_flag = blokkat_physics_researched
+					has_country_flag = blokkat_engineering_researched
+					has_country_flag = blokkat_society_researched
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+
+	option = { #reverse engineer
+		name = "giga_blokkat.3000.blokkreversengineer"
+		custom_tooltip = "giga_blokkat.3000.blokkreversengineer.tooltip"
+		custom_gui = blokkat_bureau_wave_2_option
+		trigger = {
+			has_country_flag = researched_blokkat_scrap
+			NOT = {
+				AND = {
+					has_technology = giga_tech_blokkat_afterburner
+					has_technology = giga_tech_blokkat_laser
+					has_technology = giga_tech_blokkat_plasma
+					has_technology = giga_tech_blokkat_hullrepair
+					has_technology = giga_tech_blokkat_strikecraft
+					has_technology = giga_tech_blokkat_reactor
+					has_technology = giga_tech_blokkat_shield
+					has_technology = giga_tech_blokkat_sensors
+					has_technology = giga_tech_blokkat_armor
+					has_technology = giga_tech_blokkat_emitter
+					has_technology = giga_tech_blokkat_obliterator
+					has_technology = giga_tech_blokkat_missile
+					has_technology = giga_tech_blokkat_computer
+					has_technology = giga_tech_blokkat_pd
+					has_technology = giga_tech_blokkat_ftl
+					has_technology = giga_tech_blokkat_booster
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = giga_blokkat.3090 }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = "needs_enough_blokkat_scrap"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_scrap_value
+						value >= 50
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = "blokkat_requires_20_knowledge"
+				hidden_trigger = {
+					check_variable = {
+						which = blokkat_knowledge_value
+						value >= 20
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = blokkat_project_already_underway
+				hidden_trigger = {
+					NOT = { has_country_flag = blokkat_project_underway }
+				}
+			}
+		}
+	}
+}
 country_event = { #oh shit the eradicator is here
 	id = giga_blokkat_wave_2.2000
 	title = "giga_blokkat_wave_2.2000.name"
@@ -1291,15 +2571,30 @@ country_event = { #oh shit the eradicator is here
 	is_triggered_only = yes
 	fire_only_once = yes
 	diplomatic = yes
+	immediate = {
+		country_event = { id = giga_blokkat_wave_2.2001 days = 29 }
+	}
 
 	picture_event_data = {
 		portrait = event_target:blokkat_species
 		room = blokkat3d_room
 	}
+
+	option = { #Well fuck
+		name = "giga_blokkat_wave_2.2000.a"
+	}
+}
+country_event = { #its beginning to fire, how do we plan to deal with the eradicator
+	id = giga_blokkat_wave_2.2001
+	title = "giga_blokkat_wave_2.2001.name"
+	desc = "giga_blokkat_wave_2.2001.desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_evt_intelligence_report
 	immediate = {
 		event_target:main_eradicator_system = {
 			spawn_psionic_aura = {
-				owner = event_target:blokkat_country
+				owner = event_target:blokkat2_country
 				type = eradicator_aura
 			}
 		}
@@ -1315,7 +2610,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1333,7 +2628,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1351,7 +2646,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1369,7 +2664,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1387,7 +2682,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1405,7 +2700,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1423,7 +2718,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1441,7 +2736,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1459,7 +2754,7 @@ country_event = { #oh shit the eradicator is here
 				is_discovered = yes
 				effect = {
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1479,7 +2774,7 @@ country_event = { #oh shit the eradicator is here
 					is_discovered = yes
 					effect = {
 						spawn_psionic_aura = {
-							owner = event_target:blokkat_country
+							owner = event_target:blokkat2_country
 							type = eradicator_aura
 						}
 						save_global_event_target_as = blokkat_beamfight_system_dist_0
@@ -1492,7 +2787,7 @@ country_event = { #oh shit the eradicator is here
 				event_target:giga_core_system = {
 					save_global_event_target_as = blokkat_beamfight_system_dist_0
 					spawn_psionic_aura = {
-						owner = event_target:blokkat_country
+						owner = event_target:blokkat2_country
 						type = eradicator_aura
 					}
 					add_hyperlane = { from = this to = event_target:last_blokkat_spawned_system }
@@ -1502,21 +2797,10 @@ country_event = { #oh shit the eradicator is here
 		}
 	}
 
-	option = { #Well fuck
-		name = "giga_blokkat_wave_2.2000.a"
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.2001 days = 30 }
-		}
-	}
-}
-country_event = { #its beginning to fire, how do we plan to deal with the eradicator
-	id = giga_blokkat_wave_2.2001
-	title = "giga_blokkat_wave_2.2001.name"
-	desc = "giga_blokkat_wave_2.2001.desc"
-	is_triggered_only = yes
-	fire_only_once = yes
-	picture = GFX_evt_intelligence_report
-	immediate = {
+
+	option = { #Beamfight it
+		name = "giga_blokkat_wave_2.2001.a"
+		custom_tooltip = giga_blokkat_wave_2.2001.a_tt
 		start_situation = {
 			type = situation_blokkat_beamfight
 			target = this
@@ -1524,28 +2808,7 @@ country_event = { #its beginning to fire, how do we plan to deal with the eradic
 				save_global_event_target_as = giga_beamfight_situation
 			}
 		}
-		if = {
-			limit = {
-				any_megastructure = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 } }
-			}
-			random_megastructure = {
-				limit = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 } }
-				owner = { save_global_event_target_as = qso_country }
-			}
-		}
-		else = {
-			random_country = {
-				limit = { is_ai = no }
-				save_global_event_target_as = qso_country
-			}
-		}
-	}
-
-
-	option = { #Beamfight it
-		name = "giga_blokkat_wave_2.2001.a"
-		custom_tooltip = giga_blokkat_wave_2.2001.a_tt
-		set_global_flag = is_beamfighting_eradicator
+		save_global_event_target_as = qso_country
 	}
 	option = { #Shoot it directly
 		name = "giga_blokkat_wave_2.2001.b"
@@ -1742,19 +3005,19 @@ country_event = {
 		}
 	}
 
-	option = { # Request USTF support
-		name = giga_GIF_enclaves.100.e
-		custom_tooltip = giga_GIF_enclaves.100.e_tt
-		allow = {
-			custom_tooltip = { fail_text = giga_gif_must_be_ally_tt has_country_flag = giga_is_gif_ally }
-		}
+	option = { # d'you think we're ready for the blokkats 2.0?
+		name = giga_GIF_enclaves.100.f
+		#custom_tooltip = giga_GIF_enclaves.100.f_tt
+		# allow = {
+		# 	custom_tooltip = { fail_text = giga_gif_must_be_ally_tt has_country_flag = giga_is_gif_ally }
+		# }
 		hidden_effect = {
-			#country_event = { id = leviathans.130 }
+			country_event = { id = giga_GIF_enclaves.200 }
 		}
 	}
 
 	option = {
-		name = giga_GIF_enclaves.100.f
+		name = giga_GIF_enclaves.100.exit
 		default_hide_option = yes
 	}
 }
@@ -1764,6 +3027,11 @@ country_event = { #hi yes we are part of the gif now
 	desc = "giga_GIF_enclaves.101.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_fleet_neutral
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
 
 	option = {
 		name = "giga_GIF_enclaves.101.a"
@@ -1785,6 +3053,11 @@ country_event = { #friends? friends! fren
 	desc = "giga_GIF_enclaves.102.desc"
 	is_triggered_only = yes
 	picture = GFX_evt_fleet_neutral
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
 
 	option = {
 		name = "giga_GIF_enclaves.102.a"
@@ -1797,4 +3070,132 @@ country_event = { #friends? friends! fren
 		name = giga_GIF_enclaves.102.b
 		default_hide_option = yes
 	}
+}
+country_event = { #GIF tells you if you can survive, and offers you pointers to make better ships
+	id = giga_GIF_enclaves.200
+	title = "giga_GIF_enclaves.200.name"
+	desc = {
+		text = "giga_GIF_enclaves.200.no"
+		trigger = { #MIDIRAY_CHANGE_THIS fix all the triggers here
+			always = yes
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.200.qso"
+		trigger = {
+			always = no
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.200.flagship"
+		trigger = {
+			always = no
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.200.bulwark"
+		trigger = {
+			always = no
+		}
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #can you help us make better ships?
+		name = "giga_GIF_enclaves.200.a"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.201 } }
+	}
+}
+country_event = { #we wont give them to you, but here's some pointers
+	id = giga_GIF_enclaves.201
+	title = "giga_GIF_enclaves.201.name"
+	desc = "giga_GIF_enclaves.201.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #aw ok thats fine
+		name = "giga_GIF_enclaves.201.a"
+		country_event = { id = giga_GIF_enclaves.202 }
+	}
+}
+country_event = { #well? which ones do we go for
+	id = giga_GIF_enclaves.202
+	title = "giga_GIF_enclaves.202.name"
+	desc = "giga_GIF_enclaves.202.desc"
+	picture = GFX_evt_clocks
+	is_triggered_only = yes
+
+	option = { #copy singularitycraft
+		name = "giga_GIF_enclaves.202.singularityfleet"
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_GIF_enclaves.202.singularitycraft"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_cosmogenesis
+				has_tradition = tr_cybernetics_finish
+				has_tradition = tr_cybernetics_assimilator_finish
+			}
+		}
+	}
+	option = { #the quasarcraft
+		name = "giga_GIF_enclaves.202.quasarcraft"
+		trigger = { has_global_flag = quasarmod_enabled }
+	}
+	option = { #menacing celestials
+		name = "giga_GIF_enclaves.202.menace"
+		trigger = { has_ascension_perk = ap_become_the_crisis }
+	}
+	option = { #galactic psionic avatar
+		name = "giga_GIF_enclaves.202.psionics"
+		trigger = {
+			OR = {
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+			}
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_GIF_enclaves.202.eotc"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_become_the_crisis
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+			}
+		}
+	}
+	option = { #virus swarm
+		name = "giga_GIF_enclaves.202.biogenesis"
+		trigger = {
+			OR = {
+				has_tradition = tr_genetics_finish
+				has_tradition = tr_cloning_finish
+				has_tradition = tr_mutation_finish
+				has_tradition = tr_purity_finish
+			}
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_GIF_enclaves.202.dotg"
+		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_GIF_enclaves.202.hack"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_cosmogenesis
+				has_tradition = tr_cybernetics_finish
+				has_tradition = tr_cybernetics_assimilator_finish
+			}
+		}
+ 	}
 }

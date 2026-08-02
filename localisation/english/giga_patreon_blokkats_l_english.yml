@@ -54,3 +54,8 @@
     trait_blokkat_megastructure_obsession_desc:0 "This Blokkat shows a great interest in any and all forms of artificial megastructures, from those shown in primitive science fiction entertainment to impossibly complicated plans for structures dwarfing entire galaxies."
 
     prison_blokkat_is_tempestkat:0 "§MMegastructure Obsession§! - $trait_blokkat_megastructure_obsession_desc$"
+
+    trait_blokkat_eradicator_prime:0 "Eradicator Prime"
+    trait_blokkat_eradicator_prime_desc:0 "This Blokkat appears to have an unhealthy fascination with most superweapons, from the Blokkats' own Eradicator to Quasi-Stellar Obliterators. As such, it can often be seen piloting the Blokk-Eradicators sent to demolish particularly tough galaxies.\n\nOddly, it seems to hate the Nicoll-Dyson Beam schematics. Nobody quite knows why."
+
+    prison_blokkat_is_midikat:0 "§VEradicator Prime§! - $trait_blokkat_eradicator_prime_desc$"
