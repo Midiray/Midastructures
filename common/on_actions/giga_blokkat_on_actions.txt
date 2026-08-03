@@ -63,6 +63,7 @@ on_colony_defenders_win = {						events = { giga_blokkat.3207 } }	# Blokkat Lose
 on_destroy_planet_with_PLANET_KILLER_BLOKKAT_GENERATOR = { events = { giga_blokkat.3222 } }	# Blokkat Colossus
 
 on_yearly_pulse = { 									   events = { giga_blokkat.1500 } } # Blokkat Spawning
+on_yearly_pulse = { 									   events = { giga_blokkat_wave_2.1990 } } # Blokkat Wave 2 Spawning
 
 on_tech_increased = {							events = { giga_blokkat.3324 } }	# Blokkat History
 on_tech_increased = {							events = { giga_blokkat.3327 } }	# Blokkat Time Travel

@@ -8,130 +8,130 @@
 
 namespace = giga_blokkat_wave_2
 
-country_event = { #hi gif. jif?
-	id = giga_blokkat_wave_2.999
-	title = "giga_blokkat_wave_2.999.name"
-	desc = "giga_blokkat_wave_2.999.desc"
+country_event = { #project salvation
+	id = giga_blokkat_wave_2.100
+	title = "giga_blokkat_wave_2.100.name"
+	desc = "giga_blokkat_wave_2.100.desc"
+	picture = GFX_evt_clocks
 	is_triggered_only = yes
-	picture = GFX_evt_fleet_neutral
 
-	option = {
-		name = "giga_blokkat_wave_2.999.a"
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.1000 }
-			create_species = {
-				name = NAME_Lyuinite
-				plural = NAME_Lyuinite_plural
-				portrait = random
-				class = random_non_machine
-				effect = { save_global_event_target_as = lyuinite_species }
+	option = { #copy singularitycraft
+		name = "giga_blokkat_wave_2.100.singularityfleet"
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.100.singularitycraft"
+	}
+	option = { #the quasarcraft
+		name = "giga_blokkat_wave_2.100.quasarcraft"
+		trigger = { has_global_flag = quasarmod_enabled }
+	}
+	option = { #menacing celestials
+		name = "giga_blokkat_wave_2.100.menace"
+		trigger = { has_ascension_perk = ap_become_the_crisis }
+	}
+	option = { #galactic psionic avatar
+		name = "giga_blokkat_wave_2.100.psionics"
+		trigger = {
+			OR = {
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
 			}
-			no_scope = {
-				# makes system positions originate from galactic core, spawn location is set as far away as L cluster so should never overlap galaxy
-				spawn_system = {
-					min_distance >= 550
-					max_distance <= 550
-					min_orientation_angle = 315
-					max_orientation_angle = 315
-					initializer = GIF_enclave_init
-					hyperlane = no
-					effect = {
-						save_global_event_target_as = GIF_enclave_system
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_blokkat_wave_2.100.eotc"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_become_the_crisis
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+			}
+		}
+	}
+	option = { #virus swarm
+		name = "giga_blokkat_wave_2.100.biogenesis"
+		trigger = {
+			OR = {
+				has_tradition = tr_genetics_finish
+				has_tradition = tr_cloning_finish
+				has_tradition = tr_mutation_finish
+				has_tradition = tr_purity_finish
+			}
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_blokkat_wave_2.100.dotg"
+		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_blokkat_wave_2.100.hack"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_cosmogenesis
+				has_tradition = tr_cybernetics_finish
+				has_tradition = tr_cybernetics_assimilator_finish
+			}
+		}
+	}
+}
+event = { #initial spawn event
+	id = giga_blokkat_wave_2.1990
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		NOR = {
+			has_global_flag = blokkat_wave_2_failed_spawn
+			has_global_flag = blokkat_wave_2_triggered
+		}
+		is_ai = no
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = giga_blokkats_both_wave
+				NOT = { has_global_flag = blokkat_wave2_timer }
+			}
+			random_list = {
+				40 = {
+					country_event = { id = giga_GIF_enclaves.10 days = 60 random = 300 }
+					country_event = { id = giga_blokkat_wave_2.1992 days = 7200 random = 3600 }
+					set_global_flag = blokkat_wave_2_triggered
+				}
+				60 = {
+					set_global_flag = blokkat_wave_2_failed_spawn
+					modifier = {
+						factor = 0
+						has_global_flag = giga_blokkat2_guaranteed
 					}
 				}
 			}
-			start_situation = {
-				type = situation_gif_integration
-				target = this
-				effect = {
-					save_global_event_target_as = giga_gif_enclave_situation
+		}
+		else_if = {
+			limit = {
+				event_target:global_event_country = {
+					check_variable = {
+						which = blokkat_wave2_spawn_date
+						value <= giga_blokkat_current_year
+					}
+				}
+				has_global_flag = giga_blokkats_only_wave2
+			}
+			random_list = {
+				40 = {
+					country_event = { id = giga_GIF_enclaves.10 days = 60 random = 300 }
+					country_event = { id = giga_blokkat_wave_2.1992 days = 7200 random = 3600 }
+					set_global_flag = blokkat_wave_2_triggered
+				}
+				60 = {
+					set_global_flag = blokkat_wave_2_failed_spawn
+					modifier = {
+						factor = 0
+						has_global_flag = giga_blokkat2_guaranteed
+					}
 				}
 			}
-			set_variable = { which = giga_gif_integration_progress_var value = 0 }
 		}
-	}
-}
-#gif tells you the blokkats arent done
-country_event = {
-	id = giga_blokkat_wave_2.1000
-	title = "giga_blokkat_wave_2.1000.name"
-	desc = "giga_blokkat_wave_2.1000.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:lyuinite_species
-		room = lyuinite_room
-	}
-
-	option = { #Become their ally
-		name = "giga_blokkat_wave_2.1000.a"
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.1001 }
-			change_variable = { which = giga_gif_integration_progress_var value = 50 }
-		}
-	}
-
-	option = { #Noncommittal hum
-		name = "giga_blokkat_wave_2.1000.b"
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.1002 }
-		}
-	}
-
-	option = { #I don't like you
-		name = "giga_blokkat_wave_2.1000.c"
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.1003 }
-		}
-	}
-}
-country_event = {
-	id = giga_blokkat_wave_2.1001
-	title = "giga_blokkat_wave_2.1001.name"
-	desc = "giga_blokkat_wave_2.1001.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:lyuinite_species
-		room = lyuinite_room
-	}
-
-	option = { #Uh oh
-		name = "giga_blokkat_wave_2.1001.a"
-	}
-}
-country_event = {
-	id = giga_blokkat_wave_2.1002
-	title = "giga_blokkat_wave_2.1002.name"
-	desc = "giga_blokkat_wave_2.1002.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:lyuinite_species
-		room = lyuinite_room
-	}
-
-	option = { #Uh oh
-		name = "giga_blokkat_wave_2.1002.a"
-	}
-}
-country_event = {
-	id = giga_blokkat_wave_2.1003
-	title = "giga_blokkat_wave_2.1003.name"
-	desc = "giga_blokkat_wave_2.1003.desc"
-	is_triggered_only = yes
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:lyuinite_species
-		room = lyuinite_room
-	}
-
-	option = { #Uh oh
-		name = "giga_blokkat_wave_2.1003.a"
 	}
 }
 country_event = { #Wave 2 setup, fired both from the above chain and normal Wave 2 spawning
@@ -1170,13 +1170,7 @@ situation_event = { #Monthly event for beamfight situation that increases how mu
 country_event = { #blokkat research bureau, but like, new and stuff
 	id = giga_blokkat_wave_2.1995
 	title = "giga_blokkat_wave_2.1995.name"
-
-	desc = {
-		text = "giga_blokkat_wave_2.1995.desc.a"
-		trigger = {
-			always = yes
-		}
-	}
+	desc = "giga_blokkat_wave_2.1995.desc"
 
 	is_triggered_only = yes
 
@@ -1629,9 +1623,23 @@ country_event = { #blokkat research bureau, but like, new and stuff
 		trigger = { has_global_flag = is_beamfighting_eradicator }
 		hidden_effect = {
 			event_target:global_event_country = {
-				add_variable = {
-					which = giga_blokkat_wave_2_beamfight_energy_input
-					value = 10000
+				if = {
+					limit = {
+						check_variable = {
+							which = giga_blokkat_wave_2_beamfight_energy_input
+							value = 1
+						}
+					}
+					set_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 10000
+					}
+				}
+				else = {
+					add_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 10000
+					}
 				}
 			}
 			giga_blokkat_beamfight_situation_prerun_calc = yes
@@ -1647,9 +1655,23 @@ country_event = { #blokkat research bureau, but like, new and stuff
 		trigger = { has_global_flag = is_beamfighting_eradicator }
 		hidden_effect = {
 			event_target:global_event_country = {
-				add_variable = {
-					which = giga_blokkat_wave_2_beamfight_energy_input
-					value = 1000
+				if = {
+					limit = {
+						check_variable = {
+							which = giga_blokkat_wave_2_beamfight_energy_input
+							value = 1
+						}
+					}
+					set_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 1000
+					}
+				}
+				else = {
+					add_variable = {
+						which = giga_blokkat_wave_2_beamfight_energy_input
+						value = 1000
+					}
 				}
 			}
 			giga_blokkat_beamfight_situation_prerun_calc = yes
@@ -2927,6 +2949,78 @@ situation_event = { #monthly event to manage the integration "situation" (progre
 		event_target:giga_gif_enclave_situation = { set_situation_progress = root.owner.giga_gif_integration_progress_var }
 	}
 }
+country_event = { #hi gif. jif?
+	id = giga_GIF_enclaves.10
+	title = "giga_GIF_enclaves.10.name"
+	desc = "giga_GIF_enclaves.10.desc"
+	is_triggered_only = yes
+	picture = GFX_evt_fleet_neutral
+
+	option = {
+		name = "giga_GIF_enclaves.10.a"
+		hidden_effect = {
+			country_event = { id = giga_GIF_enclaves.11 }
+			create_species = {
+				name = NAME_Lyuinite
+				plural = NAME_Lyuinite_plural
+				portrait = random
+				class = random_non_machine
+				effect = { save_global_event_target_as = lyuinite_species }
+			}
+			no_scope = {
+				# makes system positions originate from galactic core, spawn location is set as far away as L cluster so should never overlap galaxy
+				spawn_system = {
+					min_distance >= 550
+					max_distance <= 550
+					min_orientation_angle = 315
+					max_orientation_angle = 315
+					initializer = GIF_enclave_init
+					hyperlane = no
+					effect = {
+						save_global_event_target_as = GIF_enclave_system
+					}
+				}
+			}
+		}
+	}
+}
+#gif tells you the blokkats arent done
+country_event = {
+	id = giga_GIF_enclaves.11
+	title = "giga_GIF_enclaves.11.name"
+	desc = "giga_GIF_enclaves.11.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+	immediate = {
+		start_situation = {
+			type = situation_gif_integration
+			target = this
+			effect = {
+				save_global_event_target_as = giga_gif_enclave_situation
+			}
+		}
+		set_variable = { which = giga_gif_integration_progress_var value = 0 }
+	}
+
+	option = { #start project salvation
+		name = "giga_GIF_enclaves.11.a"
+		hidden_effect = {
+			country_event = { id = giga_blokkat_wave_2.100 }
+		}
+	}
+
+	option = { #above but different text
+		name = "giga_GIF_enclaves.11.b"
+		hidden_effect = {
+			country_event = { id = giga_blokkat_wave_2.100 }
+		}
+	}
+}
 country_event = {
 	id = giga_GIF_enclaves.100
 	title = giga_GIF_enclaves.100.name
@@ -3125,77 +3219,4 @@ country_event = { #we wont give them to you, but here's some pointers
 		name = "giga_GIF_enclaves.201.a"
 		country_event = { id = giga_GIF_enclaves.202 }
 	}
-}
-country_event = { #well? which ones do we go for
-	id = giga_GIF_enclaves.202
-	title = "giga_GIF_enclaves.202.name"
-	desc = "giga_GIF_enclaves.202.desc"
-	picture = GFX_evt_clocks
-	is_triggered_only = yes
-
-	option = { #copy singularitycraft
-		name = "giga_GIF_enclaves.202.singularityfleet"
-	}
-	option = { #one singularitycraft to rule them all
-		name = "giga_GIF_enclaves.202.singularitycraft"
-		trigger = {
-			OR = {
-				has_ascension_perk = ap_cosmogenesis
-				has_tradition = tr_cybernetics_finish
-				has_tradition = tr_cybernetics_assimilator_finish
-			}
-		}
-	}
-	option = { #the quasarcraft
-		name = "giga_GIF_enclaves.202.quasarcraft"
-		trigger = { has_global_flag = quasarmod_enabled }
-	}
-	option = { #menacing celestials
-		name = "giga_GIF_enclaves.202.menace"
-		trigger = { has_ascension_perk = ap_become_the_crisis }
-	}
-	option = { #galactic psionic avatar
-		name = "giga_GIF_enclaves.202.psionics"
-		trigger = {
-			OR = {
-				has_tradition = tr_psionics_finish
-				has_tradition = tr_psionics_shroud_finish
-			}
-		}
-	}
-	option = { #harness the EOTC
-		name = "giga_GIF_enclaves.202.eotc"
-		trigger = {
-			OR = {
-				has_ascension_perk = ap_become_the_crisis
-				has_tradition = tr_psionics_finish
-				has_tradition = tr_psionics_shroud_finish
-			}
-		}
-	}
-	option = { #virus swarm
-		name = "giga_GIF_enclaves.202.biogenesis"
-		trigger = {
-			OR = {
-				has_tradition = tr_genetics_finish
-				has_tradition = tr_cloning_finish
-				has_tradition = tr_mutation_finish
-				has_tradition = tr_purity_finish
-			}
-		}
-	}
-	option = { #super paladin ship
-		name = "giga_GIF_enclaves.202.dotg"
-		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
-	}
-	option = { #hack the eradicator when it gets here and use that
-		name = "giga_GIF_enclaves.202.hack"
-		trigger = {
-			OR = {
-				has_ascension_perk = ap_cosmogenesis
-				has_tradition = tr_cybernetics_finish
-				has_tradition = tr_cybernetics_assimilator_finish
-			}
-		}
- 	}
 }

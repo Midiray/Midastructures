@@ -3744,6 +3744,41 @@ country_event = {
 		save_global_event_target_as = blokkat_vanquisher
 		remove_global_flag = blokkat_crisis_ongoing
 		set_global_flag = blokkat_crisis_defeated
+		if = {
+			limit = {
+				has_global_flag = giga_blokkats_both_wave
+				event_target:global_event_country = {
+					check_variable = {
+						which = blokkat_wave2_spawn_delay
+						value < 35
+					}
+				}
+			}
+			set_timed_global_flag = {
+				flag = blokkat_wave2_timer
+				years = event_target:global_event_country.blokkat_wave2_spawn_delay
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = giga_blokkats_both_wave
+				event_target:global_event_country = {
+					check_variable = {
+						which = blokkat_wave2_spawn_delay
+						value = 40
+					}
+				}
+			}
+			event_target:global_event_country = {
+				set_variable_to_random_value = {
+					which = blokkat_wave2_spawn_delay min = 1 max = 39 rounded = yes
+				}
+			}
+			set_timed_global_flag = {
+				flag = blokkat_wave2_timer
+				years = event_target:global_event_country.blokkat_wave2_spawn_delay
+			}
+		}
 		event_target:blokkat_country = {
 			every_owned_fleet = { destroy_fleet = THIS }
 			every_owned_megastructure = { remove_megastructure = THIS }
