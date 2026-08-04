@@ -175,7 +175,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 300
+					value = 250 #Spawns with nothing but the default fleets (12 scout, 4 vanguard and 1 sterilizer)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -203,7 +203,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 670
+					value = 1250 #Spawns with a couple extra (14 scout, 5 vanguard and 1 sterilizer)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -231,7 +231,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 1000
+					value = 2500 #Spawns with a decent amount (17 scout, 6 vanguard and 1 sterilizer)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -259,7 +259,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 1500
+					value = 5000 #Starts with multiple sterilizers (20 scout, 8 vanguard and 2 sterilizer)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -287,7 +287,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 3000
+					value = 15000 #Scary (20 scout, 16 vanguard, 4 sterilizer and 1 obliterator)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -315,7 +315,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 				set_variable = {
 					which = blokkat_wave_2_rage
-					value = 6000
+					value = 40000 #Kicks your teeth in (20 scout, 30 vanguard, 9 sterilizer, 4 obliterator and 3 eradicator)
 				}
 				set_variable = {
 					which = blokkat_eradicator_life_count
@@ -334,6 +334,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 			set_variable = {
 				which = giga_blokkat_wave_2_beamfight_energy_input
 				value = 1
+			}
+			set_variable = {
+				which = blokkat2_current_wave
+				value = 2
 			}
 		}
 		#Make the species
@@ -630,7 +634,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				}
 			}
 		}
-		country_event = { id = giga_blokkat_wave_2.1993 }
+		event_target:global_event_country = { country_event = { id = giga_blokkat_wave_2.1993 } }
 		country_event = { id = giga_blokkat_wave_2.2000 days = 1 }
 	}
 }
@@ -640,57 +644,215 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 	is_triggered_only = yes
 
 	immediate = {
-		if = { #Eradicators
-			limit = { has_global_flag = multiple_eradicator_time}
+		set_variable = { #Eradicator for you and me and everyone
+			which = blokkat_wave_2_eradicator_count
+			value = blokkat_wave_2_rage
+		}
+		divide_variable = {
+			which = blokkat_wave_2_eradicator_count
+			value = 20000
+		}
+		set_variable = { #Very strong military fleets
+			which = blokkat_wave_2_strong_military_fleet_count
+			value = blokkat_wave_2_rage
+		}
+		divide_variable = {
+			which = blokkat_wave_2_strong_military_fleet_count
+			value = 10000
+		}
+		set_variable = { #Strong military fleets
+			which = blokkat_wave_2_military_fleet_count
+			value = blokkat_wave_2_rage
+		}
+		divide_variable = {
+			which = blokkat_wave_2_military_fleet_count
+			value = 5000
+		}
+		set_variable = { #Weak military fleets
+			which = blokkat_wave_2_weak_military_fleet_count
+			value = blokkat_wave_2_rage
+		}
+		divide_variable = {
+			which = blokkat_wave_2_weak_military_fleet_count
+			value = 1250
+		}
+		set_variable = { #Scout fleets
+			which = blokkat_wave_2_scout_fleet_count
+			value = blokkat_wave_2_rage
+		}
+		divide_variable = {
+			which = blokkat_wave_2_scout_fleet_count
+			value = 500
+		}
+		add_variable = {
+			which = blokkat_wave_2_scout_fleet_count
+			value = 12
+		}
+		add_variable = {
+			which = blokkat_wave_2_weak_military_fleet_count
+			value = 4
+		}
+		add_variable = {
+			which = blokkat_wave_2_military_fleet_count
+			value = 1
+		}
+		floor_variable = blokkat_wave_2_scout_fleet_count
+		floor_variable = blokkat_wave_2_weak_military_fleet_count
+		floor_variable = blokkat_wave_2_military_fleet_count
+		floor_variable = blokkat_wave_2_strong_military_fleet_count
+		floor_variable = blokkat_wave_2_eradicator_count
+		#Now we have the thresholds to limit lag
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_scout_fleet_count
+					value > 20
+				}
+			}
+			set_variable = {
+				which = blokkat_wave_2_scout_fleet_count
+				value = 20
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_weak_military_fleet_count
+					value > 30
+				}
+			}
+			set_variable = {
+				which = blokkat_wave_2_weak_military_fleet_count
+				value = 30
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_military_fleet_count
+					value > 50
+				}
+			}
+			set_variable = {
+				which = blokkat_wave_2_military_fleet_count
+				value = 50
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_strong_military_fleet_count
+					value > 100
+				}
+			}
+			set_variable = {
+				which = blokkat_wave_2_strong_military_fleet_count
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_eradicator_count
+					value > 300
+				}
+			}
 			set_variable = {
 				which = blokkat_wave_2_eradicator_count
-				value = blokkat_wave_2_rage
+				value = 300
 			}
-			divide_variable = {
-				which = blokkat_wave_2_eradicator_count
-				value = 1000
-			}
-			floor_variable = blokkat_wave_2_eradicator_count
 		}
-		else = {
+		#Now we have the section to increase fleet type at certain galactic threat levels
+		if = { #Create scout fleets if less than 50k threat
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value < 50000
+				}
+			}
+			while = {
+				count = blokkat_wave_2_scout_fleet_count
+				giga_create_scout_fleet_wave_2_effect = yes
+			}
+		}
+		else = { #If over 50k threat, change the scout fleets into weak military fleets
+			add_variable = {
+				which = blokkat_wave_2_weak_military_fleet_count
+				value = blokkat_wave_2_scout_fleet_count
+			}
 			set_variable = {
-				which = blokkat_wave_2_eradicator_count
-				value = 1
+				which = blokkat_wave_2_scout_fleet_count
+				value = 0
 			}
 		}
-		set_variable = { #Obliterators
-			which = blokkat_wave_2_obliterator_count
-			value = blokkat_wave_2_rage
+		if = { #Create weak military fleets if less than 100k
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value < 50000
+				}
+			}
+			while = {
+				count = blokkat_wave_2_weak_military_fleet_count
+				giga_create_weak_fleet_wave_2_effect = yes
+			}
 		}
-		divide_variable = {
-			which = blokkat_wave_2_obliterator_count
-			value = 1000
+		else = { #If over 100k threat, change the weak military and scout fleets to regular strength military fleets
+			add_variable = {
+				which = blokkat_wave_2_military_fleet_count
+				value = blokkat_wave_2_weak_military_fleet_count
+			}
+			set_variable = {
+				which = blokkat_wave_2_weak_military_fleet_count
+				value = 0
+			}
 		}
-		set_variable = { #Terminators
-			which = blokkat_wave_2_terminator_count
-			value = blokkat_wave_2_rage
+		if = { #Create regular military fleets if less than 200k
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value < 200000
+				}
+			}
+			while = {
+				count = blokkat_wave_2_military_fleet_count
+				giga_create_strong_fleet_wave_2_effect = yes
+			}
 		}
-		divide_variable = {
-			which = blokkat_wave_2_terminator_count
-			value = 1000
+		else = { #If over 200k threat, change all fleets to super strength obliterator fleets
+			add_variable = {
+				which = blokkat_wave_2_strong_military_fleet_count
+				value = blokkat_wave_2_military_fleet_count
+			}
+			set_variable = {
+				which = blokkat_wave_2_military_fleet_count
+				value = 0
+			}
 		}
-		set_variable = { #Custodians
-			which = blokkat_wave_2_custodian_count
-			value = blokkat_wave_2_rage
+		if = { #Create superstrength fleets if under 1 million
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value < 1000000
+				}
+			}
+			while = {
+				count = blokkat_wave_2_strong_military_fleet_count
+				giga_create_very_strong_fleet_wave_2_effect = yes
+			}
 		}
-		divide_variable = {
-			which = blokkat_wave_2_custodian_count
-			value = 1000
+		else = { #If over 1M threat, have 500 fucking eradicators I hope you're happy (highly doubt this will ever be triggered)
+			add_variable = {
+				which = blokkat_wave_2_eradicator_count
+				value = blokkat_wave_2_strong_military_fleet_count
+			}
+			set_variable = {
+				which = blokkat_wave_2_strong_military_fleet_count
+				value = 0
+			}
 		}
-		set_variable = { #Evictors
-			which = blokkat_wave_2_evictor_count
-			value = blokkat_wave_2_rage
-		}
-		divide_variable = {
-			which = blokkat_wave_2_evictor_count
-			value = 1000
-		}
-		#MIDIRAY_CHANGE_THIS, numbers of above list are very much unfinished
+		#Once threat gets to 6M it stops scaling and hits the max of 500 eradicators, so no more if statements need doing.. Game's limits are already being tested here.
+		giga_create_lead_eradicator_wave_2_effect = yes
 		while = {
 			count = blokkat_wave_2_eradicator_count
 			giga_create_eradicator_wave_2_effect = yes

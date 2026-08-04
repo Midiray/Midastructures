@@ -26,21 +26,698 @@ remove_flags_blokkat2_difficulty = {
 		remove_global_flag = giga_blokkat2_deathmode
 	}
 }
-giga_create_eradicator_wave_2_effect = {
+giga_create_lead_eradicator_wave_2_effect = {
 	create_fleet = {
-		name = "NAME_Blokk_Eradicator"
+		name = "Blokk-Eradicator"
 		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
 		effect = {
 			set_owner = event_target:blokkat2_country
 			while = {
 				count = 1
 				create_ship = {
-					name = "NAME_Blokk_Eradicator"
+					name = "Blokk-Eradicator"
 					design = "Blokk-Eradicator"
+					prefix = no
 				}
 			}
-			set_fleet_flag = giga_blokk_eradicator
+			set_fleet_flag = blokkat_beamfighter_eradicator
 			set_location = event_target:main_eradicator_system
+		}
+	}
+}
+giga_create_eradicator_wave_2_effect = {
+	create_fleet = {
+		name = "Blokk-Eradicator"
+		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
+		effect = {
+			set_owner = event_target:blokkat2_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Blokk-Eradicator"
+					design = "Blokk-Eradicator"
+					prefix = no
+				}
+			}
+			set_fleet_flag = blokkat_roaming_eradicator
+			set_location = event_target:main_eradicator_system
+		}
+	}
+}
+giga_create_very_strong_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 20
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 8
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 12
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 3
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 17
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 19
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_strong_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 9
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 5
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_weak_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 2
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 5
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_scout_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 11
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 2
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 8
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
 		}
 	}
 }
