@@ -38,6 +38,7 @@
     giga_gif_must_be_member_tt:0 "Must have officially entered the GIF as a member."
     giga_gif_must_be_ally_tt:0 "Must have signed Military Cooperation Agreements with the GIF."
     giga_blokkat_eradicator:0 "Blokk-Eradicator"
+    giga_blokkat_eradicator_plural:0 "Blokk-Eradicators"
     giga_blokkat_eradicator_cap:0 "Blokk-Eradicator"
     NAME_scout_blokkat2_fleet:0 "Blokk-Skout"
     NAME_weak_blokkat2_fleet:0 "Blokk-Vanguard"
@@ -111,7 +112,8 @@
     giga_blokkat_flavoring.5.name:0 "Blokk-Emergency"
     giga_blokkat_flavoring.5.desc:0 "§R<<MULTIPLE MILITARY DETACHMENTS LOST>>\n\n<<THREAT STATUS: CRITICAL>>\n\n<<SEVERAL ERADICATOR FLEETS DISPATCHED>>\n\n<<ALL NEARBY MILITARY DETACHMENTS REDIRECTED>>\n\n<<GALAXY STERILIZATION GIVEN PRIORITY BLOKKWORK ACCESS>>\n\n<<HARVESTING FIELD DIVERGING>>§!"
     giga_blokkat_flavoring.5.a:0 "The storm worsens..."
-    giga_blokkat_flavoring.10.name:0 "" #MIDIRAY_CHANGE_THIS
+    #MIDIRAY_CHANGE_THIS
+    giga_blokkat_flavoring.10.name:0 ""
     giga_blokkat_flavoring.10.desc:0 "§R<<EXTENSIVE MILITARY ASSETS LOST>>\n\n<<SEVERAL ERADICATOR FLEETS DISPATCHED>>\n\n<<ALL NEARBY MILITARY DETACHMENTS REDIRECTED>>\n\n<<GALAXY STERILIZATION GIVEN PRIORITY BLOKKWORK ACCESS>>\n\n<<HARVESTING FIELD DIVERGING>>§!"
     giga_blokkat_flavoring.10.a:0 "The storm worsens..."
 
@@ -214,3 +216,6 @@
     giga_blokkat_wave_2.100.biogenesis:0 "Let us design a navy that is truly biologically perfected."
     giga_blokkat_wave_2.100.dotg:0 "We need only design a Paladin strong enough to face down this new threat."
     giga_blokkat_wave_2.100.hack:0 "Why build our own, when we can hack theirs?"
+
+    GIGA_BLOKKAT_TARGETED_TITLE:0 "Blokkat Fleet Incoming"
+    GIGA_BLOKKAT_TARGETED_DESC:0 "A §RBlokkat Fleet§! is heading towards §Y$SYSTEM$§!."

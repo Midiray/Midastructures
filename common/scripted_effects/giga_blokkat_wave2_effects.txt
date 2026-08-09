@@ -60,6 +60,7 @@ giga_create_eradicator_wave_2_effect = {
 				}
 			}
 			set_fleet_flag = blokkat_roaming_eradicator
+			set_fleet_flag = giga_blokkat2_planet_killer_fleet
 			set_location = event_target:main_eradicator_system
 		}
 	}
@@ -98,7 +99,8 @@ giga_create_very_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -145,7 +147,8 @@ giga_create_very_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -192,7 +195,8 @@ giga_create_very_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -231,7 +235,8 @@ giga_create_very_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -272,7 +277,8 @@ giga_create_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -319,7 +325,8 @@ giga_create_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -358,7 +365,8 @@ giga_create_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -397,7 +405,8 @@ giga_create_strong_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -446,7 +455,8 @@ giga_create_weak_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -485,7 +495,8 @@ giga_create_weak_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -532,7 +543,8 @@ giga_create_weak_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -557,7 +569,7 @@ giga_create_weak_fleet_wave_2_effect = {
 					count = 1
 					create_ship = {
 						name = "Blokk-Terminator"
-						design = "Blokk-Custodian"
+						design = "Blokk-Terminator"
 						prefix = no
 					}
 				}
@@ -579,7 +591,8 @@ giga_create_weak_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -620,7 +633,8 @@ giga_create_scout_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_scout_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -675,7 +689,8 @@ giga_create_scout_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_scout_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}
@@ -714,7 +729,7 @@ giga_create_scout_fleet_wave_2_effect = {
 				}
 				set_location = event_target:main_eradicator_system
 				set_formation_scale = 3
-				set_fleet_flag = blokkat_scout_fleet
+				set_fleet_flag = blokkat2_scout_fleet
 				set_fleet_flag = blokkat_fleet
 				assign_leader = event_target:new_blokkat_admiral
 			}

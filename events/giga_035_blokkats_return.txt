@@ -598,6 +598,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					days = -1
 				}
 				save_global_event_target_as = blokkat2_country
+				set_country_flag = blokkat2_country
 			}
 		}
 
@@ -3005,6 +3006,249 @@ country_event = { #its beginning to fire, how do we plan to deal with the eradic
 	option = { #RUN THE FUCK AWAY FROM THIS GALAXY
 		name = "giga_blokkat_wave_2.2001.d"
 		custom_tooltip = giga_blokkat_wave_2.2001.d_tt
+	}
+}
+country_event = {
+	id = giga_blokkat_wave_2.2997
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		is_country = event_target:blokkat2_country
+	}
+
+	immediate = {
+		event_target:blokkat2_country = {
+			every_owned_fleet = {
+				limit = {
+					NOR = {
+						has_fleet_flag = giga_blokkat2_movement_in_progress
+						has_fleet_flag = blokkat_beamfighter_eradicator
+					}
+				}
+				fleet_event = { id = giga_blokkat_wave_2.2998 }
+			}
+			# every_owned_fleet = {
+			# 	limit = {
+			# 		NOT = { has_fleet_flag = blokkat_beamfighter_eradicator }
+			# 	}
+			# 	closest_system = {
+			# 		min_steps = 1
+			# 		max_steps = 10
+			# 		use_bypasses = yes
+			# 		limit = {
+			# 			count_fleet_in_system = {
+			# 				count = 1
+			# 				limit = {
+			# 					NOT = { is_owned_by = event_target:blokkat2_country }
+			# 				}
+			# 			}
+			# 		}
+			# 		prev = {
+			# 			clear_orders = yes
+			# 			queue_actions = { move_to = prev }
+			# 		}
+			# 	}
+			# }
+		}
+	}
+}
+fleet_event = {
+	id = giga_blokkat_wave_2.2998
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = { #Determine which system to target
+		set_fleet_flag = giga_blokkat2_movement_in_progress
+		random_system = {
+			limit = {
+				distance = {
+					source = root.solar_system
+					min_distance >= 0
+					max_distance <= 400
+					type = euclidean
+					#min_jumps = 2
+					#max_jumps = 10
+				}
+			}
+			weights = {
+				base = 0.1
+				modifier = {
+					add = 15
+					exists = space_owner
+				}
+				modifier = {
+					add = 30
+					any_ship_in_system = { controller = { NOT = { is_country = event_target:blokkat2_country } } }
+				}
+				modifier = {
+					factor = 0.1
+					has_star_flag = blokkat2_fleet_dispatched
+				}
+				modifier = {
+					factor = 10
+					any_system_planet = {
+						is_colony = yes
+					}
+				}
+			}
+			system_event = { id = giga_blokkat_wave_2.2999 }
+		}
+	}
+}
+system_event = {
+	id = giga_blokkat_wave_2.2999
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		export_trigger_value_to_variable = {
+			trigger = distance
+			parameters = {
+				source = from.solar_system
+				type=euclidean
+			}
+			variable = blokkat_distance_for_pathfind
+			rounded = yes
+		}
+		set_timed_star_flag = {
+			flag = blokkat2_fleet_dispatched
+			days = blokkat_distance_for_pathfind
+		}
+		# Warn the system owner that the Blokkats are coming
+		space_owner? = {
+			create_message = {
+				type = GIGA_BLOKKAT_TARGETED
+				localization = GIGA_BLOKKAT_TARGETED_DESC
+				days = 30
+				target = root
+				variable = {
+					type = name
+					localization = SYSTEM
+					scope = root
+				}
+			}
+		}
+		system_event = { id = giga_blokkat_wave_2.3000 days = blokkat_distance_for_pathfind }
+	}
+}
+system_event = {
+	id = giga_blokkat_wave_2.3000
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		fromfrom = {
+			set_location = root
+			remove_fleet_flag = giga_blokkat2_movement_in_progress
+			fleet_event = { id = giga_blokkat_wave_2.3001 days = 1 }
+		}
+	}
+}
+fleet_event = {
+	id = giga_blokkat_wave_2.3001
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		clear_orders = yes
+	}
+}
+country_event = {
+	id = giga_blokkat_wave_2.3100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = blokkat_wave_2_started
+		FromFrom = {
+			solar_system = {
+				NOT = { any_ship_in_system = { controller = { NOT = { is_country = event_target:blokkat2_country } } } }
+				any_system_planet = { is_colony = yes }
+			}
+		}
+	}
+
+	immediate = {
+		FromFrom = {
+			solar_system = {
+				create_ambient_object = {
+					type = blokk_terminator_explosion_object
+					location = ROOT.fromfrom
+					duration = 10
+					use_3d_location = yes
+					entity_offset = 0
+					scale = 1
+				}
+				every_system_planet = {
+					limit = {
+						is_colony = yes
+						NOR = {
+							ag_is_ancient_ringworld = yes
+							has_planet_flag = paluushia
+							has_carrier_flag = gigaflusion
+							is_planet_class = pc_birch
+							is_planet_class = pc_void_birch
+						}
+					}
+					destroy_colony = yes
+					if = {
+						limit = { giga_habitable_structure = no }
+						change_pc = pc_shattered
+					}
+					else = { giga_remove_planet = yes }
+				}
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = giga_blokkat_wave_2.3101
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = blokkat_wave_2_started
+		solar_system = {
+			solar_system = {
+				NOT = { any_ship_in_system = { controller = { is_hostile_to = event_target:blokkat2_country } } }
+				any_system_planet = { is_colony = yes }
+			}
+		}
+	}
+
+	immediate = {
+		solar_system = {
+			create_ambient_object = {
+				type = blokk_terminator_explosion_object
+				location = ROOT.fromfrom
+				duration = 10
+				use_3d_location = yes
+				entity_offset = 0
+				scale = 1
+			}
+			every_system_planet = {
+				limit = {
+					is_colony = yes
+					NOR = {
+						ag_is_ancient_ringworld = yes
+						has_planet_flag = paluushia
+						has_carrier_flag = gigaflusion
+						is_planet_class = pc_birch
+						is_planet_class = pc_void_birch
+					}
+				}
+				destroy_colony = yes
+				if = {
+					limit = { giga_habitable_structure = no }
+					change_pc = pc_shattered
+				}
+				else = { giga_remove_planet = yes }
+			}
+		}
 	}
 }
 namespace = giga_blokkat_flavoring #All flavor events are named for the wave they are sent to warn the arrival of (killing the first eradicator sends event 3)

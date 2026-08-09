@@ -275,6 +275,7 @@ blokkat_eradicators = {
 	observable = yes
 	uses_origins = no
 	default_ships = no
+	has_pulse_events = yes
 
 	ai = {
 		#enabled = yes
