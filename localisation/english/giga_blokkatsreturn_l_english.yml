@@ -47,6 +47,7 @@
     BLOKKAT2_COUNTRY:0 "Extragalactic Invaders"
     BLOKKAT2_COUNTRY_DESC:0 "The Blokkats are an intergalactic civilization hellbent on the absolute destruction of our galaxy before we can pose further threat."
 
+
     ERADICATOR_BEAM_BLOKKAT:0 "Eradication Beam"
     ERADICATOR_BEAM_BLOKKAT_DESC:0 "You exist because we allow it, and §Ryou will end because we demand it.§!"
     SHIP_AURA_BLOKKAT_ERADICATOR:0 "Blokk-Eradicator Hyperdimensional Bulwark"
@@ -107,7 +108,8 @@
     giga_blokkat_wave_2.2001.c_tt:0 "We will attempt to convince the GIF to lend support to us.\n\nIf successful, petitioning aid will be much easier, and we will be assisted in our research of the fabled §YMaginot Birch World§!."
     giga_blokkat_wave_2.2001.d_tt:0 "We will attempt to §Yabandon§! this galaxy, taking ourselves and any chosen other civilizations to a better place.\n\n§RThe Blokkats have warned us that evacuation is not permitted, so we are likely to be chased until we reach support in GIF space.§!"
     giga_blokkat_flavoring.3.name:0 "Eradicator Down"
-    giga_blokkat_flavoring.3.desc:0 "§R<<BLOKK-ERADICATOR LOST>>\n\n<<THREAT STATUS: EXTREME>>\n\n<<PRIORITY REINFORCEMENTS INBOUND>>\n\n<<SYSTEM CE-1461-M1D MARKED PRIORITY TARGET>>§!"
+    giga_blokkat_flavoring.3.normal:0 "§R<<BLOKK-ERADICATOR LOST>>\n\n<<THREAT STATUS: EXTREME>>\n\n<<PRIORITY REINFORCEMENTS INBOUND>>\n\n<<SYSTEM CE-1461-M1D MARKED PRIORITY TARGET>>§!"
+    giga_blokkat_flavoring.3.hacked:0 "§R<<BLOKK-ERADICATOR SYSTEM CONTROL LOST>>\n\n<<THREAT STATUS: CRITICAL>>\n\n<<PRIORITY REINFORCEMENTS INBOUND>>\n\n<<SYSTEM CE-1461-M1D MARKED PRIORITY TARGET>>§!"
     giga_blokkat_flavoring.3.a:0 "That doesn't sound good."
     giga_blokkat_flavoring.5.name:0 "Blokk-Emergency"
     giga_blokkat_flavoring.5.desc:0 "§R<<MULTIPLE MILITARY DETACHMENTS LOST>>\n\n<<THREAT STATUS: CRITICAL>>\n\n<<SEVERAL ERADICATOR FLEETS DISPATCHED>>\n\n<<ALL NEARBY MILITARY DETACHMENTS REDIRECTED>>\n\n<<GALAXY STERILIZATION GIVEN PRIORITY BLOKKWORK ACCESS>>\n\n<<HARVESTING FIELD DIVERGING>>§!"
@@ -116,6 +118,21 @@
     giga_blokkat_flavoring.10.name:0 ""
     giga_blokkat_flavoring.10.desc:0 "§R<<EXTENSIVE MILITARY ASSETS LOST>>\n\n<<SEVERAL ERADICATOR FLEETS DISPATCHED>>\n\n<<ALL NEARBY MILITARY DETACHMENTS REDIRECTED>>\n\n<<GALAXY STERILIZATION GIVEN PRIORITY BLOKKWORK ACCESS>>\n\n<<HARVESTING FIELD DIVERGING>>§!"
     giga_blokkat_flavoring.10.a:0 "The storm worsens..."
+
+    blokkat_threat_name:0 "§RGalactic Threat§!"
+
+    blokkat_threat_desc:0 "§RGalactic Threat§! represents the threat level which the Blokkats currently place us at. It will only go up over time as we incur further wrath of the intergalactic stripminers."
+
+    giga_blokkat_wave_2.1995.threat:0 "§RGalactic Threat§!: §Y[event_target:global_event_country.blokkat_wave_2_rage]§!"
+    giga_blokkat_wave_2.1995.threat_status_1:0 "§RThreat Status§!: §1Miniscule§!"
+    giga_blokkat_wave_2.1995.threat_status_2:0 "§RThreat Status§!: §0Minute§!"
+    giga_blokkat_wave_2.1995.threat_status_3:0 "§RThreat Status§!: §cMinor§!"
+    giga_blokkat_wave_2.1995.threat_status_4:0 "§RThreat Status§!: §LModerate§!"
+    giga_blokkat_wave_2.1995.threat_status_5:0 "§RThreat Status§!: §YHigh§!"
+    giga_blokkat_wave_2.1995.threat_status_6:0 "§RThreat Status§!: §HExtreme§!"
+    giga_blokkat_wave_2.1995.threat_status_7:0 "§RThreat Status§!: §PCritical§!"
+    giga_blokkat_wave_2.1995.threat_status_8:0 "§RThreat Status§!: §RCatastrophic§!"
+
 
     giga_blokkat2_very_easy:0 "The Blokkat Eradicators (§EBlokklets§!)\nThe Blokkats will be §Every debuffed§!.\n\nThey will receive the following effects:\n§Y-70% Weapons Damage\n-70% Ship Hull/Armor/Shield HP\n-50% Ship Speed\n-70% Army Damage/Heath/Morale§!\n\nThe §YBlokk-Eradicator§! will not revive, thus having a base total of §Y60 billion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y10k§! £energy£\nThe §YClash of the Titans§! will be §Y70%§! cheaper\n['concept_giga_blokkat2_rage'] will start at §Y250§! and scale §Y70%§! slower\n\n§HBalanced for usage with §YGigastructural Engineering & More§! as the only major mod and limited §YCelestial Warships§!."
     giga_blokkat2_easy:0 "The Blokkat Eradicators (§BBlokkittens§!)\nThe Blokkats will be §Bsomewhat debuffed§!.\n\nThey will receive the following effects:\n§Y-33% Weapons Damage\n-33% Ship Hull/Armor/Shield HP\n-33% Ship Speed\n-33% Army Damage/Heath/Morale§!\n\nThe §YBlokk-Eradicator§! will revive §Y1 time§!, thus having a base total of §Y120 billion§! HP\nEnabling §YHyperdimensional Weaponry§! will have a base upkeep of §Y20k§! £energy£\nThe §YClash of the Titans§! will be §Y33%§! cheaper\n['concept_giga_blokkat2_rage'] will start at §Y1250§! and scale §Y33%§! slower\n\n§HBalanced for usage with §YGigastructural Engineering & More§! as the only major mod."
@@ -207,15 +224,70 @@
     giga_GIF_enclaves.11.b:0 "They will be no match for us."
     giga_blokkat_wave_2.100.name:0 "Project Salvation"
     giga_blokkat_wave_2.100.desc:0 "With the admittedly limited data given to us by the GIF Anchorage, we now know ships even more powerful than a Stellar Systemcraft are not out of reach. Every citizen of our nation will need to pour their blood, sweat and tears into this project; our one saving grace against the Blokkats' return, our species' salvation.\n\nAll that is left to do before we begin this project is to choose where to focus our efforts; we can only hope to unlock the secrets of one path."
-    giga_blokkat_wave_2.100.singularityfleet:0 "The GIF has seen success with fleets of Singularitycraft; we should make our own."
-    giga_blokkat_wave_2.100.singularitycraft:0 "We must make one gargantuan Singularitycraft, capable of fighting the Eradicator alone."
-    giga_blokkat_wave_2.100.quasarcraft:0 "A Quasarcraft, improved with GIF tech, would be able to take on the entire Blokkat fleet."
-    giga_blokkat_wave_2.100.menace:0 "Let us darken the stars with Menacing Celestials."
-    giga_blokkat_wave_2.100.psionics:0 "We must combine the psionic effort of this entire galaxy into one avatar."
-    giga_blokkat_wave_2.100.eotc:0 "The End of the Cycle shall assist us, at a cost."
-    giga_blokkat_wave_2.100.biogenesis:0 "Let us design a navy that is truly biologically perfected."
-    giga_blokkat_wave_2.100.dotg:0 "We need only design a Paladin strong enough to face down this new threat."
-    giga_blokkat_wave_2.100.hack:0 "Why build our own, when we can hack theirs?"
+    giga_blokkat_wave_2.100.singularityfleet:0  "A fleet of Singularitycraft will be able to take them on."
+    giga_blokkat_wave_2.100.singularitycraft:0  "A Birch Singularitycraft shall duel the Eradicator alone."
+    giga_blokkat_wave_2.100.quasarcraft:0       "The Gargantuan Quasarcraft can easily best the Blokkat menace."
+    giga_blokkat_wave_2.100.menace:0            "Let us darken the stars with Menacing Celestials."
+    giga_blokkat_wave_2.100.psionics:0          "We will commune with the entire galaxy to form The Avatar."
+    giga_blokkat_wave_2.100.eotc:0              "The End of the Cycle shall assist us, at a cost."
+    giga_blokkat_wave_2.100.biogenesis:0        "A truly biologically perfected navy shall be our salvation."
+    giga_blokkat_wave_2.100.dotg:0              "We need only design a Paladin strong enough to defend us."
+    giga_blokkat_wave_2.100.hack:0              "Why build our own, when we can hack theirs?"
 
     GIGA_BLOKKAT_TARGETED_TITLE:0 "Blokkat Fleet Incoming"
     GIGA_BLOKKAT_TARGETED_DESC:0 "A §RBlokkat Fleet§! is heading towards §Y$SYSTEM$§!."
+
+    ### Events ###
+
+    giga_blokkat_wave_2.500.name:0 "Project Salvation: Complete"
+    giga_blokkat_wave_2.500.desc.singularityfleet:0 ""
+    giga_blokkat_wave_2.500.desc.singularitycraft:0 ""
+    giga_blokkat_wave_2.500.desc.quasarcraft:0 ""
+    giga_blokkat_wave_2.500.desc.menace:0 ""
+    giga_blokkat_wave_2.500.desc.psionics:0 ""
+    giga_blokkat_wave_2.500.desc.eotc:0 ""
+    giga_blokkat_wave_2.500.desc.biogenesis:0 ""
+    giga_blokkat_wave_2.500.desc.dotg:0 ""
+    giga_blokkat_wave_2.500.desc.hack:0 ""
+    giga_blokkat_wave_2.500.singularityfleet:0 ""
+    giga_blokkat_wave_2.500.singularitycraft:0 ""
+    giga_blokkat_wave_2.500.quasarcraft:0 ""
+    giga_blokkat_wave_2.500.menace:0 ""
+    giga_blokkat_wave_2.500.psionics:0 ""
+    giga_blokkat_wave_2.500.eotc:0 ""
+    giga_blokkat_wave_2.500.biogenesis:0 ""
+    giga_blokkat_wave_2.500.dotg:0 ""
+    giga_blokkat_wave_2.500.hack:0 ""
+    giga_blokkat_wave_2.600:0 ""
+    giga_blokkat_wave_2_debug.1.name:0 "Debug: Galactic Threat"
+    giga_blokkat_wave_2_debug.1.desc:0 "Increase Galactic Threat by any amount as follows:"
+    giga_blokkat_wave_2_debug.1.a:0 "Set to 999999"
+    giga_blokkat_wave_2_debug.1.b:0 "Increase by 500000"
+    giga_blokkat_wave_2_debug.1.c:0 "Increase by 50000"
+    giga_blokkat_wave_2_debug.1.d:0 "Increase by 5000"
+    giga_blokkat_wave_2_debug.1.e:0 "Increase by 1000"
+
+
+    ### Situations ###
+
+    giga_situation_project_salvation:0 "Project Salvation"
+    giga_situation_project_salvation_desc:0 "The Blokkats are approaching our galaxy with weapons capable of eradicating all life from it. This project may be our only salvation from them."
+    giga_situation_project_salvation_approach_no_investment:0 "No Investment"
+    giga_situation_project_salvation_approach_low_investment:0 "Low Investment"
+    giga_situation_project_salvation_approach_med_investment:0 "Medium Investment"
+    giga_situation_project_salvation_approach_high_investment:0 "High Investment"
+    giga_situation_project_salvation_approach_no_investment_tooltip:0 "We will make no effort towards Project Salvation."
+    giga_situation_project_salvation_approach_low_investment_tooltip:0 "We will put some investment towards Project Salvation."
+    giga_situation_project_salvation_approach_med_investment_tooltip:0 "We will reallocate significant research and resources towards Project Salvation."
+    giga_situation_project_salvation_approach_high_investment_tooltip:0 "Our very existence is at stake! We must allocate all possible resources towards Project Salvation."
+    giga_situation_project_salvation_finish_tt:0 "Project Salvation will be completed, and we may at last stand a chance against the oncoming storm."
+    giga_situation_project_salvation_progress_tt:0 "We will make progress on Project Salvation. Every step counts."
+
+
+    ### Technologies ###
+
+    allow_projsalv_singularityfleet_p4:0 "§HUnlocks Megastructure:§! Singularitycraft"
+    giga_tech_blokkat_project_salvation_singularityfleet_4:0 "§PProject Salvation§! - Singularitycraft Finalization"
+    giga_tech_blokkat_project_salvation_singularityfleet_4_desc:0 ""
+    desc_projsalv_singularityfleet_p4:0 "Unlocks another step of the Singularitycraft."
+

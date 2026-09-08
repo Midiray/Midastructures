@@ -17,17 +17,57 @@ country_event = { #project salvation
 
 	option = { #copy singularitycraft
 		name = "giga_blokkat_wave_2.100.singularityfleet"
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_singularityfleet
+		}
 	}
 	option = { #one singularitycraft to rule them all
 		name = "giga_blokkat_wave_2.100.singularitycraft"
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_singularitycraft
+		}
 	}
 	option = { #the quasarcraft
 		name = "giga_blokkat_wave_2.100.quasarcraft"
 		trigger = { has_global_flag = quasarmod_enabled }
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_quasarcraft
+		}
 	}
 	option = { #menacing celestials
 		name = "giga_blokkat_wave_2.100.menace"
 		trigger = { has_ascension_perk = ap_become_the_crisis }
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_menace
+		}
 	}
 	option = { #galactic psionic avatar
 		name = "giga_blokkat_wave_2.100.psionics"
@@ -36,6 +76,16 @@ country_event = { #project salvation
 				has_tradition = tr_psionics_finish
 				has_tradition = tr_psionics_shroud_finish
 			}
+		}
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_psionics
 		}
 	}
 	option = { #harness the EOTC
@@ -46,6 +96,16 @@ country_event = { #project salvation
 				has_tradition = tr_psionics_finish
 				has_tradition = tr_psionics_shroud_finish
 			}
+		}
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_eotc
 		}
 	}
 	option = { #virus swarm
@@ -58,13 +118,166 @@ country_event = { #project salvation
 				has_tradition = tr_purity_finish
 			}
 		}
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_biogenesis
+		}
 	}
 	option = { #super paladin ship
 		name = "giga_blokkat_wave_2.100.dotg"
-		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
+		trigger = { has_ascension_perk = ap_defender_of_the_galaxy_nomads }
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_dotg
+		}
 	}
 	option = { #hack the eradicator when it gets here and use that
 		name = "giga_blokkat_wave_2.100.hack"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_cosmogenesis
+				has_tradition = tr_cybernetics_finish
+				has_tradition = tr_cybernetics_assimilator_finish
+			}
+		}
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_hack
+		}
+	}
+}
+country_event = { #project salvation finish
+	id = giga_blokkat_wave_2.500
+	title = "giga_blokkat_wave_2.500.name"
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.singularityfleet"
+		trigger = {
+			has_country_flag = project_salvation_option_singularityfleet
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.singularitycraft"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+	picture = GFX_evt_clocks
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = blokkat_project_salvation_finished
+	}
+
+	option = { #copy singularitycraft
+		name = "giga_blokkat_wave_2.500.singularityfleet"
+		add_research_option = giga_tech_blokkat_project_salvation_singularityfleet_4
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.500.singularitycraft"
+	}
+	option = { #the quasarcraft
+		name = "giga_blokkat_wave_2.500.quasarcraft"
+		trigger = { has_global_flag = quasarmod_enabled }
+	}
+	option = { #menacing celestials
+		name = "giga_blokkat_wave_2.500.menace"
+		trigger = { has_ascension_perk = ap_become_the_crisis }
+	}
+	option = { #galactic psionic avatar
+		name = "giga_blokkat_wave_2.500.psionics"
+		trigger = {
+			OR = {
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+			}
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_blokkat_wave_2.500.eotc"
+		trigger = {
+			OR = {
+				has_ascension_perk = ap_become_the_crisis
+				has_tradition = tr_psionics_finish
+				has_tradition = tr_psionics_shroud_finish
+			}
+		}
+	}
+	option = { #virus swarm
+		name = "giga_blokkat_wave_2.500.biogenesis"
+		trigger = {
+			OR = {
+				has_tradition = tr_genetics_finish
+				has_tradition = tr_cloning_finish
+				has_tradition = tr_mutation_finish
+				has_tradition = tr_purity_finish
+			}
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_blokkat_wave_2.500.dotg"
+		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_blokkat_wave_2.500.hack"
 		trigger = {
 			OR = {
 				has_ascension_perk = ap_cosmogenesis
@@ -170,6 +383,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 0.3
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 0.3
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 3000
 				}
@@ -177,6 +394,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 250 #Spawns with nothing but the default fleets (12 scout, 4 vanguard and 1 sterilizer)
 				}
+				set_global_flag = giga_blokkat2_threat_category_1
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 1
@@ -198,6 +416,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 0.67
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 0.67
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 6700
 				}
@@ -205,6 +427,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 1250 #Spawns with a couple extra (14 scout, 5 vanguard and 1 sterilizer)
 				}
+				set_global_flag = giga_blokkat2_threat_category_1
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 2
@@ -226,6 +449,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 1
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 1
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 10000
 				}
@@ -233,6 +460,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 2500 #Spawns with a decent amount (17 scout, 6 vanguard and 1 sterilizer)
 				}
+				set_global_flag = giga_blokkat2_threat_category_2
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 5
@@ -254,6 +482,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 1.5
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 1.5
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 15000
 				}
@@ -261,6 +493,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 5000 #Starts with multiple sterilizers (20 scout, 8 vanguard and 2 sterilizer)
 				}
+				set_global_flag = giga_blokkat2_threat_category_3
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 20
@@ -282,6 +515,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 3
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 3
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 30000
 				}
@@ -289,6 +526,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 15000 #Scary (20 scout, 16 vanguard, 4 sterilizer and 1 obliterator)
 				}
+				set_global_flag = giga_blokkat2_threat_category_4
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 100
@@ -310,6 +548,10 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					value = 6
 				}
 				set_variable = {
+					which = blokkat_wave_2_salvation_cost_mult
+					value = 6
+				}
+				set_variable = {
 					which = blokkat_wave_2_beamfight_energy_upkeep
 					value = 60000
 				}
@@ -317,6 +559,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					which = blokkat_wave_2_rage
 					value = 40000 #Kicks your teeth in (20 scout, 30 vanguard, 9 sterilizer, 4 obliterator and 3 eradicator)
 				}
+				set_global_flag = giga_blokkat2_threat_category_5
 				set_variable = {
 					which = blokkat_eradicator_life_count
 					value = 1000
@@ -328,7 +571,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 				set_variable = {
 					which = blokkat_terminator_life_count
 					value = 40
-				}
+				} #MIDIRAY_CHANGE_THIS make sure the revival events work and set the life counts
 				event_target:global_event_country = { set_variable = { which = blokkat_difficulty_component_upkeep_multipler value = @blokkats_obliterator_component_upkeep_multiplier } }
 			}
 			set_variable = {
@@ -1330,6 +1573,132 @@ situation_event = { #Monthly event for beamfight situation that increases how mu
 		}
 	}
 }
+country_event = {
+	id = giga_blokkat_wave_2.19941
+
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_global_flag = blokkat_wave_2_started
+	}
+	immediate = {
+		#MIDIRAY_CHANGE_THIS increment rage/threat in this event anytime it increases with time
+		event_target:global_event_country = {
+			if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 500000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_8
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 100000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_7
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 50000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+						has_global_flag = giga_blokkat2_threat_category_6
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_6
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 20000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+						has_global_flag = giga_blokkat2_threat_category_6
+						has_global_flag = giga_blokkat2_threat_category_5
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_5
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 8000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+						has_global_flag = giga_blokkat2_threat_category_6
+						has_global_flag = giga_blokkat2_threat_category_5
+						has_global_flag = giga_blokkat2_threat_category_4
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_4
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 4000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+						has_global_flag = giga_blokkat2_threat_category_6
+						has_global_flag = giga_blokkat2_threat_category_5
+						has_global_flag = giga_blokkat2_threat_category_4
+						has_global_flag = giga_blokkat2_threat_category_3
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_3
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
+						value > 2000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_8
+						has_global_flag = giga_blokkat2_threat_category_7
+						has_global_flag = giga_blokkat2_threat_category_6
+						has_global_flag = giga_blokkat2_threat_category_5
+						has_global_flag = giga_blokkat2_threat_category_4
+						has_global_flag = giga_blokkat2_threat_category_3
+						has_global_flag = giga_blokkat2_threat_category_2
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_2
+			}
+		}
+	}
+}
 country_event = { #blokkat research bureau, but like, new and stuff
 	id = giga_blokkat_wave_2.1995
 	title = "giga_blokkat_wave_2.1995.name"
@@ -1503,9 +1872,75 @@ country_event = { #blokkat research bureau, but like, new and stuff
 		}
 	}
 
-	option = { #knowledge count
-		name = "giga_blokkat.3000.knowledge"
+	option = { #threat number
+		name = "giga_blokkat_wave_2.1995.threat"
 		custom_gui = blokkat_bureau_wave_2_option_knowledge
+		allow = {
+			always = no
+		}
+	}
+
+	#threat categories
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_1"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_1 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_2"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_2 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_3"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_3 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_4"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_4 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_5"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_5 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_6"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_6 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_7"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_7 }
+		allow = {
+			always = no
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2.1995.threat_status_8"
+		custom_gui = blokkat_bureau_wave_2_option_threat_status
+		trigger = { has_global_flag = giga_blokkat2_threat_category_8 }
 		allow = {
 			always = no
 		}
@@ -3251,12 +3686,17 @@ fleet_event = {
 		}
 	}
 }
-namespace = giga_blokkat_flavoring #All flavor events are named for the wave they are sent to warn the arrival of (killing the first eradicator sends event 3)
+namespace = giga_blokkat_flavoring
 
 country_event = { #ERADICATOR DOWN
 	id = giga_blokkat_flavoring.3
 	title = "giga_blokkat_flavoring.3.name"
-	desc = "giga_blokkat_flavoring.3.desc"
+	desc = {
+		text = "giga_blokkat_flavoring.3.normal"
+		trigger = { #MIDIRAY_CHANGE_THIS fix all the triggers here
+			always = yes
+		}
+	}
 	is_triggered_only = yes
 	fire_only_once = yes
 	diplomatic = yes
@@ -3624,5 +4064,59 @@ country_event = { #we wont give them to you, but here's some pointers
 	option = { #aw ok thats fine
 		name = "giga_GIF_enclaves.201.a"
 		country_event = { id = giga_GIF_enclaves.202 }
+	}
+}
+namespace = giga_blokkat_wave_2_debug
+
+country_event = { #debug threat event
+	id = giga_blokkat_wave_2_debug.1
+	title = "giga_blokkat_wave_2_debug.1.name"
+	desc = "giga_blokkat_wave_2_debug.1.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = "giga_blokkat_wave_2_debug.1.a"
+		event_target:global_event_country = {
+			set_variable = {
+				which = blokkat_wave_2_rage
+				value = 999999
+			}
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.1.b"
+		event_target:global_event_country = {
+			add_variable = {
+				which = blokkat_wave_2_rage
+				value = 500000
+			}
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.1.c"
+		event_target:global_event_country = {
+			add_variable = {
+				which = blokkat_wave_2_rage
+				value = 50000
+			}
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.1.d"
+		event_target:global_event_country = {
+			add_variable = {
+				which = blokkat_wave_2_rage
+				value = 5000
+			}
+		}
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.1.e"
+		event_target:global_event_country = {
+			add_variable = {
+				which = blokkat_wave_2_rage
+				value = 1000
+			}
+		}
 	}
 }

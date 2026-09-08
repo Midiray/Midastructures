@@ -1089,3 +1089,31 @@ giga_tech_blokkat_gigarelay_core = {
 		factor = @giga_aiweight_multiplier_medium
 	}
 }
+
+#Project Salvation Techs
+giga_tech_blokkat_project_salvation_singularityfleet_4 = {
+	cost = @giga_50_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	potential = {
+		has_country_flag = blokkat_project_salvation_finished
+	}
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularityfleet_p4"	desc = "desc_projsalv_singularityfleet_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}

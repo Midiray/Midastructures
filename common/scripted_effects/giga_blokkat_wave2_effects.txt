@@ -26,6 +26,114 @@ remove_flags_blokkat2_difficulty = {
 		remove_global_flag = giga_blokkat2_deathmode
 	}
 }
+blokkat2_remove_threat_flags = {
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_1 }
+		remove_global_flag = giga_blokkat2_threat_category_1
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_8 }
+		remove_global_flag = giga_blokkat2_threat_category_8
+	}
+}
+blokkat2_increase_threat_status = {
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_1 }
+		remove_global_flag = giga_blokkat2_threat_category_1
+		set_global_flag = giga_blokkat2_threat_category_2
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+		set_global_flag = giga_blokkat2_threat_category_3
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+		set_global_flag = giga_blokkat2_threat_category_4
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+		set_global_flag = giga_blokkat2_threat_category_5
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+		set_global_flag = giga_blokkat2_threat_category_6
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+		set_global_flag = giga_blokkat2_threat_category_7
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+		set_global_flag = giga_blokkat2_threat_category_8
+	}
+}
+blokkat2_decrease_threat_status = { #Here just in case, but really shouldn't be used due to how threat works
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+		set_global_flag = giga_blokkat2_threat_category_1
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+		set_global_flag = giga_blokkat2_threat_category_2
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+		set_global_flag = giga_blokkat2_threat_category_3
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+		set_global_flag = giga_blokkat2_threat_category_4
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+		set_global_flag = giga_blokkat2_threat_category_5
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+		set_global_flag = giga_blokkat2_threat_category_6
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_8 }
+		remove_global_flag = giga_blokkat2_threat_category_8
+		set_global_flag = giga_blokkat2_threat_category_7
+	}
+}
 giga_create_lead_eradicator_wave_2_effect = {
 	create_fleet = {
 		name = "Blokk-Eradicator"

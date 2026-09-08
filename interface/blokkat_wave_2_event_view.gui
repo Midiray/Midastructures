@@ -53,7 +53,24 @@ guiTypes = {
 		buttonType = {
 			alwaysTransparent = yes
 			name = "option_button"
-			position = { x=-585 y=435 }
+			position = { x=-585 y=430 }
+			font = "malgun_goth_24"
+			text = "OPTION_TEXT"
+			format = CENTER
+			size = { x=500 y= 0 }
+		}
+	}
+
+	containerWindowType = {
+		name = "blokkat_bureau_wave_2_option_threat_status" #threat status desc
+		position = { x=0 y=0 }
+		size = { width = 0 height = 0 }
+		moveable = no
+
+		buttonType = {
+			alwaysTransparent = yes
+			name = "option_button"
+			position = { x=-585 y=455 }
 			font = "malgun_goth_24"
 			text = "OPTION_TEXT"
 			format = CENTER
@@ -539,7 +556,7 @@ guiTypes = {
 			instantTextBoxType={
 				name = "blokkat_knowledge_name"
 				font = "malgun_goth_24"
-				text = blokkat_knowledge_name
+				text = blokkat_threat_name
 				position = { x = 165 y = 2 }
 				maxWidth = 450
 				maxHeight = 500
@@ -551,8 +568,8 @@ guiTypes = {
 			instantTextBoxType={
 				name = "blokkat_knowledge_desc"
 				font = "cg_16b"
-				text = blokkat_knowledge_desc
-				position = { x = 3 y = 65 }
+				text = blokkat_threat_desc
+				position = { x = 3 y = 75 }
 				maxWidth = 465
 				maxHeight = 100
 				format = CENTER
