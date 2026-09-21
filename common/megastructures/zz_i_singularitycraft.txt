@@ -41,18 +41,18 @@ singularitycraft_0 = {
 		custom_tooltip = { fail_text = "requires_no_habitable_planets"		NOT = { any_system_planet = { is_colony = yes } } }
 		custom_tooltip = { fail_text = "requires_inside_border"				is_inside_border = from }
 		custom_tooltip = { fail_text = "requires_no_crisis_system"			NOT = { any_system_planet = { has_planet_flag = crisis_vital_planet } } }
-		# custom_tooltip = { #Commented out in dev until the actual caps are added to the menu
-		# 	fail_text = "requires_not_capped"
-		# 	from = {
-		# 		OR = {
-		# 			has_global_flag = singularitycraft_capped_u
-		# 			check_variable = {
-		# 				which = giga_current_singularitycraft
-		# 				value < value:giga_singularitycraft_limit
-		# 			}
-		# 		}
-		# 	}
-		# }
+		custom_tooltip = { #Commented out in dev until the actual caps are added to the menu
+			fail_text = "requires_not_capped"
+			from = {
+				OR = {
+					has_global_flag = salvationcraft_capped_u
+					check_variable = {
+						which = giga_current_salvationcraft
+						value < value:giga_salvationcraft_limit
+					}
+				}
+			}
+		}
 	}
 
 	placement_rules = {

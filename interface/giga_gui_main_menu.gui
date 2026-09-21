@@ -6625,9 +6625,70 @@ guiTypes = {
 					effectButtonType = { name = "systemcraft_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_systemcraft_1_disabled" }
 				}
 
+				####################################
+				### salvationcraft ####################
+				####################################
+				containerWindowType = {
+					name = "salvationcraft_options"
+					position = { x = 450 y = -135 }
+					size = { width = 410 height = 34 }
+					orientation = upper_left
+
+					effectButtonType = {
+						name = "background_salvationcraft"
+						spriteType = "GFX_giga_menu_button_bg"
+						position = { x = 0 y = 0 }
+						format = left
+						no_clicksound = yes
+						borderSize = { x = 10 y = 0 }
+						font = "cg_16b"
+						text = "name_salvationcraft"
+						effect = "giga_salvationcraft_tt"
+					}
+
+					effectButtonType = { name = "salvationcraft_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_disabled" }
+					effectButtonType = { name = "salvationcraft_r" spriteType = "GFX_giga_menu_r" position = { x = 350 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_r" }
+					effectButtonType = { name = "salvationcraft_u" spriteType = "GFX_giga_menu_u" position = { x = 320 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_u" }
+					effectButtonType = { name = "salvationcraft_3" spriteType = "GFX_giga_menu_3" position = { x = 290 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_3" }
+					effectButtonType = { name = "salvationcraft_2" spriteType = "GFX_giga_menu_2" position = { x = 260 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_2" }
+					effectButtonType = { name = "salvationcraft_1" spriteType = "GFX_giga_menu_1" position = { x = 230 y = 5 } no_clicksound = yes effect = "giga_salvationcraft_1" }
+
+					effectButtonType = { name = "salvationcraft_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface effect = "giga_salvationcraft_enabled" }
+					effectButtonType = { name = "salvationcraft_r_disabled" spriteType = "GFX_giga_menu_r_disabled" position = { x = 350 y = 5 } clicksound = interface effect = "giga_salvationcraft_r_disabled" }
+					effectButtonType = { name = "salvationcraft_u_disabled" spriteType = "GFX_giga_menu_u_disabled" position = { x = 320 y = 5 } clicksound = interface effect = "giga_salvationcraft_u_disabled" }
+					effectButtonType = { name = "salvationcraft_3_disabled" spriteType = "GFX_giga_menu_3_disabled" position = { x = 290 y = 5 } clicksound = interface effect = "giga_salvationcraft_3_disabled" }
+					effectButtonType = { name = "salvationcraft_2_disabled" spriteType = "GFX_giga_menu_2_disabled" position = { x = 260 y = 5 } clicksound = interface effect = "giga_salvationcraft_2_disabled" }
+					effectButtonType = { name = "salvationcraft_1_disabled" spriteType = "GFX_giga_menu_1_disabled" position = { x = 230 y = 5 } clicksound = interface effect = "giga_salvationcraft_1_disabled" }
+				}
+
+				####################################
+				### terastructural salvationcraft ####################
+				####################################
+				containerWindowType = {
+					name = "big_salvationcraft_options"
+					position = { x = 450 y = -95 }
+					size = { width = 410 height = 34 }
+					orientation = upper_left
+
+					effectButtonType = {
+						name = "background_big_salvationcraft"
+						spriteType = "GFX_giga_menu_button_bg"
+						position = { x = 0 y = 0 }
+						format = left
+						no_clicksound = yes
+						borderSize = { x = 10 y = 0 }
+						font = "cg_16b"
+						text = "name_big_salvationcraft"
+						effect = "giga_big_salvationcraft_tt"
+					}
+
+					effectButtonType = { name = "big_salvationcraft_disabled" spriteType = "GFX_giga_menu_disabled" position = { x = 380 y = 5 } no_clicksound = yes effect = "giga_big_salvationcraft_disabled" }
+					effectButtonType = { name = "big_salvationcraft_enabled" spriteType = "GFX_giga_menu_enabled" position = { x = 380 y = 5 } clicksound = interface effect = "giga_big_salvationcraft_enabled" }
+				}
+
 				effectButtonType = {
 					name = "header_terraformers"
-					position = { x = 432 y = -175 }
+					position = { x = 432 y = -95 }
 					no_clicksound = yes
 					alwaysTransparent = yes
 					font = "large_title_font_28"
@@ -6640,7 +6701,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "terraform_toxic_options"
-					position = { x = 450 y = -55 }
+					position = { x = 450 y = 25 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -6676,7 +6737,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "terraform_barren_options"
-					position = { x = 450 y = -15 }
+					position = { x = 450 y = 65 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -6712,7 +6773,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "geothermal_options"
-					position = { x = 450 y = 25 }
+					position = { x = 450 y = 105 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -6748,7 +6809,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "glue_options"
-					position = { x = 450 y = 65 }
+					position = { x = 450 y = 145 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -6784,7 +6845,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "terraform_gasgiant_options"
-					position = { x = 450 y = 105 }
+					position = { x = 450 y = 185 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 
@@ -6820,7 +6881,7 @@ guiTypes = {
 				####################################
 				containerWindowType = {
 					name = "compressor_options"
-					position = { x = 450 y = 145 }
+					position = { x = 450 y = 225 }
 					size = { width = 410 height = 34 }
 					orientation = upper_left
 

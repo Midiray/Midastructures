@@ -322,6 +322,18 @@ giga_war_system_tt = {
     effect = { custom_tooltip = war_system_0_MEGASTRUCTURE_DETAILS }
 }
 
+giga_salvationcraft_tt = {
+    potential = { exists = from from = { has_country_flag = giga_menu_page_03 } }
+    allow = { always = yes }
+    effect = { custom_tooltip = salvationcraft_MEGASTRUCTURE_DETAILS }
+}
+
+giga_big_salvationcraft_tt = {
+    potential = { exists = from from = { has_country_flag = giga_menu_page_03 } }
+    allow = { always = yes }
+    effect = { custom_tooltip = big_salvationcraft_MEGASTRUCTURE_DETAILS }
+}
+
 giga_terraform_toxic_tt = {
     potential = { exists = from from = { has_country_flag = giga_menu_page_03 } }
     allow = { always = yes }

@@ -422,10 +422,27 @@
     desc_projsalv_singularitycraft_p2:0 "Unlocks another step of the Singularitycraft."
     allow_projsalv_singularitycraft_p3:0 "$allow_singularitycraft$ Phase 3: Ultima Obliterators"
     giga_tech_blokkat_project_salvation_singularitycraft_3:0 "§PProject Salvation§! - Hyperdimensional Weaponry"
-    giga_tech_blokkat_project_salvation_singularitycraft_3_desc:0 "Mere celestial erasure beams struggled against the mere mining operations of the Blokkats. With an invasion force incoming, those beams will be ineffective. The primary weapons of the Singularitycraft must be much, much stronger than those weapons of old."
+    giga_tech_blokkat_project_salvation_singularitycraft_3_desc:0 "Our most modern Celestial Erasure Beams struggled against the mere mining operations of the Blokkats. With an invasion force incoming, those beams will be ineffective. The primary weapons of the Singularitycraft must be much, much stronger than those weapons of old."
     desc_projsalv_singularitycraft_p3:0 "Unlocks another step of the Singularitycraft."
     allow_projsalv_singularitycraft_p4:0 "$allow_singularitycraft$"
     giga_tech_blokkat_project_salvation_singularitycraft_4:0 "§PProject Salvation§! - Singularitycraft Finalization"
     giga_tech_blokkat_project_salvation_singularitycraft_4_desc:0 ""
     desc_projsalv_singularitycraft_p4:0 "Unlocks another step of the Singularitycraft."
 
+    ### Misc ###
+
+    name_salvationcraft:0 "Salvationcraft (Small)"
+    salvationcraft_MEGASTRUCTURE_DETAILS:0 "$giga_list_category_gigastructure$ - $giga_list_category_celestial_warship$\nConsists of the Singularitycraft, Galactic Nemesis, and Biological paths."
+    name_big_salvationcraft:0 "Salvationcraft (Large)"
+    big_salvationcraft_MEGASTRUCTURE_DETAILS:0 "$giga_list_category_terastructure$ - $giga_list_category_celestial_warship$\nConsists of the Birch Singularitycraft, Psionic, Defender of the Galaxy, and Cybernetic paths."
+
+
+    giga_blokkat_wave_2.500.desc.singularitycraft:0 ""
+    giga_blokkat_wave_2.500.desc.singularitybirch:0 ""
+    giga_blokkat_wave_2.500.desc.quasarcraft:0 ""
+    giga_blokkat_wave_2.500.desc.menace:0 ""
+    giga_blokkat_wave_2.500.desc.psionics:0 ""
+    giga_blokkat_wave_2.500.desc.eotc:0 ""
+    giga_blokkat_wave_2.500.desc.biogenesis:0 ""
+    giga_blokkat_wave_2.500.desc.dotg:0 ""
+    giga_blokkat_wave_2.500.desc.hack:0 ""

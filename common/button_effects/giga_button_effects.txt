@@ -1334,6 +1334,8 @@ giga_all_r = {
             set_global_flag = drill_capped_r
             set_global_flag = warplanet_capped_r
             set_global_flag = birch_capped_1
+			set_global_flag = big_salvationcraft_capped_1
+			set_global_flag = salvationcraft_capped_r
             set_global_flag = crystal_capped_r
             set_global_flag = terraform_barren_capped_r
             set_global_flag = shipyard_capped_r
@@ -1450,6 +1452,8 @@ giga_all_u = {
             set_global_flag = psychic_beacon_capped_1
             set_global_flag = asteroid_artillery_capped_u
             set_global_flag = planetshipyard_capped_u
+			set_global_flag = big_salvationcraft_capped_1
+			set_global_flag = salvationcraft_capped_u
             set_global_flag = planetary_seeder_nexus_capped_u
             remove_global_flag = virtual_reality_disabled
             set_global_flag = maginot_capped_u
@@ -1516,6 +1520,8 @@ giga_all_3 = {
             set_global_flag = siphon_capped_3
             set_global_flag = quasistellar_capped_1
             set_global_flag = lifters_capped_3
+			set_global_flag = big_salvationcraft_capped_1
+			set_global_flag = salvationcraft_capped_3
             set_global_flag = accelerator_capped_3
             set_global_flag = systemcraft_capped_3
             set_global_flag = compressor_capped_3
@@ -1588,6 +1594,8 @@ giga_all_2 = {
             set_global_flag = ndb_capped_1
             set_global_flag = nidavellir_capped_2
             set_global_flag = orbital_arcologies_capped_2
+			set_global_flag = big_salvationcraft_capped_1
+			set_global_flag = salvationcraft_capped_2
             set_global_flag = orbital_artificial_eco_capped_2
             set_global_flag = orbital_naval_logistics_capped_2
             set_global_flag = penrose_sphere_capped_2
@@ -1656,6 +1664,8 @@ giga_all_1 = {
             set_global_flag = geothermal_capped_1
             set_global_flag = glue_capped_1
             set_global_flag = hraemc_capped_1
+			set_global_flag = big_salvationcraft_capped_1
+			set_global_flag = salvationcraft_capped_1
             set_global_flag = hyperstructural_ass_capped_1
             set_global_flag = stellarhabitat_capped_1
             set_global_flag = kugel_capped_1
@@ -4558,6 +4568,37 @@ inline_script = {
         set_global_flag = warplanet_capped_u
     "
     OTHER_DISABLE_EFFECTS = ""
+}
+
+# salvationcraft
+inline_script = {
+	script = button_effects/giga_menu_button_multicap
+	BUTTON_EFFECT_PREFIX = giga_salvationcraft
+	GIGA_PAGE_FLAG = giga_menu_page_03
+	MEGA_FLAG_NAME_PREFIX = salvationcraft
+	OTHER_ENABLE_EFFECTS = "
+        remove_global_flag = warplanet_disabled
+        remove_global_flag = warmoon_disabled
+        remove_global_flag = systemcraft_disabled
+        # sets all three celestials to a usable limit
+        remove_flags_warmoon = yes
+        set_global_flag = warmoon_capped_u
+        remove_flags_warplanet = yes
+        set_global_flag = warplanet_capped_u
+        remove_flags_systemcraft = yes
+        set_global_flag = systemcraft_capped_u
+    "
+	OTHER_DISABLE_EFFECTS = ""
+}
+
+# big salvationcraft
+inline_script = {
+	script = button_effects/giga_menu_button_toggle
+	BUTTON_EFFECT_PREFIX = giga_big_salvationcraft
+	GIGA_PAGE_FLAG = giga_menu_page_03
+	MEGA_FLAG_NAME_PREFIX = big_salvationcraft
+	OTHER_ENABLE_EFFECTS = ""
+	OTHER_DISABLE_EFFECTS = ""
 }
 
 #######################################################################################################################

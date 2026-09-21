@@ -28,6 +28,11 @@ country_event = { #project salvation
 			set_country_flag = project_salvation_option_singularitycraft
 			add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_0
 		}
+		trigger = {
+			NOT = {
+				has_global_flag = salvationcraft_disabled
+			}
+		}
 	}
 	option = { #one singularitycraft to rule them all
 		name = "giga_blokkat_wave_2.100.singularitybirch"
@@ -41,10 +46,18 @@ country_event = { #project salvation
 			}
 			set_country_flag = project_salvation_option_singularitybirch
 		}
+		trigger = {
+			NOT = {
+				has_global_flag = big_salvationcraft_disabled
+			}
+		}
 	}
 	option = { #the quasarcraft
 		name = "giga_blokkat_wave_2.100.quasarcraft"
-		trigger = { has_global_flag = quasarmod_enabled }
+		trigger = {
+			has_global_flag = quasarmod_enabled
+			NOT = { has_global_flag = big_salvationcraft_disabled }
+		}
 		hidden_effect = {
 			start_situation = {
 				type = giga_situation_project_salvation
@@ -58,7 +71,10 @@ country_event = { #project salvation
 	}
 	option = { #menacing celestials
 		name = "giga_blokkat_wave_2.100.menace"
-		trigger = { has_ascension_perk = ap_become_the_crisis }
+		trigger = {
+			has_ascension_perk = ap_become_the_crisis
+			NOT = { has_global_flag = salvationcraft_disabled }
+		}
 		hidden_effect = {
 			start_situation = {
 				type = giga_situation_project_salvation
@@ -77,6 +93,7 @@ country_event = { #project salvation
 				has_tradition = tr_psionics_finish
 				has_tradition = tr_psionics_shroud_finish
 			}
+			NOT = { has_global_flag = big_salvationcraft_disabled }
 		}
 		hidden_effect = {
 			start_situation = {
@@ -97,6 +114,7 @@ country_event = { #project salvation
 				has_tradition = tr_psionics_finish
 				has_tradition = tr_psionics_shroud_finish
 			}
+			NOT = { has_global_flag = big_salvationcraft_disabled } #MIDIRAY_CHANGE_THIS make sure this has the right flag trigger once we decide what it is
 		}
 		hidden_effect = {
 			start_situation = {
@@ -118,6 +136,7 @@ country_event = { #project salvation
 				has_tradition = tr_mutation_finish
 				has_tradition = tr_purity_finish
 			}
+			NOT = { has_global_flag = salvationcraft_disabled }
 		}
 		hidden_effect = {
 			start_situation = {
@@ -132,7 +151,10 @@ country_event = { #project salvation
 	}
 	option = { #super paladin ship
 		name = "giga_blokkat_wave_2.100.dotg"
-		trigger = { has_ascension_perk = ap_defender_of_the_galaxy_nomads }
+		trigger = {
+			has_ascension_perk = ap_defender_of_the_galaxy_nomads
+			NOT = { has_global_flag = big_salvationcraft_disabled }
+		}
 		hidden_effect = {
 			start_situation = {
 				type = giga_situation_project_salvation
@@ -152,6 +174,7 @@ country_event = { #project salvation
 				has_tradition = tr_cybernetics_finish
 				has_tradition = tr_cybernetics_assimilator_finish
 			}
+			NOT = { has_global_flag = big_salvationcraft_disabled }
 		}
 		hidden_effect = {
 			start_situation = {

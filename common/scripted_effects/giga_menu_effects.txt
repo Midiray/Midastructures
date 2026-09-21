@@ -584,6 +584,18 @@ remove_flags_systemcraft = {
 	remove_global_flag = systemcraft_capped_u
 }
 
+remove_flags_salvationcraft = {
+	remove_global_flag = salvationcraft_capped_1
+	remove_global_flag = salvationcraft_capped_2
+	remove_global_flag = salvationcraft_capped_3
+	remove_global_flag = salvationcraft_capped_r
+	remove_global_flag = salvationcraft_capped_u
+}
+
+remove_flags_big_salvationcraft = {
+	remove_global_flag = big_salvationcraft_capped_1
+}
+
 remove_flags_compressor = {
 	remove_global_flag = compressor_capped_1
 	remove_global_flag = compressor_capped_2
@@ -733,6 +745,8 @@ disable_menu_mega = { #relocated this here for ease of access and to keep it con
 	set_global_flag = asteroid_artillery_disabled
 	set_global_flag = psychic_beacon_disabled
 	set_global_flag = virtual_reality_disabled
+	set_global_flag = salvationcraft_disabled
+	set_global_flag = big_salvationcraft_disabled
 	set_global_flag = planetshipyard_disabled
 	set_global_flag = maginot_disabled
 	set_global_flag = giga_celestial_printing_moon_disabled
@@ -800,6 +814,8 @@ remove_menu_mega_disable = { #Removes the disable flag for everything mega relat
 	remove_global_flag = siphon_disabled
 	remove_global_flag = quasistellar_disabled
 	remove_global_flag = lifters_disabled
+	remove_global_flag = salvationcraft_disabled
+	remove_global_flag = big_salvationcraft_disabled
 	# remove_global_flag = accelerator_disabled
 	remove_global_flag = systemcraft_disabled
 	remove_global_flag = compressor_disabled
@@ -877,6 +893,8 @@ remove_all_mega_flags = { #This is so all the capacity buttons and whatnot do no
 	remove_flags_vanilla_furnace = yes
 	remove_flags_warmoon = yes
 	remove_flags_warplanet = yes
+	remove_flags_salvationcraft = yes
+	remove_flags_big_salvationcraft = yes
 	# remove_flags_habitats = yes
 	remove_menu_mega_disable = yes
 	remove_flags_planetary_seeder_nexus = yes
@@ -2045,6 +2063,34 @@ giga_preset_random = {
 			set_global_flag = systemcraft_disabled
 		}
 	}
+	random_list = { #salvationcraft cap
+		1 = {
+			set_global_flag = salvationcraft_capped_1
+		}
+		1 = {
+			set_global_flag = salvationcraft_capped_2
+		}
+		1 = {
+			set_global_flag = salvationcraft_capped_3
+		}
+		1 = {
+			set_global_flag = salvationcraft_capped_r
+		}
+		1 = {
+			set_global_flag = salvationcraft_capped_u
+		}
+		1 = {
+			set_global_flag = salvationcraft_disabled
+		}
+	}
+	random_list = { #big salvationcraft cap
+		1 = {
+			set_global_flag = big_salvationcraft_capped_1
+		}
+		1 = {
+			set_global_flag = big_salvationcraft_disabled
+		}
+	}
 	random_list = { #substellar compressor cap
 		1 = {
 			set_global_flag = compressor_capped_1
@@ -2645,6 +2691,8 @@ giga_preset_vanilla_plus = {
 	set_global_flag = lifters_capped_1
 	set_global_flag = accelerator_capped_1
 	set_global_flag = systemcraft_disabled
+	set_global_flag = salvationcraft_disabled
+	set_global_flag = big_salvationcraft_disabled
 	set_global_flag = compressor_capped_1
 	set_global_flag = succ_capped_1
 	set_global_flag = orchid_capped_1
@@ -2848,6 +2896,8 @@ giga_preset_gigas_experience = {
 	set_global_flag = quasistellar_capped_1
 	set_global_flag = lifters_capped_3
 	set_global_flag = systemcraft_disabled
+	set_global_flag = salvationcraft_disabled
+	set_global_flag = big_salvationcraft_disabled
 	set_global_flag = compressor_capped_3
 	set_global_flag = succ_capped_u
 	set_global_flag = orchid_capped_3
@@ -3049,6 +3099,8 @@ giga_preset_arcade = {
 	set_global_flag = lifters_capped_u
 	set_global_flag = accelerator_capped_u
 	set_global_flag = systemcraft_capped_u
+	set_global_flag = salvationcraft_capped_u
+	set_global_flag = big_salvationcraft_capped_1
 	set_global_flag = compressor_capped_u
 	set_global_flag = succ_capped_u
 	set_global_flag = orchid_capped_u
