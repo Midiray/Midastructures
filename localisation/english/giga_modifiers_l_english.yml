@@ -389,3 +389,4 @@
     mod_giga_matrioshka_brain_limit_add: "$name_matrioshka_brain$ Capacity"
     mod_giga_nidavellir_limit_add: "$name_nidavellir$ Capacity"
     mod_giga_systemcraft_limit_add: "$name_war_system$ Capacity"
+    mod_giga_singularitycraft_limit_add: "$name_singularitycraft$ Capacity"

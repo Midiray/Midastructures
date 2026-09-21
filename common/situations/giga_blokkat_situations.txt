@@ -315,8 +315,6 @@ giga_situation_project_salvation = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
-			on_first_enter = {
-			}
 			custom_tooltip = giga_situation_project_salvation_progress_tt
 		}
 		stage_2 = {
@@ -324,7 +322,7 @@ giga_situation_project_salvation = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 200
 			on_first_enter = {
-				#owner = { country_event = { id = giga_blokkat_wave_2.1010 } }
+				owner = { country_event = { id = giga_blokkat_wave_2.200 } }
 			}
 			custom_tooltip = giga_situation_project_salvation_progress_tt
 		}
@@ -333,7 +331,7 @@ giga_situation_project_salvation = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 300
 			on_first_enter = {
-				#owner = { country_event = { id = giga_blokkat_wave_2.1011 } }
+				owner = { country_event = { id = giga_blokkat_wave_2.300 } }
 			}
 			custom_tooltip = giga_situation_project_salvation_progress_tt
 		}
@@ -342,7 +340,7 @@ giga_situation_project_salvation = {
 			icon_background = GFX_situation_stage_frame_blue
 			end = 400
 			on_first_enter = {
-				#owner = { country_event = { id = giga_blokkat_wave_2.1011 } }
+				owner = { country_event = { id = giga_blokkat_wave_2.400 } }
 			}
 			custom_tooltip = giga_situation_project_salvation_progress_tt
 		}
@@ -469,11 +467,11 @@ giga_situation_project_salvation = {
 		# 	}
 		# }
 		modifier = {
-			country_physics_research_produces_mult = -0.4
-			country_society_research_produces_mult = -0.4
-			country_engineering_research_produces_mult = -0.4
+			#country_physics_research_produces_mult = -0.4
+			#country_society_research_produces_mult = -0.4
+			#country_engineering_research_produces_mult = -0.4
 			country_unity_produces_mult = 1
-			country_produces_mult = -0.2
+			#country_produces_mult = -0.2
 			ship_weapon_damage = -0.4
 			ship_fire_rate_mult = -0.4
 		}
@@ -510,11 +508,11 @@ giga_situation_project_salvation = {
 		# 	}
 		# }
 		modifier = {
-			country_physics_research_produces_mult = -0.8
-			country_society_research_produces_mult = -0.8
-			country_engineering_research_produces_mult = -0.8
+			#country_physics_research_produces_mult = -0.8
+			#country_society_research_produces_mult = -0.8
+			#country_engineering_research_produces_mult = -0.8
 			country_unity_produces_mult = 2.50
-			country_produces_mult = -0.4
+			#country_produces_mult = -0.4
 			ship_weapon_damage = -0.8
 			ship_fire_rate_mult = -0.8
 		}

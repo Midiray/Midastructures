@@ -4978,4 +4978,47 @@ giga_system_craft = {
 		}
 	}
 }
+giga_singularity_craft = {
+	create_fleet = {
+		name = "The Singularitycraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "The Singularitycraft"
+				graphical_culture = root.from
+				random_existing_design = giga_singularitycraft
+				effect = {
+
+					[[ship_name]
+						set_name = {
+							key = $ship_name$
+							]
+							[[ship_name_variables]
+							variable_string = $ship_name_variables$
+							]
+							[[ship_name]
+						}
+					]
+				}
+			}
+			set_formation_scale = 20
+
+			[[fleet_name]
+				set_name = {
+					key = $fleet_name$
+					]
+					[[fleet_name_variables]
+					variable_string = $fleet_name_variables$
+					]
+					[[fleet_name]
+				}
+			]
+		}
+	}
+}
 ### WARNING: Would not advise adding any scripted effects below the "Create Ship Effects" comment as PLS cannot understand the celestial spawn effects and all effects below them will be treated as invalid by the plugin

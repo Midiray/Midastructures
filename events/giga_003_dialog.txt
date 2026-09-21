@@ -3540,6 +3540,72 @@ country_event = {
 # 5000 used for Maginot
 
 ############################################################################################################################################################
+#################################################################### Project Salvation Megastructures ######################################################
+############################################################################################################################################################
+####################################################
+### Singularitycraft ###############################
+####################################################
+# Construction Site
+country_event = {
+	id = giga_dialog.6001
+	title = "giga_dialog.6001.name"
+	desc = "giga_dialog.6001.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_dyson_sphere_build_start
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = "giga_dialog.6001.a" }
+}
+
+# Thrusters(ish) Complete
+country_event = {
+	id = giga_dialog.6002
+	title = "giga_dialog.6002.name"
+	desc = "giga_dialog.6002.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = "giga_dialog.6002.a" }
+}
+
+# Armor Complete
+country_event = {
+	id = giga_dialog.6003
+	title = "giga_dialog.6003.name"
+	desc = "giga_dialog.6003.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = "giga_dialog.6003.a" }
+}
+
+# Guns Complete
+country_event = {
+	id = giga_dialog.6004
+	title = "giga_dialog.6004.name"
+	desc = "giga_dialog.6004.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_ringworld_build_complete
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = "giga_dialog.6004.a" }
+}
+
+# Complete
+country_event = {
+	id = giga_dialog.6005
+	title = "giga_dialog.6005.name"
+	desc = "giga_dialog.6005.desc"
+	picture = GFX_evt_cold_barren
+	show_sound = event_ringworld_build_complete
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = "giga_dialog.6005.a" }
+}
+
+############################################################################################################################################################
 #################################################################### Non-Megastructures ####################################################################
 ############################################################################################################################################################
 ####################################################

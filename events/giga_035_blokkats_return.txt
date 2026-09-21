@@ -16,19 +16,6 @@ country_event = { #project salvation
 	is_triggered_only = yes
 
 	option = { #copy singularitycraft
-		name = "giga_blokkat_wave_2.100.singularityfleet"
-		hidden_effect = {
-			start_situation = {
-				type = giga_situation_project_salvation
-				target = this
-				effect = {
-					save_global_event_target_as = giga_salvation_situation
-				}
-			}
-			set_country_flag = project_salvation_option_singularityfleet
-		}
-	}
-	option = { #one singularitycraft to rule them all
 		name = "giga_blokkat_wave_2.100.singularitycraft"
 		hidden_effect = {
 			start_situation = {
@@ -39,6 +26,20 @@ country_event = { #project salvation
 				}
 			}
 			set_country_flag = project_salvation_option_singularitycraft
+			add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_0
+		}
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.100.singularitybirch"
+		hidden_effect = {
+			start_situation = {
+				type = giga_situation_project_salvation
+				target = this
+				effect = {
+					save_global_event_target_as = giga_salvation_situation
+				}
+			}
+			set_country_flag = project_salvation_option_singularitybirch
 		}
 	}
 	option = { #the quasarcraft
@@ -164,19 +165,376 @@ country_event = { #project salvation
 		}
 	}
 }
+country_event = { #project salvation entering second stage
+	id = giga_blokkat_wave_2.200
+	title = "giga_blokkat_wave_2.200.name"
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.singularitycraft"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.200.desc.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+	picture = GFX_evt_clocks
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = blokkat_project_salvation_stage_2_entered
+	}
+
+	option = { #copy singularitycraft
+		name = "giga_blokkat_wave_2.200.singularitycraft"
+		add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_1
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.200.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	option = { #the quasarcraft
+		name = "giga_blokkat_wave_2.200.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	option = { #menacing celestials
+		name = "giga_blokkat_wave_2.200.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	option = { #galactic psionic avatar
+		name = "giga_blokkat_wave_2.200.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_blokkat_wave_2.200.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	option = { #virus swarm
+		name = "giga_blokkat_wave_2.200.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_blokkat_wave_2.200.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_blokkat_wave_2.200.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+}
+country_event = { #project salvation entering third stage
+	id = giga_blokkat_wave_2.300
+	title = "giga_blokkat_wave_2.300.name"
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.singularitycraft"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.300.desc.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+	picture = GFX_evt_clocks
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = blokkat_project_salvation_stage_3_entered
+	}
+
+	option = { #copy singularitycraft
+		name = "giga_blokkat_wave_2.300.singularitycraft"
+		add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_2
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.300.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	option = { #the quasarcraft
+		name = "giga_blokkat_wave_2.300.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	option = { #menacing celestials
+		name = "giga_blokkat_wave_2.300.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	option = { #galactic psionic avatar
+		name = "giga_blokkat_wave_2.300.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_blokkat_wave_2.300.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	option = { #virus swarm
+		name = "giga_blokkat_wave_2.300.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_blokkat_wave_2.300.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_blokkat_wave_2.300.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+}
+country_event = { #project salvation entering final stage
+	id = giga_blokkat_wave_2.400
+	title = "giga_blokkat_wave_2.400.name"
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.singularitycraft"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.400.desc.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+	picture = GFX_evt_clocks
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = blokkat_project_salvation_stage_4_entered
+	}
+
+	option = { #copy singularitycraft
+		name = "giga_blokkat_wave_2.400.singularitycraft"
+		add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_3
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	option = { #one singularitycraft to rule them all
+		name = "giga_blokkat_wave_2.400.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
+	}
+	option = { #the quasarcraft
+		name = "giga_blokkat_wave_2.400.quasarcraft"
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
+	}
+	option = { #menacing celestials
+		name = "giga_blokkat_wave_2.400.menace"
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
+	}
+	option = { #galactic psionic avatar
+		name = "giga_blokkat_wave_2.400.psionics"
+		trigger = {
+			has_country_flag = project_salvation_option_psionics
+		}
+	}
+	option = { #harness the EOTC
+		name = "giga_blokkat_wave_2.400.eotc"
+		trigger = {
+			has_country_flag = project_salvation_option_eotc
+		}
+	}
+	option = { #virus swarm
+		name = "giga_blokkat_wave_2.400.biogenesis"
+		trigger = {
+			has_country_flag = project_salvation_option_biogenesis
+		}
+	}
+	option = { #super paladin ship
+		name = "giga_blokkat_wave_2.400.dotg"
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
+	}
+	option = { #hack the eradicator when it gets here and use that
+		name = "giga_blokkat_wave_2.400.hack"
+		trigger = {
+			has_country_flag = project_salvation_option_hack
+		}
+	}
+}
 country_event = { #project salvation finish
 	id = giga_blokkat_wave_2.500
 	title = "giga_blokkat_wave_2.500.name"
 	desc = {
-		text = "giga_blokkat_wave_2.500.desc.singularityfleet"
-		trigger = {
-			has_country_flag = project_salvation_option_singularityfleet
-		}
-	}
-	desc = {
 		text = "giga_blokkat_wave_2.500.desc.singularitycraft"
 		trigger = {
 			has_country_flag = project_salvation_option_singularitycraft
+		}
+	}
+	desc = {
+		text = "giga_blokkat_wave_2.500.desc.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
 		}
 	}
 	desc = {
@@ -228,62 +586,58 @@ country_event = { #project salvation finish
 	}
 
 	option = { #copy singularitycraft
-		name = "giga_blokkat_wave_2.500.singularityfleet"
-		add_research_option = giga_tech_blokkat_project_salvation_singularityfleet_4
+		name = "giga_blokkat_wave_2.500.singularitycraft"
+		add_research_option = giga_tech_blokkat_project_salvation_singularitycraft_4
+		trigger = {
+			has_country_flag = project_salvation_option_singularitycraft
+		}
 	}
 	option = { #one singularitycraft to rule them all
-		name = "giga_blokkat_wave_2.500.singularitycraft"
+		name = "giga_blokkat_wave_2.500.singularitybirch"
+		trigger = {
+			has_country_flag = project_salvation_option_singularitybirch
+		}
 	}
 	option = { #the quasarcraft
 		name = "giga_blokkat_wave_2.500.quasarcraft"
-		trigger = { has_global_flag = quasarmod_enabled }
+		trigger = {
+			has_country_flag = project_salvation_option_quasarcraft
+		}
 	}
 	option = { #menacing celestials
 		name = "giga_blokkat_wave_2.500.menace"
-		trigger = { has_ascension_perk = ap_become_the_crisis }
+		trigger = {
+			has_country_flag = project_salvation_option_menace
+		}
 	}
 	option = { #galactic psionic avatar
 		name = "giga_blokkat_wave_2.500.psionics"
 		trigger = {
-			OR = {
-				has_tradition = tr_psionics_finish
-				has_tradition = tr_psionics_shroud_finish
-			}
+			has_country_flag = project_salvation_option_psionics
 		}
 	}
 	option = { #harness the EOTC
 		name = "giga_blokkat_wave_2.500.eotc"
 		trigger = {
-			OR = {
-				has_ascension_perk = ap_become_the_crisis
-				has_tradition = tr_psionics_finish
-				has_tradition = tr_psionics_shroud_finish
-			}
+			has_country_flag = project_salvation_option_eotc
 		}
 	}
 	option = { #virus swarm
 		name = "giga_blokkat_wave_2.500.biogenesis"
 		trigger = {
-			OR = {
-				has_tradition = tr_genetics_finish
-				has_tradition = tr_cloning_finish
-				has_tradition = tr_mutation_finish
-				has_tradition = tr_purity_finish
-			}
+			has_country_flag = project_salvation_option_biogenesis
 		}
 	}
 	option = { #super paladin ship
 		name = "giga_blokkat_wave_2.500.dotg"
-		trigger = { has_ascension_perk = ap_defender_of_the_galaxy }
+		trigger = {
+			has_country_flag = project_salvation_option_dotg
+		}
 	}
 	option = { #hack the eradicator when it gets here and use that
 		name = "giga_blokkat_wave_2.500.hack"
 		trigger = {
-			OR = {
-				has_ascension_perk = ap_cosmogenesis
-				has_tradition = tr_cybernetics_finish
-				has_tradition = tr_cybernetics_assimilator_finish
-			}
+			has_country_flag = project_salvation_option_hack
 		}
 	}
 }
@@ -1573,7 +1927,7 @@ situation_event = { #Monthly event for beamfight situation that increases how mu
 		}
 	}
 }
-country_event = {
+country_event = { #does threat things
 	id = giga_blokkat_wave_2.19941
 
 	is_triggered_only = yes
@@ -3488,7 +3842,7 @@ country_event = {
 		}
 	}
 }
-fleet_event = {
+fleet_event = { #they move
 	id = giga_blokkat_wave_2.2998
 	hide_window = yes
 
@@ -3532,7 +3886,7 @@ fleet_event = {
 		}
 	}
 }
-system_event = {
+system_event = { #they move (but in a different scope)
 	id = giga_blokkat_wave_2.2999
 	hide_window = yes
 
@@ -3569,7 +3923,7 @@ system_event = {
 		system_event = { id = giga_blokkat_wave_2.3000 days = blokkat_distance_for_pathfind }
 	}
 }
-system_event = {
+system_event = { #they move (but in a different event because fuck this game man it broke if it was in the same one)
 	id = giga_blokkat_wave_2.3000
 	hide_window = yes
 	is_triggered_only = yes
@@ -4118,5 +4472,50 @@ country_event = { #debug threat event
 				value = 1000
 			}
 		}
+	}
+}
+
+country_event = { #debug ships event
+	id = giga_blokkat_wave_2_debug.2
+	title = "giga_blokkat_wave_2_debug.2.name"
+	desc = "giga_blokkat_wave_2_debug.2.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = "giga_blokkat_wave_2_debug.2.a"
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_0 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_1 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_2 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_3 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_4 message = yes }
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.2.b"
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitybirch_4 message = yes }
+	}
+}
+
+country_event = { #debug ships event
+	id = giga_blokkat_wave_2_debug.3
+	title = "giga_blokkat_wave_2_debug.3.name"
+	desc = "giga_blokkat_wave_2_debug.3.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = "giga_blokkat_wave_2_debug.3.a"
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_0 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_1 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_2 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_3 message = yes }
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitycraft_4 message = yes }
+		giga_singularity_craft = {
+			ship_name = "singularitycraft_ship_name"
+			ship_name_variables = "[event_target:giga_planet.GetName]"
+		}
+		capital_scope = { last_created_fleet = { set_location = prev } }
+	}
+	option = {
+		name = "giga_blokkat_wave_2_debug.3.b"
+		give_technology = { tech = giga_tech_blokkat_project_salvation_singularitybirch_4 message = yes }
 	}
 }

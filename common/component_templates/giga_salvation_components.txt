@@ -1,0 +1,23 @@
+### Reactors ###
+utility_component_template = {
+	key = "REACTOR_SINGULARITYCRAFT"
+	size = small
+	icon = "GFX_ship_part_reactor_system"
+	icon_frame = 1
+	power = 1000000
+	component_set = "power_core"
+	potential = { is_ship_size = giga_singularitycraft }
+	prerequisites = { "giga_tech_blokkat_project_salvation_singularitycraft_4" }
+	ai_weight = { weight = 10000 } # fix 'normal' reactors being potentially autopicked if they are somehow valid for the systemcraft
+}
+utility_component_template = {
+	key = "REACTOR_SINGULARITYBIRCH"
+	size = small
+	icon = "GFX_ship_part_reactor_system"
+	icon_frame = 1
+	power = 100000000
+	component_set = "power_core"
+	potential = { is_ship_size = giga_singularitybirch }
+	prerequisites = { "giga_tech_blokkat_project_salvation_singularitybirch_4" }
+	ai_weight = { weight = 10000 } # fix 'normal' reactors being potentially autopicked if they are somehow valid for the systemcraft
+}

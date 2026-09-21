@@ -1,0 +1,54 @@
+entity = { #Separate entity rather than using the needle entity so scale can be messed with, and if the model needs replaced it can easily be done so
+	name = "giga_singularitycraft_entity"
+	pdxmesh = "monadic_qerr_mesh"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+	scale = 3
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = cyb_monadic_qerr_idle } }
+	}
+
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = "ball_joint" particle = "monadic_qerr_exhaust_effect" trigger_once = yes keep_particle = yes
+			sound = { soundeffect = cyb_monadic_qerr_move }
+		}
+
+	}
+
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.4 node = "ball_joint" particle = "monadic_qerr_explosion_effect" sound = { soundeffect = ship_destroyed } }
+		event = { time = 0.8 sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.2 sound = { soundeffect = ship_destroyed } }
+	}
+}
+entity = {
+	name = "giga_singularitybirch_entity"
+	pdxmesh = "monadic_qerr_mesh"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+	scale = 30
+	game_data = {
+		emissive_recolor_crunch = 2.0
+	}
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = cyb_monadic_qerr_idle } }
+	}
+
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = "ball_joint" particle = "monadic_qerr_exhaust_effect" trigger_once = yes keep_particle = yes
+			sound = { soundeffect = cyb_monadic_qerr_move }
+		}
+
+	}
+
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.4 node = "ball_joint" particle = "monadic_qerr_explosion_effect" sound = { soundeffect = ship_destroyed } }
+		event = { time = 0.8 sound = { soundeffect = ship_destroyed } }
+		event = { time = 1.2 sound = { soundeffect = ship_destroyed } }
+	}
+}
