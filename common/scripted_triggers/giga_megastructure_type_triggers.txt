@@ -479,6 +479,31 @@ giga_has_birch_world = {
 	}
 }
 
+giga_has_big_salvationcraft = { #MIDIRAY_CHANGE_THIS make this trigger actually check for *all* the big salvationcraft megas and ships. it currently only checks for megas, and depending how we do the eotc path might need that check too.
+	OR = {
+		has_megastructure = singularitybirch_0
+		has_megastructure = singularitybirch_1
+		has_megastructure = singularitybirch_2
+		has_megastructure = singularitybirch_3
+		has_megastructure = singularitybirch_4
+		has_megastructure = hacking_beacon_0
+		has_megastructure = hacking_beacon_1
+		has_megastructure = hacking_beacon_2
+		has_megastructure = hacking_beacon_3
+		has_megastructure = hacking_beacon_4
+		has_megastructure = superavatar_0
+		has_megastructure = superavatar_1
+		has_megastructure = superavatar_2
+		has_megastructure = superavatar_3
+		has_megastructure = superavatar_4
+		has_megastructure = superpaladin_0
+		has_megastructure = superpaladin_1
+		has_megastructure = superpaladin_2
+		has_megastructure = superpaladin_3
+		has_megastructure = superpaladin_4
+	}
+}
+
 giga_has_crystal_megabore = {
     OR = {
         has_megastructure = crystal_megabore_0

@@ -1228,3 +1228,156 @@ giga_blokkat_beamfight_situation_run_calc_with_update = {
 		}
 	}
 }
+
+giga_make_singularitycraft = {
+	create_fleet = {
+		name = "Singularitycraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Singularitycraft"
+				graphical_culture = root.from
+				random_existing_design = giga_singularitycraft
+			}
+		}
+	}
+}
+giga_make_singularitybirch = {
+	create_fleet = {
+		name = "The Birch Singularitycraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "The Birch Singularitycraft"
+				graphical_culture = root.from
+				random_existing_design = giga_singularitybirch
+			}
+		}
+	}
+}
+giga_make_biocraft = {
+	create_fleet = {
+		name = "Bioweapon"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Bioweapon"
+				graphical_culture = root.from
+				random_existing_design = giga_biocraft
+			}
+		}
+	}
+}
+giga_make_horizonpiercer = {
+	create_fleet = {
+		name = "Horizonpiercer"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Horizonpiercer"
+				graphical_culture = root.from
+				random_existing_design = giga_horizonpiercer
+			}
+		}
+	}
+}
+giga_make_superavatar = {
+	create_fleet = {
+		name = "The Avatar"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "The Avatar"
+				graphical_culture = root.from
+				random_existing_design = giga_superavatar
+			}
+		}
+	}
+}
+giga_make_superpaladin = {
+	create_fleet = {
+		name = "Palatinus Ultima"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Palatinus Ultima"
+				graphical_culture = root.from
+				random_existing_design = giga_superpaladin
+			}
+		}
+	}
+}
+
+giga_make_menacing_systemcraft = {
+	create_fleet = {
+		name = "Menacing Stellar Systemcraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Menacing Stellar Systemcraft"
+				graphical_culture = root.from
+				random_existing_design = giga_menacing_systemcraft
+				effect = {
+
+					[[ship_name]
+						set_name = {
+							key = $ship_name$
+							]
+							[[ship_name_variables]
+							variable_string = $ship_name_variables$
+							]
+							[[ship_name]
+						}
+					]
+				}
+			}
+			set_formation_scale = 20
+
+			[[fleet_name]
+				set_name = {
+					key = $fleet_name$
+					]
+					[[fleet_name_variables]
+					variable_string = $fleet_name_variables$
+					]
+					[[fleet_name]
+				}
+			]
+		}
+	}
+}

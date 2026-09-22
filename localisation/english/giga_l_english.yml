@@ -311,6 +311,7 @@
   requires_no_existing_quasistellar:0 "$TRIGGER_FAIL$What do you even need a second one for?"
   requires_no_existing_target_marker_qso:0 "$TRIGGER_FAIL$This celestial body is already being targeted by the $name_quasistellar$."
   requires_no_existing_birch:0 "$TRIGGER_FAIL$Can only construct one $name_birch$."
+  requires_no_existing_big_salvationcraft:0 "$TRIGGER_FAIL$Can only construct one of this type of vessel."
   requires_no_existing_psychic_hypersiphon:0 "$TRIGGER_FAIL$We can only construct one $name_psy_siphon$."
   requires_no_existing_accelerator:0 "$TRIGGER_FAIL$Cannot build more than one $name_particle_accel$ here."
   requires_standard_star_class:0 "$TRIGGER_FAIL$Cannot build around a non-standard star class."
@@ -5009,6 +5010,7 @@
   giga_tech_war_system_6_desc:0 "At last, we have mastered the technologies necessary to assemble our wonderful masterpiece, the $name_war_system$. All that remains now is to figure out how to manage the logistics involved in supporting such a vast vessel and its population, and this gargantuan construct shall finally set sail through the stars!"
 
   war_system_ship_name:0 "[event_target:giga_planet.GetName] Ascendant"
+  menacing_systemcraft_ship_name:0 "[event_target:giga_planet.GetName] Horror"
 
   # giga_dialog.2801.name:0 "Assembling the $name_war_system$"
   # giga_dialog.2801.nonvirtual.desc:0 "The $name_war_system$.\n\nWeaponizing an entire solar system is no small task, and constructing this gargantuan vessel will first require building some $name_war_planet$s and $name_war_moon$s, as they will be incorporated into the Systemcraft's gargantuan hull. Although the actual megastructure is going to require researching several advanced technologies, it would be wise to make the required components in advance, as they will be needed in order to complete the Systemcraft's construction.\n\nRequired celestial bodies:\n4 $name_war_planet$s\n5 $name_war_moon$s\nA planet with at least 4,000 pops, to serve as the crew\n\nIt also features the ability to destroy planets like a Colossus.\n\n§RThe use of an UI Overhaul mod will be required for the Systemcraft to properly display in the ship editor.§!"
