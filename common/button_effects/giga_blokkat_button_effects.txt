@@ -5,7 +5,7 @@ giga_contact_blokkat_bureau = {
 		#OR = { any_country = { is_country_type = blokkat_stripminers } }
 		from = {
 			has_country_flag = gigas_diplo_engaged
-			NOT = { has_country_flag = giga_diplo_sa_buttons }
+			NOT = { has_country_flag = giga_diplo_sa_buttons has_country_flag = blokkat2_bureau_unlocked }
 			OR = {
 				has_country_flag = blokkat_bureau_unlocked
                 OR = {

@@ -1,4 +1,30 @@
 
+giga_contact_blokkat2_bureau = {
+    potential = {
+        exists = from
+        #OR = { any_country = { is_country_type = blokkat_stripminers } }
+        from = {
+            has_country_flag = gigas_diplo_engaged
+            NOT = { has_country_flag = giga_diplo_sa_buttons }
+            has_country_flag = blokkat2_bureau_unlocked
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "giga_not_contacted"
+            from = {
+                has_country_flag = blokkat2_bureau_unlocked
+            }
+        }
+        custom_tooltip = {
+            fail_text = "giga_blokkat2_open"
+            from = {
+                NOT = { has_country_flag = monitoring_blokkat2 }
+            }
+        }
+    }
+    effect = { custom_tooltip = "giga_contact_blokkats_tooltip" hidden_effect = { from = { country_event = { id = giga_blokkat_wave_2.1995 } } } }
+}
 
 # literally a dummy made to show a tooltip about the blokkat2 in the main menu
 giga_page_00_blokkat2_desc = {

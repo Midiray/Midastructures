@@ -4339,17 +4339,251 @@ country_event = {
 		set_variable = { which = giga_gif_integration_progress_var value = 0 }
 	}
 
-	option = { #start project salvation
+	option = { #is there any technology you could offer us
 		name = "giga_GIF_enclaves.11.a"
 		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.100 }
+			country_event = { id = giga_GIF_enclaves.12 }
+		}
+		trigger = {
+			has_global_flag = giga_blokkats_both_wave
 		}
 	}
-
-	option = { #above but different text
+	option = { #is there any technology you could offer us
 		name = "giga_GIF_enclaves.11.b"
 		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.100 }
+			country_event = { id = giga_GIF_enclaves.12 }
+		}
+		trigger = {
+			has_global_flag = giga_blokkats_only_wave2
+		}
+	}
+}
+country_event = { #GIF tells you if you can survive, and offers you pointers to make better ships
+	id = giga_GIF_enclaves.12
+	title = "giga_GIF_enclaves.12.name"
+	desc = {
+		text = "giga_GIF_enclaves.12.desc.bothwave"
+		trigger = {
+			has_global_flag = giga_blokkats_both_wave
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.12.desc.wave2only"
+		trigger = {
+			has_global_flag = giga_blokkats_only_wave2
+		}
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #could we fight them navally?
+		name = "giga_GIF_enclaves.intro.naval"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.13 } }
+	}
+
+	option = { #could we form some sort of shield?
+		name = "giga_GIF_enclaves.intro.shield"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.14 } }
+	}
+
+	option = { #could we escape the galaxy?
+		name = "giga_GIF_enclaves.intro.leave"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.15 } }
+	}
+
+	option = { #why couldn't you give us more than information?
+		name = "giga_GIF_enclaves.intro.beg"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.16 } }
+	}
+
+	option = { #ok im done here
+		name = "giga_GIF_enclaves.intro.goodbye"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
+	}
+}
+country_event = { #nah you need some better ships cuh (unless quasarcraft, then ur good)
+	id = giga_GIF_enclaves.13
+	title = "giga_GIF_enclaves.13.name"
+	desc = {
+		text = "giga_GIF_enclaves.13.desc.has_quasarcraft"
+		trigger = {
+			any_owned_ship = { OR = { is_ship_size = quasarmod_quasarcraft is_ship_size = carks_quasark } }
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.13.desc.is_lame"
+		trigger = {
+			NOT = { any_owned_ship = { OR = { is_ship_size = quasarmod_quasarcraft is_ship_size = carks_quasark } } }
+		}
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #could we fight them navally?
+		name = "giga_GIF_enclaves.intro.naval"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.13 } }
+	}
+
+	option = { #could we form some sort of shield?
+		name = "giga_GIF_enclaves.intro.shield"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.14 } }
+	}
+
+	option = { #could we escape the galaxy?
+		name = "giga_GIF_enclaves.intro.leave"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.15 } }
+	}
+
+	option = { #why couldn't you give us more than information?
+		name = "giga_GIF_enclaves.intro.beg"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.16 } }
+	}
+
+	option = { #ok im done here
+		name = "giga_GIF_enclaves.intro.goodbye"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
+	}
+}
+country_event = { #beamfighting is a thing btw you should try it!
+	id = giga_GIF_enclaves.14
+	title = "giga_GIF_enclaves.14.name"
+	desc = {
+		text = "giga_GIF_enclaves.14.desc.has_qso"
+		trigger = {
+			any_owned_megastructure = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 is_megastructure_type = quasi_stellar_obliterator_firing_1 } }
+		}
+	}
+	desc = {
+		text = "giga_GIF_enclaves.14.desc.is_lame"
+		trigger = {
+			NOT = { any_owned_megastructure = { OR = { is_megastructure_type = quasi_stellar_obliterator_5 is_megastructure_type = quasi_stellar_obliterator_6 is_megastructure_type = quasi_stellar_obliterator_firing_1 } } }
+		}
+	}
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #could we fight them navally?
+		name = "giga_GIF_enclaves.intro.naval"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.13 } }
+	}
+
+	option = { #could we form some sort of shield?
+		name = "giga_GIF_enclaves.intro.shield"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.14 } }
+	}
+
+	option = { #could we escape the galaxy?
+		name = "giga_GIF_enclaves.intro.leave"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.15 } }
+	}
+
+	option = { #why couldn't you give us more than information?
+		name = "giga_GIF_enclaves.intro.beg"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.16 } }
+	}
+
+	option = { #ok im done here
+		name = "giga_GIF_enclaves.intro.goodbye"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
+	}
+}
+country_event = { #the escapists
+	id = giga_GIF_enclaves.15
+	title = "giga_GIF_enclaves.15.name"
+	desc = "giga_GIF_enclaves.15.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #could we fight them navally?
+		name = "giga_GIF_enclaves.intro.naval"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.13 } }
+	}
+
+	option = { #could we form some sort of shield?
+		name = "giga_GIF_enclaves.intro.shield"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.14 } }
+	}
+
+	option = { #could we escape the galaxy?
+		name = "giga_GIF_enclaves.intro.leave"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.15 } }
+	}
+
+	option = { #why couldn't you give us more than information?
+		name = "giga_GIF_enclaves.intro.beg"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.16 } }
+	}
+
+	option = { #ok im done here
+		name = "giga_GIF_enclaves.intro.goodbye"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
+	}
+}
+country_event = { #no we cant give everyone stuff
+	id = giga_GIF_enclaves.16
+	title = "giga_GIF_enclaves.16.name"
+	desc = "giga_GIF_enclaves.16.desc"
+	is_triggered_only = yes
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:lyuinite_species
+		room = lyuinite_room
+	}
+
+	option = { #could we fight them navally?
+		name = "giga_GIF_enclaves.intro.naval"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.13 } }
+	}
+
+	option = { #could we form some sort of shield?
+		name = "giga_GIF_enclaves.intro.shield"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.14 } }
+	}
+
+	option = { #could we escape the galaxy?
+		name = "giga_GIF_enclaves.intro.leave"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.15 } }
+	}
+
+	option = { #why couldn't you give us more than information?
+		name = "giga_GIF_enclaves.intro.beg"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.16 } }
+	}
+
+	option = { #ok im done here
+		name = "giga_GIF_enclaves.intro.goodbye"
+		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
+	}
+}
+country_event = { #project salvation becomes available in the bureau
+	id = giga_GIF_enclaves.17
+	title = "giga_GIF_enclaves.17.name"
+	desc = "giga_GIF_enclaves.17.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = "giga_GIF_enclaves.17.a"
+		custom_tooltip = "giga_GIF_enclaves.17.a.tooltip"
+		hidden_effect = {
+			set_global_flag = blokkat2_bureau_popup
+			set_country_flag = gigas_diplo_engaged
+			set_country_flag = blokkat2_bureau_unlocked
 		}
 	}
 }
@@ -4495,45 +4729,6 @@ country_event = { #friends? friends! fren
 	option = {
 		name = giga_GIF_enclaves.102.b
 		default_hide_option = yes
-	}
-}
-country_event = { #GIF tells you if you can survive, and offers you pointers to make better ships
-	id = giga_GIF_enclaves.200
-	title = "giga_GIF_enclaves.200.name"
-	desc = {
-		text = "giga_GIF_enclaves.200.no"
-		trigger = { #MIDIRAY_CHANGE_THIS fix all the triggers here
-			always = yes
-		}
-	}
-	desc = {
-		text = "giga_GIF_enclaves.200.qso"
-		trigger = {
-			always = no
-		}
-	}
-	desc = {
-		text = "giga_GIF_enclaves.200.flagship"
-		trigger = {
-			always = no
-		}
-	}
-	desc = {
-		text = "giga_GIF_enclaves.200.bulwark"
-		trigger = {
-			always = no
-		}
-	}
-	is_triggered_only = yes
-	diplomatic = yes
-	picture_event_data = {
-		portrait = event_target:lyuinite_species
-		room = lyuinite_room
-	}
-
-	option = { #can you help us make better ships?
-		name = "giga_GIF_enclaves.200.a"
-		hidden_effect = { country_event = { id = giga_GIF_enclaves.201 } }
 	}
 }
 country_event = { #we wont give them to you, but here's some pointers

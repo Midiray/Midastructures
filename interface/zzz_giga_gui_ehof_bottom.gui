@@ -2902,6 +2902,14 @@ guiTypes = {
 			}
 
 			effectButtonType = {
+				name = "system_large_blokkats"
+				quadTextureSprite = "GFX_btn_large_blokkat"
+				position = { x = 85 y = 3 }
+				clicksound = interface
+				effect = "giga_contact_blokkat2_bureau"
+			}
+
+			effectButtonType = {
 				name = "system_large_traders"
 				quadTextureSprite = "GFX_btn_large_traders"
 				position = { x = 124 y = 3 }

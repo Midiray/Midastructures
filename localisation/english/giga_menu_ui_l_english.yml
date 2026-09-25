@@ -11,6 +11,7 @@
     #Buttons disabled
     giga_not_contacted:0 "$TRIGGER_FAIL$You have not yet unlocked this contact"
     giga_blokkats_open:0 "$TRIGGER_FAIL$The §YBlokkat Research Bureau§! menu is already open"
+    giga_blokkat2_open:0 "$TRIGGER_FAIL$The §YBlokkat Emergency Bureau§! menu is already open"
     giga_aeternum_open:0 "$TRIGGER_FAIL$The §YAeternite Agency§! menu is already open"
     giga_traders_scared:0 "$TRIGGER_FAIL$You cannot contact the §YUrmazin§! while the §RCompound§! continues to threaten the galaxy"
     giga_katzens_defeated:0 "$TRIGGER_FAIL$Now that the §YKatzenartig Imperium§! has been defeated, contacting the partisans serves little purpose"
