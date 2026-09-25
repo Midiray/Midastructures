@@ -35,3 +35,8 @@
 @platform_reactor_upkeep_blokkat = 37.4
 @war_moon_reactor_upkeep_blokkat = 1576.65
 @war_planet_reactor_upkeep_blokkat = 2364.975
+
+
+@approach_situation_gif_blueprint_research_2_cost_base = 10000
+@approach_situation_gif_blueprint_research_3_cost_base = 20000
+@approach_situation_gif_blueprint_research_4_cost_base = 50000

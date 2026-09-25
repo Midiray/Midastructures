@@ -1,0 +1,1383 @@
+
+
+remove_flags_blokkat2_difficulty = {
+	if = {
+		limit = { has_global_flag = giga_blokkat2_very_easy }
+		remove_global_flag = giga_blokkat2_very_easy
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_easy }
+		remove_global_flag = giga_blokkat2_easy
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_normal }
+		remove_global_flag = giga_blokkat2_normal
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_bismuth }
+		remove_global_flag = giga_blokkat2_bismuth
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_endtech }
+		remove_global_flag = giga_blokkat2_endtech
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_deathmode }
+		remove_global_flag = giga_blokkat2_deathmode
+	}
+}
+blokkat2_remove_threat_flags = {
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_1 }
+		remove_global_flag = giga_blokkat2_threat_category_1
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+	}
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_8 }
+		remove_global_flag = giga_blokkat2_threat_category_8
+	}
+}
+blokkat2_increase_threat_status = {
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_1 }
+		remove_global_flag = giga_blokkat2_threat_category_1
+		set_global_flag = giga_blokkat2_threat_category_2
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+		set_global_flag = giga_blokkat2_threat_category_3
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+		set_global_flag = giga_blokkat2_threat_category_4
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+		set_global_flag = giga_blokkat2_threat_category_5
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+		set_global_flag = giga_blokkat2_threat_category_6
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+		set_global_flag = giga_blokkat2_threat_category_7
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+		set_global_flag = giga_blokkat2_threat_category_8
+	}
+}
+blokkat2_decrease_threat_status = { #Here just in case, but really shouldn't be used due to how threat works
+	if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_2 }
+		remove_global_flag = giga_blokkat2_threat_category_2
+		set_global_flag = giga_blokkat2_threat_category_1
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_3 }
+		remove_global_flag = giga_blokkat2_threat_category_3
+		set_global_flag = giga_blokkat2_threat_category_2
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_4 }
+		remove_global_flag = giga_blokkat2_threat_category_4
+		set_global_flag = giga_blokkat2_threat_category_3
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_5 }
+		remove_global_flag = giga_blokkat2_threat_category_5
+		set_global_flag = giga_blokkat2_threat_category_4
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_6 }
+		remove_global_flag = giga_blokkat2_threat_category_6
+		set_global_flag = giga_blokkat2_threat_category_5
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_7 }
+		remove_global_flag = giga_blokkat2_threat_category_7
+		set_global_flag = giga_blokkat2_threat_category_6
+	}
+	else_if = {
+		limit = { has_global_flag = giga_blokkat2_threat_category_8 }
+		remove_global_flag = giga_blokkat2_threat_category_8
+		set_global_flag = giga_blokkat2_threat_category_7
+	}
+}
+giga_create_lead_eradicator_wave_2_effect = {
+	create_fleet = {
+		name = "Blokk-Eradicator"
+		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
+		effect = {
+			set_owner = event_target:blokkat2_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Blokk-Eradicator"
+					design = "Blokk-Eradicator"
+					prefix = no
+				}
+			}
+			set_fleet_flag = blokkat_beamfighter_eradicator
+			set_location = event_target:main_eradicator_system
+		}
+	}
+}
+giga_create_eradicator_wave_2_effect = {
+	create_fleet = {
+		name = "Blokk-Eradicator"
+		settings = { spawn_debris = no can_change_composition = no is_ultra_boss = yes }
+		effect = {
+			set_owner = event_target:blokkat2_country
+			while = {
+				count = 1
+				create_ship = {
+					name = "Blokk-Eradicator"
+					design = "Blokk-Eradicator"
+					prefix = no
+				}
+			}
+			set_fleet_flag = blokkat_roaming_eradicator
+			set_fleet_flag = giga_blokkat2_planet_killer_fleet
+			set_location = event_target:main_eradicator_system
+		}
+	}
+}
+giga_create_very_strong_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 20
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 8
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 12
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 3
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 17
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_powerful_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 19
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_obliterator_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_strong_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 9
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_regular_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 5
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_sterilizer_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_weak_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 50000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = yes
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Obliterator"
+						design = "Blokk-Obliterator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 2
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 4
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_weak_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 5
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 15
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_vanguard_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+giga_create_scout_fleet_wave_2_effect = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 20000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_strong_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 11
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_scout_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value > 5000
+				}
+			}
+		}
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Terminator"
+						design = "Blokk-Terminator"
+						prefix = no
+					}
+				}
+				while = {
+					count = 2
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 8
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_scout_fleet
+				set_fleet_flag = giga_blokkat2_planet_killer_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+	else = {
+		event_target:blokkat2_country = {
+			create_blokkat_admiral = yes
+		}
+		create_fleet = { #Spawn some Escort ships
+			name = "NAME_scout_blokkat2_fleet"
+			settings = {
+				spawn_debris = no
+				can_upgrade = no
+				uses_naval_capacity = no
+				can_change_composition = no
+				is_boss = no
+			}
+			effect = {
+				set_owner = event_target:blokkat2_country
+				while = {
+					count = 1
+					create_ship = {
+						name = "Blokk-Custodian"
+						design = "Blokk-Custodian"
+						prefix = no
+					}
+				}
+				while = {
+					count = 10
+					create_ship = {
+						name = "Blokk-Evictor"
+						design = "Blokk-Evictor"
+						prefix = no
+					}
+				}
+				set_location = event_target:main_eradicator_system
+				set_formation_scale = 3
+				set_fleet_flag = blokkat2_scout_fleet
+				set_fleet_flag = blokkat_fleet
+				assign_leader = event_target:new_blokkat_admiral
+			}
+		}
+	}
+}
+
+blokkat_spread_aura = { #Useless atm
+	custom_tooltip = try_spread_aura_tt
+	if = {
+		limit = {
+			has_psionic_aura = yes
+			#aura_owner = { has_technology = tech_aura_intensification }
+		}
+		aura_owner = { save_event_target_as = current_aura_owner }
+		random_neighbor_system = {
+			limit = { has_psionic_aura = no }
+			spawn_psionic_aura = { owner = prev.aura_owner }
+			weights = {
+				base = 1
+				modifier = {
+					add = value:count_adjacent_psionic_auras
+					always = yes
+				}
+			}
+		}
+	}
+}
+
+setup_beam_aura_clashing_monthly = {
+	set_timed_star_flag = {
+		flag = aura_clashing_on_monthly_check
+		days = 20 #to fit within on_monthly (can be changed for AIs if needed)
+	}
+	setup_beam_aura_clashing = {
+		PRE_LOOP_CONDITIONS = "NOT = { has_star_flag = aura_clashing_on_monthly_check }"
+		PRE_LOOP_EFFECTS = "clear_aura_clashing_flags = yes"
+	}
+}
+setup_beam_aura_clashing = {
+	export_trigger_value_to_variable = {
+		trigger = monthly_intensity_increase
+		variable = monthly_increase
+	}
+	every_neighbor_system = {
+		limit = {
+			[[PRE_LOOP_CONDITIONS]
+				$PRE_LOOP_CONDITIONS$
+			]
+			has_psionic_aura = yes
+			aura_owner = { NOT = { is_same_value = root.aura_owner } }
+		}
+
+		[[PRE_LOOP_EFFECTS]
+			$PRE_LOOP_EFFECTS$
+		]
+
+		export_trigger_value_to_variable = {
+			trigger = monthly_intensity_increase
+			variable = monthly_increase
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = monthly_increase
+					value < root.monthly_increase
+				}
+			}
+			root = { save_event_target_as = winning_system }
+			save_event_target_as = losing_system
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = monthly_increase
+					value > root.monthly_increase
+				}
+			}
+			save_event_target_as = winning_system
+			root = { save_event_target_as = losing_system }
+		}
+		if = {
+			limit = { exists = event_target:losing_system }
+			if = {
+				limit = {
+					always = yes
+					# 	event_target:losing_system = {
+					# 		aura_clash_can_attacker_spread_in_system = {
+					# 			ATTACKER_SYSTEM = event_target:winning_system
+					# 		}
+					# 	}
+				}
+				event_target:winning_system = {
+					set_star_flag = aura_is_clashing_against_@event_target:losing_system
+					set_star_flag = aura_clash_winning_against_@event_target:losing_system
+				}
+				event_target:losing_system = {
+					set_star_flag = aura_is_clashing_against_@event_target:winning_system
+				}
+			}
+		}
+		else = {
+			save_event_target_as = tested_system
+			if = { # In case of tie, auras are clashing if any of them can spread
+				limit = {
+					OR = {
+						aura_clash_can_attacker_spread_in_system = {
+							ATTACKER_SYSTEM = root
+						}
+						root = {
+							aura_clash_can_attacker_spread_in_system = {
+								ATTACKER_SYSTEM = event_target:tested_system
+							}
+						}
+					}
+				}
+				set_star_flag = aura_is_clashing_against_@root
+				trigger_aura_clashing_event = { FROM = root }
+				root = {
+					set_star_flag = aura_is_clashing_against_@event_target:tested_system
+					trigger_aura_clashing_event = { FROM = event_target:tested_system }
+				}
+			}
+		}
+		clear_variable = monthly_increase
+	}
+	clear_variable = monthly_increase
+}
+
+reduce_blokkat_wave2_spawn_date = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave2_spawn_date
+					value > 2200
+				}
+			}
+		}
+		event_target:global_event_country = {
+			subtract_variable = {
+				which = blokkat_wave2_spawn_date
+				value = 50
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave2_spawn_date
+					value <= 2200
+				}
+			}
+		}
+		event_target:global_event_country = {
+			set_variable = {
+				which = blokkat_wave2_spawn_date
+				value = 2550
+			}
+		}
+	}
+}
+
+reduce_blokkat_wave2_spawn_delay = {
+	if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave2_spawn_delay
+					value > 10
+				}
+			}
+		}
+		event_target:global_event_country = {
+			subtract_variable = {
+				which = blokkat_wave2_spawn_delay
+				value = 10
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			event_target:global_event_country = {
+				check_variable = {
+					which = blokkat_wave2_spawn_delay
+					value <= 10
+				}
+			}
+		}
+		event_target:global_event_country = {
+			set_variable = {
+				which = blokkat_wave2_spawn_delay
+				value = 40
+			}
+		}
+	}
+}
+
+giga_blokkat_beamfight_situation_prerun_calc = {
+	event_target:giga_beamfight_situation_recipient = {
+		set_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_rage
+		}
+		multiply_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep_mult
+		}
+		divide_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = 12
+		}
+		#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+	}
+
+	event_target:giga_beamfight_situation_recipient = {
+		# Updating situation progress: done manually to avoid the situation going out of bounds, and to allow choosing how much energy the QSO fires
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		subtract_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 1
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 20
+		}
+		event_target:giga_beamfight_situation = {
+			export_trigger_value_to_variable = {
+				trigger = situation_progress
+				variable = giga_blokkat_wave_2_situation_progress_absolute
+			}
+			change_variable = {
+				which = giga_blokkat_wave_2_situation_progress_absolute
+				value = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_situation_progress_absolute
+			value = event_target:giga_beamfight_situation.giga_blokkat_wave_2_situation_progress_absolute
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_expected_progress
+			value = giga_blokkat_wave_2_beamfight_status
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 10000
+		}
+		round_variable = giga_blokkat_wave_2_beamfight_fulfil_perc
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 100
+		}
+		# if = {
+		# 	limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value > 0 } }
+		# 	# if = {
+		# 	# 	limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value < 999 } }
+		# 	# 	event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+		# 	# }
+		# 	# else = {
+		# 	# 	event_target:giga_beamfight_situation = { set_situation_progress = 999 }
+		# 	# }
+		# }
+		# else_if = {
+		# 	limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value < 0 } }
+		# 	# if = {
+		# 	# 	limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value > 1 } }
+		# 	# 	event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+		# 	# }
+		# 	# else = {
+		# 	# 	event_target:giga_beamfight_situation = { set_situation_progress = 1 }
+		# 	# }
+		# }
+	}
+}
+giga_blokkat_beamfight_situation_run_calc_with_update = {
+	event_target:giga_beamfight_situation_recipient = {
+		set_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_rage
+		}
+		multiply_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep_mult
+		}
+		divide_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep_temp
+			value = 12
+		}
+		ceiling_variable = blokkat_wave_2_beamfight_energy_upkeep_temp
+		#If rage is desired to be incremented here, the system of incrementing beamfight cost MUST be changed otherwise it will result in an endless feedback loop
+	}
+	event_target:global_event_country = {
+		add_variable = {
+			which = blokkat_wave_2_beamfight_energy_upkeep
+			value = event_target:giga_beamfight_situation_recipient.blokkat_wave_2_beamfight_energy_upkeep_temp
+		}
+	}
+	event_target:giga_beamfight_situation_recipient = {
+		# Updating situation progress: done manually to avoid the situation going out of bounds, and to allow choosing how much energy the QSO fires
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		subtract_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 1
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_status
+			value = 20
+		}
+		event_target:giga_beamfight_situation = {
+			export_trigger_value_to_variable = {
+				trigger = situation_progress
+				variable = giga_blokkat_wave_2_situation_progress_absolute
+			}
+			change_variable = {
+				which = giga_blokkat_wave_2_situation_progress_absolute
+				value = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_situation_progress_absolute
+			value = event_target:giga_beamfight_situation.giga_blokkat_wave_2_situation_progress_absolute
+		}
+		if = {
+			limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value > 0 } }
+			if = {
+				limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value < 999 } }
+				event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+			}
+			else = {
+				event_target:giga_beamfight_situation = { set_situation_progress = 999 }
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_status value < 0 } }
+			if = {
+				limit = { check_variable = { which = giga_blokkat_wave_2_situation_progress_absolute value > 1 } }
+				event_target:giga_beamfight_situation = { add_situation_progress = event_target:giga_beamfight_situation_recipient.giga_blokkat_wave_2_beamfight_status }
+			}
+			else = {
+				event_target:giga_beamfight_situation = { set_situation_progress = 1 }
+			}
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_expected_progress
+			value = giga_blokkat_wave_2_beamfight_status
+		}
+		set_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.giga_blokkat_wave_2_beamfight_energy_input
+		}
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = event_target:global_event_country.blokkat_wave_2_beamfight_energy_upkeep
+		}
+		multiply_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 10000
+		}
+		round_variable = giga_blokkat_wave_2_beamfight_fulfil_perc
+		divide_variable = {
+			which = giga_blokkat_wave_2_beamfight_fulfil_perc
+			value = 100
+		}
+	}
+}
+
+giga_make_singularitycraft = {
+	create_fleet = {
+		name = "Singularitycraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Singularitycraft"
+				graphical_culture = root.from
+				random_existing_design = giga_singularitycraft
+			}
+		}
+	}
+}
+giga_make_singularitybirch = {
+	create_fleet = {
+		name = "The Birch Singularitycraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "The Birch Singularitycraft"
+				graphical_culture = root.from
+				random_existing_design = giga_singularitybirch
+			}
+		}
+	}
+}
+giga_make_biocraft = {
+	create_fleet = {
+		name = "Bioweapon"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Bioweapon"
+				graphical_culture = root.from
+				random_existing_design = giga_biocraft
+			}
+		}
+	}
+}
+giga_make_horizonpiercer = {
+	create_fleet = {
+		name = "Horizonpiercer"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Horizonpiercer"
+				graphical_culture = root.from
+				random_existing_design = giga_horizonpiercer
+			}
+		}
+	}
+}
+giga_make_superavatar = {
+	create_fleet = {
+		name = "The Avatar"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "The Avatar"
+				graphical_culture = root.from
+				random_existing_design = giga_superavatar
+			}
+		}
+	}
+}
+giga_make_superpaladin = {
+	create_fleet = {
+		name = "Palatinus Ultima"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Palatinus Ultima"
+				graphical_culture = root.from
+				random_existing_design = giga_superpaladin
+			}
+		}
+	}
+}
+
+giga_make_menacing_systemcraft = {
+	create_fleet = {
+		name = "Menacing Stellar Systemcraft"
+		settings = {
+			spawn_debris = no
+			can_change_composition = yes #no
+			is_boss = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "Menacing Stellar Systemcraft"
+				graphical_culture = root.from
+				random_existing_design = giga_menacing_systemcraft
+				effect = {
+
+					[[ship_name]
+						set_name = {
+							key = $ship_name$
+							]
+							[[ship_name_variables]
+							variable_string = $ship_name_variables$
+							]
+							[[ship_name]
+						}
+					]
+				}
+			}
+			set_formation_scale = 20
+
+			[[fleet_name]
+				set_name = {
+					key = $fleet_name$
+					]
+					[[fleet_name_variables]
+					variable_string = $fleet_name_variables$
+					]
+					[[fleet_name]
+				}
+			]
+		}
+	}
+}

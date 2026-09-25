@@ -57,6 +57,7 @@ blokkat_unique = {
 		"blokkat3d_edblokk"
 		"blokkat3d_pieblokk"
 		"blokkat3d_tempestkat"
+		"blokkat3d_midikat"
 	}
 }
 
@@ -103,6 +104,7 @@ blokkat_unique_angry = {
 		"blokkat3d_edblokk_angry"
 		"blokkat3d_pieblokk_angry"
 		"blokkat3d_tempestkat_angry"
+		"blokkat3d_midikat_angry"
 	}
 }
 

@@ -247,6 +247,14 @@ defined_text = {
 		}
 		localization_key = prison_blokkat_is_tempestkat
 	}
+	text = {
+		trigger = {
+			event_target:blokkat_prisoner_being_viewed = {
+				has_leader_flag = blokkat_is_midikat
+			}
+		}
+		localization_key = prison_blokkat_is_midikat
+	}
 }
 
 defined_text = {

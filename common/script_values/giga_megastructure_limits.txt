@@ -362,4 +362,11 @@ giga_nidavellir_limit = {
         add = giga_nidavellir_cap
     }
 }
+giga_salvationcraft_limit = {
+    base = 0
+    add = modifier:giga_salvationcraft_limit_add
+    modifier = {
+        add = giga_salvationcraft_cap
+    }
+}
 # EOF :3

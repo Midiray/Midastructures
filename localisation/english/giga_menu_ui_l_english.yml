@@ -11,6 +11,7 @@
   #Buttons disabled
   giga_not_contacted:0 "$TRIGGER_FAIL$You have not yet unlocked this contact"
   giga_blokkats_open:0 "$TRIGGER_FAIL$The §YBlokkat Research Bureau§! menu is already open"
+  giga_blokkat2_open:0 "$TRIGGER_FAIL$The §YBlokkat Emergency Bureau§! menu is already open"
   giga_aeternum_open:0 "$TRIGGER_FAIL$The §YAeternite Agency§! menu is already open"
   giga_traders_scared:0 "$TRIGGER_FAIL$You cannot contact the §YUrmazin§! while the §RCompound§! continues to threaten the galaxy"
   giga_katzens_defeated:0 "$TRIGGER_FAIL$Now that the §YKatzenartig Imperium§! has been defeated, contacting the partisans serves little purpose"
@@ -111,7 +112,7 @@
   giga_compendium_habitat_control_prereqs:0 "\nRequirements:\n$giga_compendium_pre_tech_hab_1$"
 
   giga_compendium_orbital_major_header:0 "§Y$major_orbital$§!"
-  giga_compendium_orbital_description:0 "$major_orbital_DESC$" # Both orbitals are intended to have the same description, vanilla has a missing minor orbital description entry 
+  giga_compendium_orbital_description:0 "$major_orbital_DESC$" # Both orbitals are intended to have the same description, vanilla has a missing minor orbital description entry
 
   giga_compendium_orbital_minor_header:0 "§Y$minor_orbital$§!"
   #$TABBED_NEW_LINE$

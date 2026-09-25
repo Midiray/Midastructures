@@ -124,7 +124,7 @@ entity = {
 	name = "blokkat_obliterator_entity"
 
 	cull_radius = 9999
-	scale = 75
+	scale = 30
 
 	locator = { name = "part1" position = { 0 0 0 } rotation = { 0 0 0 } }
 

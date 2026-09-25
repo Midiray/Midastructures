@@ -5,7 +5,7 @@ entity = {
 	default_state = idle
 	state = { name = "idle" state_time = 5 }
 	
-	scale = 6.25
+	scale = 3 #6.25
 	
 	game_data = {
 		size = 24

@@ -9,3 +9,17 @@
 # 	}
 	
 # }
+
+approach_situation_gif_blueprint_research_2_cost = {
+    base = @approach_situation_gif_blueprint_research_2_cost_base
+    multiply = event_target:giga_eawaf_country.giga_eawaf_field_potency_multiplier
+}
+approach_situation_gif_blueprint_research_3_cost = {
+    base = @approach_situation_gif_blueprint_research_3_cost_base
+    multiply = event_target:giga_eawaf_country.giga_eawaf_field_potency_multiplier
+}
+
+approach_situation_gif_blueprint_research_4_cost = {
+    base = @approach_situation_gif_blueprint_research_4_cost_base
+    multiply = event_target:giga_eawaf_country.giga_eawaf_field_potency_multiplier
+}

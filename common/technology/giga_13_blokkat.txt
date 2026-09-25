@@ -1120,3 +1120,1304 @@ giga_tech_blokkat_supermassive_ehof_activate = {
 		factor = @giga_aiweight_multiplier_strong
 	}
 }
+#Project Salvation Techs
+giga_tech_blokkat_project_salvation_singularitycraft_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitycraft_p0"	desc = "desc_projsalv_singularitycraft_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitycraft_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitycraft_p1"	desc = "desc_projsalv_singularitycraft_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitycraft_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitycraft_p2"	desc = "desc_projsalv_singularitycraft_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitycraft_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitycraft_p3"	desc = "desc_projsalv_singularitycraft_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitycraft_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitycraft_p4"	desc = "desc_projsalv_singularitycraft_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitybirch_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitybirch_p0"	desc = "desc_projsalv_singularitybirch_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitybirch_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitybirch_p1"	desc = "desc_projsalv_singularitybirch_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitybirch_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitybirch_p2"	desc = "desc_projsalv_singularitybirch_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitybirch_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitybirch_p3"	desc = "desc_projsalv_singularitybirch_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_singularitybirch_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_singularitybirch_p4"	desc = "desc_projsalv_singularitybirch_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+} #MIDIRAY_CHANGE_THIS below this
+giga_tech_blokkat_project_salvation_quasarcraft_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_quasarcraft_p0"	desc = "desc_projsalv_quasarcraft_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_quasarcraft_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_quasarcraft_p1"	desc = "desc_projsalv_quasarcraft_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_quasarcraft_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_quasarcraft_p2"	desc = "desc_projsalv_quasarcraft_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_quasarcraft_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_quasarcraft_p3"	desc = "desc_projsalv_quasarcraft_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_quasarcraft_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_quasarcraft_p4"	desc = "desc_projsalv_quasarcraft_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_menace_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_menace_p0"	desc = "desc_projsalv_menace_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_menace_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_menace_p1"	desc = "desc_projsalv_menace_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_menace_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_menace_p2"	desc = "desc_projsalv_menace_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_menace_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_menace_p3"	desc = "desc_projsalv_menace_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_menace_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_menace_p4"	desc = "desc_projsalv_menace_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_psionics_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_psionics_p0"	desc = "desc_projsalv_psionics_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_psionics_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_psionics_p1"	desc = "desc_projsalv_psionics_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_psionics_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_psionics_p2"	desc = "desc_projsalv_psionics_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_psionics_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_psionics_p3"	desc = "desc_projsalv_psionics_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_psionics_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_psionics_p4"	desc = "desc_projsalv_psionics_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_eotc_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_eotc_p0"	desc = "desc_projsalv_eotc_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_eotc_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_eotc_p1"	desc = "desc_projsalv_eotc_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_eotc_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_eotc_p2"	desc = "desc_projsalv_eotc_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_eotc_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_eotc_p3"	desc = "desc_projsalv_eotc_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_eotc_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_eotc_p4"	desc = "desc_projsalv_eotc_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_biogenesis_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_biogenesis_p0"	desc = "desc_projsalv_biogenesis_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_biogenesis_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_biogenesis_p1"	desc = "desc_projsalv_biogenesis_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_biogenesis_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_biogenesis_p2"	desc = "desc_projsalv_biogenesis_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_biogenesis_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_biogenesis_p3"	desc = "desc_projsalv_biogenesis_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_biogenesis_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_biogenesis_p4"	desc = "desc_projsalv_biogenesis_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_dotg_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_dotg_p0"	desc = "desc_projsalv_dotg_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_dotg_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_dotg_p1"	desc = "desc_projsalv_dotg_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_dotg_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_dotg_p2"	desc = "desc_projsalv_dotg_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_dotg_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_dotg_p3"	desc = "desc_projsalv_dotg_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_dotg_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_dotg_p4"	desc = "desc_projsalv_dotg_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_hack_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_hack_p0"	desc = "desc_projsalv_hack_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_hack_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_hack_p1"	desc = "desc_projsalv_hack_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_hack_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_hack_p2"	desc = "desc_projsalv_hack_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_hack_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_hack_p3"	desc = "desc_projsalv_hack_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_hack_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_hack_p4"	desc = "desc_projsalv_hack_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_cosmo_0 = {
+	cost = @giga_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_cosmo_p0"	desc = "desc_projsalv_cosmo_p0" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_cosmo_1 = {
+	cost = @giga_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_cosmo_p1"	desc = "desc_projsalv_cosmo_p1" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_cosmo_2 = {
+	cost = @giga_1_250_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_cosmo_p2"	desc = "desc_projsalv_cosmo_p2" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_cosmo_3 = {
+	cost = @giga_2_500_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_cosmo_p3"	desc = "desc_projsalv_cosmo_p3" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
+giga_tech_blokkat_project_salvation_cosmo_4 = {
+	cost = @giga_5_000_000_cost
+	area = engineering
+	tier = 5
+	category = { blokkats }
+	is_rare = yes
+	#is_dangerous = yes
+	weight = 0
+	is_reverse_engineerable = no
+	# potential = {
+	# 	has_country_flag = blokkat_project_salvation_finished
+	# }
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = ship
+		hide_prereq_for_desc = component
+		hide_prereq_for_desc = feature
+		hide_prereq_for_desc = resource
+		custom = { title = "header_04_lud_insane"	desc = "header_04_lud_insane_desc" }
+		custom = { title = "allow_projsalv_cosmo_p4"	desc = "desc_projsalv_cosmo_p4" }
+	}
+
+	ai_weight = {
+		factor = @giga_aiweight_multiplier_medium
+	}
+}
