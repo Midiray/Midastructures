@@ -1372,6 +1372,7 @@ vat_07_chk = {
 }
 
 giga_system_has_atmosphere_shredder = {
+	optimize_memory
 	OR = {
 		any_system_megastructure = {
 			ehof_giga_new_is_atmosphere_shredder = yes
@@ -1380,6 +1381,7 @@ giga_system_has_atmosphere_shredder = {
 }
 
 giga_system_has_artificial_eco = {
+	optimize_memory
 	OR = {
 		any_system_megastructure = {
 			ehof_giga_new_is_artificial_eco = yes
@@ -1388,6 +1390,7 @@ giga_system_has_artificial_eco = {
 }
 
 giga_system_has_macro_test = {
+	optimize_memory
 	OR = {
 		any_system_megastructure = {
 			ehof_giga_new_is_macrotest = yes
@@ -1395,8 +1398,8 @@ giga_system_has_macro_test = {
 	}
 }
 
-
 giga_system_has_planetary_seeder_nexus = {
+	optimize_memory
 	OR = {
 		any_system_megastructure = {
 			ehof_giga_new_is_planetary_seeder_nexus = yes

@@ -613,12 +613,44 @@ disco_moon_modifier = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_disco_moon.dds"
 	icon_frame = 1
 
-	planet_amenities_mult = 0.35
+	planet_amenities_mult = 0.30
 	planet_jobs_unity_produces_mult = 0.25
 	pop_happiness = 0.1
 	planet_jobs_trade_produces_mult = 0.25
 	pop_government_ethic_attraction = 0.25
-	pop_environment_tolerance = -0.10
+	# pop_environment_tolerance = -0.10
+}
+
+disco_moon_repro_modifier = {
+	logistic_growth_mult = 0.30
+	biological_pop_happiness = 0.15
+	planet_stability_add = -5
+	planet_pops_consumer_goods_upkeep_mult = 0.10
+	planet_jobs_produces_mult = -0.10
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_atmospheric_aphrodisiac.dds"
+	icon_frame = 1
+}
+
+disco_moon_indoc_modifier = {
+	pop_government_ethic_attraction = 2
+	planet_stability_add = 10
+	planet_crime_mult = -0.50
+	logistic_growth_mult = -0.10
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_surreal_visions.dds"
+	icon_frame = 1
+}
+
+disco_moon_nonight_modifier = {
+	pop_bonus_workforce_mult = 0.20
+	planet_crime_mult = -0.30
+	planet_stability_add = -15
+	biological_pop_happiness = -0.15
+	pop_environment_tolerance = -0.20
+
+	icon = "gfx/interface/icons/planet_modifiers/pm_star.dds"
+	icon_frame = 1
 }
 
 orbital_arcology_modifier_1 = {
@@ -822,6 +854,17 @@ giga_fleet_power_scaling_buff = {
 	ship_weapon_damage = 0.05
 }
 
+# used for excess spawn budge (currently in the hypersiphon incursions)
+giga_hypersiphon_excess_buff_hp = {
+	ship_hull_mult = 1
+	ship_shield_mult = 1
+}
+giga_hypersiphon_excess_buff_damage = {
+	ship_weapon_damage = 1
+	ship_fire_rate_mult = 0.1
+	ship_weapon_range_mult = 0.05	## hidden range buff hehe
+}
+
 giga_highlight_object = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
 	icon_frame = 2
@@ -888,3 +931,21 @@ giga_crisis_damage = {
 	damage_vs_country_type_blokkat_stripminers_mult = 1
 	damage_vs_country_type_giga_eawaf_sirens_mult = 1
 }
+
+
+
+giga_combat_ship_weapon_damage = { ship_weapon_damage = 1 }
+giga_combat_ship_fire_rate_mult = { ship_fire_rate_mult = 1 }
+giga_combat_ship_hull_damage_mult = { ship_hull_damage_mult = 1 }
+giga_combat_ship_armor_damage_mult = { ship_armor_damage_mult = 1 }
+giga_combat_ship_shield_damage_mult = { ship_shield_damage_mult = 1 }
+giga_combat_ship_weapon_range_mult = { ship_weapon_range_mult = 1 }
+giga_combat_ship_engagement_range_mult = { ship_engagement_range_mult = 1 }
+giga_combat_ship_tracking_mult = { ship_tracking_mult = 1 }
+giga_combat_ship_accuracy_mult = { ship_accuracy_mult = 1 }
+giga_combat_ship_tracking_add = { ship_tracking_add = 1 }
+giga_combat_ship_accuracy_add = { ship_accuracy_add = 1 }
+giga_combat_ship_shield_penetration_add = { ship_shield_penetration_add = 1 }
+giga_combat_ship_armor_penetration_add = { ship_armor_penetration_add = 1 }
+giga_combat_ship_shield_penetration_mult = { ship_shield_penetration_mult = 1 }
+giga_combat_ship_armor_penetration_mult = { ship_armor_penetration_mult = 1 }
