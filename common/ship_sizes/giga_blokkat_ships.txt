@@ -235,7 +235,7 @@ giga_blokkat_obliterator = {
 	required_component_set = "ship_aura_components"
 }
 
-#Eradicators are when the Blokkats decide they care more about the death of a species than efficiency
+#Just don't fight an Eradicator if you value your life
 giga_blokkat_eradicator = {
 	entity = blokkat_eradicator_frame_entity
 	graphical_culture = no

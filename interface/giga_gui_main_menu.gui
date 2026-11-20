@@ -2144,6 +2144,10 @@ guiTypes = {
 					effectButtonType = { name = "blokkat2_x_guaranteed"	    spriteType = "GFX_giga_menu_enabled"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkat2_x_guaranteed" }
 					effectButtonType = { name = "blokkat2_x_disabled"		spriteType = "GFX_giga_menu_disabled"		position = { x = 380 y = 5 } clicksound = interface		effect = "blokkat2_x_disabled" }
 
+					#one wave or infinite?
+					effectButtonType = { name = "blokkat2_one_wave"	    spriteType = "GFX_giga_menu_1"		position = { x = 350 y = 5 } clicksound = interface		effect = "blokkat2_one_wave" }
+					effectButtonType = { name = "blokkat2_infinite_waves"		spriteType = "GFX_giga_menu_u"		position = { x = 350 y = 5 } clicksound = interface		effect = "blokkat2_infinite_waves" }
+
 					#how long after the vester is kil (if wave 1 is enabled)
 					effectButtonType = { name = "blokkat2_x_randompostwave1"		spriteType = "GFX_giga_menu_blokkats_randomgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_randompostwave1" }
 					effectButtonType = { name = "blokkat2_x_10yrs"	spriteType = "GFX_giga_menu_blokkats_lateendgame"		position = { x = 200 y = 5 } clicksound = interface	effect = "blokkat2_x_10yrs" }

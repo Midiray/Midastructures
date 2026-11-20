@@ -183,3 +183,30 @@ blokkat_gigarelay_3 = {
 		if = { limit = { exists = fromfrom.planet } fromfrom.planet = { save_event_target_as = giga_planet } }
 	}
 }
+
+blokkat_wave2_gigarelay = {
+	entity = "blokkat_pylon_full_entity"
+	construction_entity = "blokkat_pylon_full_entity"
+	portrait = "GFX_megastructure_blokkat_shieldkiller"
+
+	outliner_trigger = {
+		exists = owner
+		NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+	}
+
+	potential = { always = no }
+	possible = { always = no }
+}
+blokkat_wave2_shieldemitter = {
+	entity = "blokkat_pylon_full_entity"
+	construction_entity = "blokkat_pylon_full_entity"
+	portrait = "GFX_megastructure_blokkat_shieldkiller"
+
+	outliner_trigger = {
+		exists = owner
+		NOT = { has_megastructure_flag = giga_outliner_hidden_by_@owner }
+	}
+
+	potential = { always = no }
+	possible = { always = no }
+}

@@ -1289,7 +1289,7 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 		#Make the country
 		create_country = {
 			type = blokkat_eradicators
-			name = "Blokkat Eradicators"
+			name = "Blokkat Harvesters"
 			species = event_target:blokkat_species
 			auto_delete = no
 			flag = {
@@ -1348,6 +1348,59 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 			}
 		}
 		no_scope = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_distance = 475
+				max_distance = 475
+				min_orientation_angle = 135
+				max_orientation_angle = 135
+				initializer = blokkat_shieldemitter_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					while = { count = 4 giga_generate_hyperlane = yes }
+				}
+			}
+			spawn_system = {
+				min_distance = 475
+				max_distance = 475
+				min_orientation_angle = 225
+				max_orientation_angle = 225
+				initializer = blokkat_shieldemitter_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					while = { count = 4 giga_generate_hyperlane = yes }
+				}
+			}
+			spawn_system = {
+				min_distance = 475
+				max_distance = 475
+				min_orientation_angle = 315
+				max_orientation_angle = 315
+				initializer = blokkat_shieldemitter_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					while = { count = 4 giga_generate_hyperlane = yes }
+				}
+			}
+			spawn_system = {
+				min_distance = 475
+				max_distance = 475
+				min_orientation_angle = 45
+				max_orientation_angle = 45
+				initializer = blokkat_shieldemitter_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					while = { count = 4 giga_generate_hyperlane = yes }
+				}
+			}
 			spawn_system = {
 				min_distance = 500
 				max_distance = 500
@@ -1360,9 +1413,98 @@ country_event = { #Wave 2 setup, fired both from the above chain and normal Wave
 					save_global_event_target_as = main_eradicator_system
 					save_global_event_target_as = last_blokkat_spawned_system
 					set_name = NAME_eradicator_system
-					while = { count = 4 giga_generate_hyperlane = yes }
+					#while = { count = 4 giga_generate_hyperlane = yes }
 				}
 			}
+			set_spawn_system_batch = end
+		}
+		event_target:last_blokkat_spawned_system = {
+			set_spawn_system_batch = begin
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 120
+				max_orientation_angle = 120
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_1
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 180
+				max_orientation_angle = 180
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_2
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 240
+				max_orientation_angle = 240
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_3
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 300
+				max_orientation_angle = 300
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_4
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 0
+				max_orientation_angle = 0
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_5
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			spawn_system = {
+				min_distance = 15
+				max_distance = 15
+				min_orientation_angle = 60
+				max_orientation_angle = 60
+				initializer = blokkat_pylon_system_init
+				hyperlane = no
+				is_discovered = yes
+				effect = {
+					save_global_event_target_as = last_blokkat_spawned_system
+					set_name = NAME_blokkpylon_system_6
+					add_hyperlane = { from = this to = event_target:main_eradicator_system }
+				}
+			}
+			set_spawn_system_batch = end
 		}
 		event_target:global_event_country = { country_event = { id = giga_blokkat_wave_2.1993 } }
 		country_event = { id = giga_blokkat_wave_2.2000 days = 1 }
@@ -1374,21 +1516,13 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 	is_triggered_only = yes
 
 	immediate = {
-		set_variable = { #Eradicator for you and me and everyone
-			which = blokkat_wave_2_eradicator_count
-			value = blokkat_wave_2_rage
-		}
-		divide_variable = {
-			which = blokkat_wave_2_eradicator_count
-			value = 20000
-		}
 		set_variable = { #Very strong military fleets
 			which = blokkat_wave_2_strong_military_fleet_count
 			value = blokkat_wave_2_rage
 		}
 		divide_variable = {
 			which = blokkat_wave_2_strong_military_fleet_count
-			value = 10000
+			value = 8000
 		}
 		set_variable = { #Strong military fleets
 			which = blokkat_wave_2_military_fleet_count
@@ -1396,7 +1530,7 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 		}
 		divide_variable = {
 			which = blokkat_wave_2_military_fleet_count
-			value = 5000
+			value = 4000
 		}
 		set_variable = { #Weak military fleets
 			which = blokkat_wave_2_weak_military_fleet_count
@@ -1420,11 +1554,19 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 		}
 		add_variable = {
 			which = blokkat_wave_2_weak_military_fleet_count
-			value = 4
+			value = 5
 		}
-		add_variable = {
-			which = blokkat_wave_2_military_fleet_count
-			value = 1
+		if = {
+			limit = {
+				check_variable = {
+					which = blokkat_wave_2_rage
+					value < 2000
+				}
+			}
+			set_variable = {
+				which = blokkat_wave_2_weak_military_fleet_count
+				value = 0
+			}
 		}
 		floor_variable = blokkat_wave_2_scout_fleet_count
 		floor_variable = blokkat_wave_2_weak_military_fleet_count
@@ -1519,7 +1661,7 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 			limit = {
 				check_variable = {
 					which = blokkat_wave_2_rage
-					value < 50000
+					value < 100000
 				}
 			}
 			while = {
@@ -1559,34 +1701,12 @@ country_event = { #Spawn ships, repeatable event that fires with each new wave f
 				value = 0
 			}
 		}
-		if = { #Create superstrength fleets if under 1 million
-			limit = {
-				check_variable = {
-					which = blokkat_wave_2_rage
-					value < 1000000
-				}
-			}
-			while = {
-				count = blokkat_wave_2_strong_military_fleet_count
-				giga_create_very_strong_fleet_wave_2_effect = yes
-			}
-		}
-		else = { #If over 1M threat, have 500 fucking eradicators I hope you're happy (highly doubt this will ever be triggered)
-			add_variable = {
-				which = blokkat_wave_2_eradicator_count
-				value = blokkat_wave_2_strong_military_fleet_count
-			}
-			set_variable = {
-				which = blokkat_wave_2_strong_military_fleet_count
-				value = 0
-			}
-		}
-		#Once threat gets to 6M it stops scaling and hits the max of 500 eradicators, so no more if statements need doing.. Game's limits are already being tested here.
-		giga_create_lead_eradicator_wave_2_effect = yes
 		while = {
-			count = blokkat_wave_2_eradicator_count
-			giga_create_eradicator_wave_2_effect = yes
+			count = blokkat_wave_2_strong_military_fleet_count
+			giga_create_very_strong_fleet_wave_2_effect = yes
 		}
+		#If over 1M threat, the blokkats send an experimental 'Blokk-Annihilator', a variant of the Eradicator designed to engage warships head-on, as their last ditch effort. If it dies, the Blokkats are then pushed back out of the region.
+		giga_create_lead_eradicator_wave_2_effect = yes
 	}
 }
 situation_event = { #Monthly event for beamfight situation that increases how much energy the Blokks are giving it
@@ -2074,9 +2194,23 @@ country_event = { #does threat things
 				limit = {
 					check_variable = {
 						which = blokkat_wave_2_rage
+						value > 2000000
+					}
+					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
+					}
+				}
+				blokkat2_remove_threat_flags = yes
+				set_global_flag = giga_blokkat2_threat_category_9
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = blokkat_wave_2_rage
 						value > 500000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 					}
 				}
@@ -2090,6 +2224,7 @@ country_event = { #does threat things
 						value > 100000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 					}
@@ -2104,6 +2239,7 @@ country_event = { #does threat things
 						value > 50000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 						has_global_flag = giga_blokkat2_threat_category_6
@@ -2119,6 +2255,7 @@ country_event = { #does threat things
 						value > 20000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 						has_global_flag = giga_blokkat2_threat_category_6
@@ -2135,6 +2272,7 @@ country_event = { #does threat things
 						value > 8000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 						has_global_flag = giga_blokkat2_threat_category_6
@@ -2152,6 +2290,7 @@ country_event = { #does threat things
 						value > 4000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 						has_global_flag = giga_blokkat2_threat_category_6
@@ -2170,6 +2309,7 @@ country_event = { #does threat things
 						value > 2000
 					}
 					NOT = {
+						has_global_flag = giga_blokkat2_threat_category_9
 						has_global_flag = giga_blokkat2_threat_category_8
 						has_global_flag = giga_blokkat2_threat_category_7
 						has_global_flag = giga_blokkat2_threat_category_6
@@ -2213,140 +2353,6 @@ country_event = { #blokkat research bureau, but like, new and stuff
 		hidden_effect = {
 			remove_country_flag = monitoring_blokkat2
 		}
-	}
-
-	option = { #general study
-		name = "giga_blokkat_wave_2.1995.generalstudy"
-		custom_tooltip = "giga_blokkat_wave_2.1995.generalstudy.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless
-		hidden_effect = {
-			country_event = { id = giga_blokkat_wave_2.1995 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = "blokkats_are_already_gone"
-				hidden_trigger = {
-					NOT = { has_global_flag = blokkat_wave_2_defeated }
-				}
-			}
-		}
-	}
-
-	option = { #repeatables
-		name = "giga_blokkat.3000.repeatables"
-		custom_tooltip = "giga_blokkat.3000.repeatables.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_1
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		allow = {
-			custom_tooltip = {
-				fail_text = "blokkats_are_already_gone"
-				hidden_trigger = {
-					NOT = { has_global_flag = blokkat_crisis_defeated }
-				}
-			}
-		}
-		trigger = { has_country_flag = blokkat_shield_researched }
-	}
-
-	option = { #sacrifice ship
-		name = "giga_blokkat.3000.sacrifice"
-		custom_tooltip = "giga_blokkat.3000.sacrifice.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_2
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		trigger = { has_country_flag = blokkat_shield_researched }
-		allow = {
-			custom_tooltip = {
-				fail_text = "blokkat_task_already_done"
-				hidden_trigger = {
-					NOT = { has_country_flag = blokkat_ship_sacrificed }
-				}
-			}
-			custom_tooltip = {
-				fail_text = "blokkats_are_already_gone"
-				hidden_trigger = {
-					NOT = { has_global_flag = blokkat_crisis_defeated }
-				}
-			}
-		}
-	}
-
-	option = { #go to system
-		name = "giga_blokkat.3000.system"
-		custom_tooltip = "giga_blokkat.3000.system.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_3
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		trigger = { has_country_flag = blokkat_shield_researched }
-		allow = {
-			custom_tooltip = {
-				fail_text = "blokkat_task_already_done"
-				hidden_trigger = {
-					NOT = { has_country_flag = blokkat_ship_sent_to_system }
-				}
-			}
-			custom_tooltip = {
-				fail_text = "blokkats_are_already_gone"
-				hidden_trigger = {
-					NOT = { has_global_flag = blokkat_crisis_defeated }
-				}
-			}
-		}
-	}
-
-	option = { #blow up dismantlers
-		name = "giga_blokkat.3000.destroy"
-		custom_tooltip = "giga_blokkat.3000.destroy.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_4
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		trigger = { has_country_flag = blokkat_shield_researched }
-		allow = {
-			custom_tooltip = {
-				fail_text = "blokkat_task_already_done"
-				hidden_trigger = {
-					NOT = { has_country_flag = blokkat_ship_sent_to_destroy }
-				}
-			}
-			custom_tooltip = {
-				fail_text = "blokkats_are_already_gone"
-				hidden_trigger = {
-					NOT = { has_global_flag = blokkat_crisis_defeated }
-				}
-			}
-		}
-	}
-
-	option = { #capture blokkats
-		name = "giga_blokkat.3000.capture"
-		custom_tooltip = "giga_blokkat.3000.capture.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_5
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		trigger = { has_country_flag = 	blokkat_capture_project_researched }
-	}
-
-	option = { #do paluushia stuff
-		name = "giga_blokkat.3000.paluushia"
-		custom_tooltip = "giga_blokkat.3000.paluushia.tooltip"
-		custom_gui = blokkat_bureau_wave_2_option_clickless_6
-		hidden_effect = {
-			country_event = { id = giga_blokkat.3000 }
-			remove_country_flag = monitoring_blokkat2
-		}
-		trigger = { has_country_flag = paluush_event_chain_ongoing }
 	}
 
 	option = { #scrap count
@@ -2449,45 +2455,6 @@ country_event = { #blokkat research bureau, but like, new and stuff
 			always = no
 		}
 	}
-
-	# option = { #inquietude modifiers
-	# 	name = "giga_blokkat_wave_2.1995.increaseenergy"
-	# 	custom_gui = blokkat_bureau_wave_2_option_inquietude_modifiers
-	# 	trigger = { has_global_flag = is_beamfighting_eradicator }
-	# 	hidden_effect = {
-	# 		event_target:global_event_country = {
-	# 			add_variable = {
-	# 				which = giga_blokkat_wave_2_beamfight_energy_input
-	# 				value = 1000
-	# 			}
-	# 		}
-	# 		remove_country_flag = monitoring_blokkat2
-	# 		country_event = { id = giga_blokkat_wave_2.1995 }
-	# 	}
-	# }
-	#
-	# option = { #inquietude modifiers 2
-	# 	name = "giga_blokkat_wave_2.1995.decreaseenergy"
-	# 	custom_gui = blokkat_bureau_wave_2_option_inquietude_modifiers_2
-	# 	trigger = { has_global_flag = is_beamfighting_eradicator }
-	# 	hidden_effect = {
-	# 		event_target:global_event_country = {
-	# 			subtract_variable = {
-	# 				which = giga_blokkat_wave_2_beamfight_energy_input
-	# 				value = 1000
-	# 			}
-	# 			if = {
-	# 				limit = { check_variable = { which = giga_blokkat_wave_2_beamfight_energy_input value < 1 } }
-	# 				set_variable = {
-	# 					which = giga_blokkat_wave_2_beamfight_energy_input
-	# 					value = 1
-	# 				}
-	# 			}
-	# 		}
-	# 		remove_country_flag = monitoring_blokkat2
-	# 		country_event = { id = giga_blokkat_wave_2.1995 }
-	# 	}
-	# }
 
 	option = { #scrap: research boost
 		name = "giga_blokkat.3000.scrapresearch"
@@ -4319,7 +4286,7 @@ country_event = { #hi gif. jif?
 #gif tells you the blokkats arent done
 country_event = {
 	id = giga_GIF_enclaves.11
-	title = "giga_GIF_enclaves.11.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = "giga_GIF_enclaves.11.desc"
 	is_triggered_only = yes
 	diplomatic = yes
@@ -4360,7 +4327,7 @@ country_event = {
 }
 country_event = { #GIF tells you if you can survive, and offers you pointers to make better ships
 	id = giga_GIF_enclaves.12
-	title = "giga_GIF_enclaves.12.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = {
 		text = "giga_GIF_enclaves.12.desc.bothwave"
 		trigger = {
@@ -4407,7 +4374,7 @@ country_event = { #GIF tells you if you can survive, and offers you pointers to 
 }
 country_event = { #nah you need some better ships cuh (unless quasarcraft, then ur good)
 	id = giga_GIF_enclaves.13
-	title = "giga_GIF_enclaves.13.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = {
 		text = "giga_GIF_enclaves.13.desc.has_quasarcraft"
 		trigger = {
@@ -4454,7 +4421,7 @@ country_event = { #nah you need some better ships cuh (unless quasarcraft, then 
 }
 country_event = { #beamfighting is a thing btw you should try it!
 	id = giga_GIF_enclaves.14
-	title = "giga_GIF_enclaves.14.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = {
 		text = "giga_GIF_enclaves.14.desc.has_qso"
 		trigger = {
@@ -4501,7 +4468,7 @@ country_event = { #beamfighting is a thing btw you should try it!
 }
 country_event = { #the escapists
 	id = giga_GIF_enclaves.15
-	title = "giga_GIF_enclaves.15.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = "giga_GIF_enclaves.15.desc"
 	is_triggered_only = yes
 	diplomatic = yes
@@ -4537,7 +4504,7 @@ country_event = { #the escapists
 }
 country_event = { #no we cant give everyone stuff
 	id = giga_GIF_enclaves.16
-	title = "giga_GIF_enclaves.16.name"
+	title = "giga_GIF_enclaves.diplo.name"
 	desc = "giga_GIF_enclaves.16.desc"
 	is_triggered_only = yes
 	diplomatic = yes
@@ -4571,23 +4538,29 @@ country_event = { #no we cant give everyone stuff
 		hidden_effect = { country_event = { id = giga_GIF_enclaves.17 } }
 	}
 }
-country_event = { #project salvation becomes available in the bureau
+country_event = { #can now access the bureau, notified that project salvation is started through it
 	id = giga_GIF_enclaves.17
 	title = "giga_GIF_enclaves.17.name"
 	desc = "giga_GIF_enclaves.17.desc"
 	is_triggered_only = yes
+	immediate = {
+		set_global_flag = blokkat2_bureau_popup
+		set_country_flag = gigas_diplo_engaged
+		set_country_flag = blokkat2_bureau_unlocked
+	}
 
 	option = {
 		name = "giga_GIF_enclaves.17.a"
 		custom_tooltip = "giga_GIF_enclaves.17.a.tooltip"
-		hidden_effect = {
-			set_global_flag = blokkat2_bureau_popup
-			set_country_flag = gigas_diplo_engaged
-			set_country_flag = blokkat2_bureau_unlocked
-		}
+		trigger = { has_global_flag = giga_blokkats_both_wave }
+	}
+	option = {
+		name = "giga_GIF_enclaves.17.b"
+		custom_tooltip = "giga_GIF_enclaves.17.b.tooltip"
+		trigger = { has_global_flag = giga_blokkats_only_wave2 }
 	}
 }
-country_event = {
+country_event = { #GIF Diplomacy Menu
 	id = giga_GIF_enclaves.100
 	title = giga_GIF_enclaves.100.name
 	desc = giga_GIF_enclaves.100.desc

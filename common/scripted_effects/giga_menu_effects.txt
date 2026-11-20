@@ -2776,6 +2776,7 @@ giga_preset_vanilla_plus = {
 		set_global_flag = gigas_menu_fe_planetcrafts_disabled
 		set_global_flag = katzenartig_disabled #it's kaisover
 		set_global_flag = giga_blokkats_disabled
+		set_global_flag = giga_blokkat2_disabled
 		set_global_flag = giga_core_always_empty
 		set_global_flag = giga_galactic_fed_shuffle
 		#Sirens are disabled already via remove_all_menu_flags
@@ -2825,7 +2826,6 @@ giga_preset_vanilla_plus = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
-		else = { set_global_flag = giga_blokkats_enabled	}
 		# Sirens dlc check
 		if = {
 			limit = {
@@ -2953,7 +2953,7 @@ giga_preset_gigas_experience = {
 		set_global_flag = ehof_ai_capped_1
 		set_global_flag = compound_disabled #Disabling by default
 		set_global_flag = katzenartig_disabled #it's kaisover
-		set_global_flag = giga_blokkats_enabled
+		set_global_flag = giga_blokkat2_disabled
 		set_global_flag = giga_core_shuffle
 		set_global_flag = giga_galactic_fed_shuffle
 		#Sirens are disabled already via remove_all_menu_flags
@@ -3003,7 +3003,6 @@ giga_preset_gigas_experience = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
-		else = { set_global_flag = giga_blokkats_enabled	}
 		# Sirens dlc check
 		if = {
 			limit = {
@@ -3181,7 +3180,6 @@ giga_preset_arcade = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
-		else = { set_global_flag = giga_blokkats_enabled	}
 		# Sirens dlc check
 		if = {
 			limit = {
@@ -3359,7 +3357,6 @@ giga_preset_00 = {
 			}
 			set_global_flag = giga_blokkats_disabled
 		}
-		else = { set_global_flag = giga_blokkats_enabled	}
 		# Sirens dlc check
 		if = {
 			limit = {

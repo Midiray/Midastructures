@@ -460,7 +460,7 @@
 
   giga_gigas_experience_preset_title:0 "GIGA-EXPERIENCE"
   giga_gigas_experience_preset_text:0 "A mostly-balanced experience with challenging crises and unique mechanics."
-  giga_gigas_experience_preset_tooltip:0 "- Megastructures have varying build caps based on their size\n- Job-based build cap mechanics\n- Celestial warships are limited to Behemoth Planetcrafts\n- Aeternum and the Blokkats might spawn as crises\n- Unique systems may spawn\n- The galactic core will spawn\n- Fallen Empires receive a few Celestial Warships\n- Megastructure output varies based on star type\n- The E.H.O.F. is enabled\n- Mod-unique achievements are enabled but provide no bonuses"
+  giga_gigas_experience_preset_tooltip:0 "- Megastructures have varying build caps based on their size\n- Job-based build cap mechanics\n- Celestial warships are limited to Behemoth Planetcrafts\n- Aeternum and the Blokkat Harvesters might spawn as crises\n- Unique systems may spawn\n- The galactic core will spawn\n- Fallen Empires receive a few Celestial Warships\n- Megastructure output varies based on star type\n- The E.H.O.F. is enabled\n- Mod-unique achievements are enabled but provide no bonuses"
 
   giga_arcade_preset_title:0 "ARCADE"
   giga_arcade_preset_text:0 "No limitations, no restrictions!\nFight the biggest of bads with the biggest of megastructures.\n\n§LRecommended if your playset includes high-powered mods.§!"
@@ -12810,6 +12810,9 @@
   already_monitoring_blokkats:0 "The Blokkat Research Bureau is already open."
   edict_giga_blokkat_bureau_edict:0 "Open the §GBlokkat Research Bureau§!"
   edict_giga_blokkat_bureau_edict_desc:0 "Peruse our §GBlokkat Knowledge§! through the §GBlokkat Research Bureau§! and manage Blokkat-related operations."
+
+  edict_giga_blokkat2_bureau_edict:0 "Open the §GBlokkat Emergency Bureau§!"
+  edict_giga_blokkat2_bureau_edict_desc:0 "Peruse our §GBlokkat Knowledge§! through the §GBlokkat Emergency Bureau§! and manage Blokkat-related operations."
 
   ###DEFENSE NEXUS###
 

@@ -1284,29 +1284,29 @@ country_event = {
 			# set flags for which blokkats spawn
 			if = {
 				limit = {
-					OR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
-					NOR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+					NOT = { has_global_flag = giga_blokkats_disabled  }
+					has_global_flag = giga_blokkat2_disabled
 				}
 				set_global_flag = giga_blokkats_only_wave1
 			}
 			else_if = {
 				limit = {
-					NOR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
-					OR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+					has_global_flag = giga_blokkats_disabled
+					NOT = { has_global_flag = giga_blokkat2_disabled  }
 				}
 				set_global_flag = giga_blokkats_only_wave2
 			}
 			else_if = {
 				limit = {
-					OR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
-					OR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+					NOT = { has_global_flag = giga_blokkats_disabled  }
+					NOT = { has_global_flag = giga_blokkat2_disabled }
 				}
 				set_global_flag = giga_blokkats_both_wave
 			}
 			else = {
 				limit = {
-					NOR = { has_global_flag = giga_blokkats_enabled has_global_flag = giga_blokkats_guaranteed }
-					NOR = { has_global_flag = giga_blokkat2_enabled has_global_flag = giga_blokkat2_guaranteed }
+					has_global_flag = giga_blokkats_disabled
+					has_global_flag = giga_blokkat2_disabled
 				}
 				set_global_flag = giga_blokkats_no_wave
 			}

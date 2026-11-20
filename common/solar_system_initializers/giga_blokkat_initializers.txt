@@ -173,3 +173,73 @@ blokkat_beamfight_system_init = {
 
 	change_orbit = 45
 }
+
+blokkat_shieldemitter_system_init = {
+	class = "sc_empty_space"
+	name = "NAME_shieldemitter_system"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+	}
+
+	max_instances = -1
+	spawn_chance = 0
+
+	flags = { blokkat_shieldemitter_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	init_effect = {
+		spawn_megastructure = {
+			type = blokkat_wave2_shieldemitter
+			owner = event_target:blokkat2_country
+			planet = star
+			orbit_distance = 0
+			orbit_angle = 0
+		}
+	}
+
+	change_orbit = 45
+}
+
+blokkat_pylon_system_init = {
+	class = "sc_empty_space"
+	name = "NAME_blokkpylon_system"
+
+	usage = misc_system_init
+	usage_odds = {
+		base = 0
+	}
+
+	max_instances = -1
+	spawn_chance = 0
+
+	flags = { blokkat_pylon_system }
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = { min = 20 max = 30 }
+		has_ring = no
+	}
+	init_effect = {
+		spawn_megastructure = {
+			type = blokkat_wave2_gigarelay
+			owner = event_target:blokkat2_country
+			planet = star
+			orbit_distance = 0
+			orbit_angle = 0
+		}
+	}
+
+	change_orbit = 45
+}

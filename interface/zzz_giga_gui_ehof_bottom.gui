@@ -2902,7 +2902,7 @@ guiTypes = {
 			}
 
 			effectButtonType = {
-				name = "system_large_blokkats"
+				name = "system_large_blokkat2"
 				quadTextureSprite = "GFX_btn_large_blokkat"
 				position = { x = 85 y = 3 }
 				clicksound = interface
